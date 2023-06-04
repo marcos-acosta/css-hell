@@ -4,12 +4,14 @@ import styles from './App.module.css'
 
 function App() {
   const [width, setWidth] = useState(5);
+  const [tlCenter, setTlCenter] = useState({});
+  console.log(tlCenter);
 
   return (
     <header className={styles.header}>
       <input value={width} onChange={e => setWidth(e.target.value)} />
       <div className={styles.arena}>
-        <Box width={width} />
+        <Box width={width} setTlCenter={setTlCenter} />
       </div>
     </header>
   );
