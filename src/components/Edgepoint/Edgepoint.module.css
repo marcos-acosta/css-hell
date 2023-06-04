@@ -1,0 +1,22 @@
+.edgepoint {
+  width: 1vw;
+  height: 1vw;
+  background-color: red;
+  position: absolute;
+}
+
+.top {
+  top: -0.5vw;
+}
+
+.right {
+  right: -0.5vw;
+}
+
+.bottom {
+  bottom: -0.5vw;
+}
+
+.left {
+  left: -0.5vw;
+}
