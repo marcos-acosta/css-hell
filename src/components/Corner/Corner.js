@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react'
-import styles from './Edgepoint.module.css'
+import styles from './Corner.module.css'
 import { combineClassNames } from '../../util';
 
-export default function Edgepoint(props) {
+export default function Corner(props) {
   const ref = useRef();
   const isTop = props.corner[0] === "t";
   const isLeft = props.corner[1] === "l";
+  const eventsToListenFor = ["scroll", "resize"];
 
-  const getCornerCenter = (ref) => {
+  const getCornerCenter = () => {
     if (!ref.current) {
       return null;
     }
@@ -18,16 +19,20 @@ export default function Edgepoint(props) {
     }
   }
 
+  const reportCornerCenterFn = () => props.setCornerCenter(getCornerCenter())
+
   useEffect(() => {
     if (ref.current) {
       props.setCornerCenter(getCornerCenter(ref));
-      window.addEventListener("scroll", () => props.setCornerCenter(getCornerCenter(ref)));
-      window.addEventListener("resize", () => props.setCornerCenter(getCornerCenter(ref)));
+      eventsToListenFor.forEach(eventName => window.addEventListener(eventName, reportCornerCenterFn));
     }
+    return () => {
+      eventsToListenFor.forEach(eventName => window.removeEventListener(eventName, reportCornerCenterFn));
+    };
   }, [props, ref]);
 
   return (
-    <div ref={ref} className={combineClassNames(styles.edgepoint,
+    <div ref={ref} className={combineClassNames(styles.corner,
                                                 isTop ? styles.top : styles.bottom,
                                                 isLeft ? styles.left : styles.right)} />
   )
