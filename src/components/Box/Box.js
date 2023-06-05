@@ -3,13 +3,34 @@ import styles from './Box.module.css'
 import Corner from '../Corner/Corner'
 
 export default function Box(props) {
-  const ref = useRef(null);
+  const tlRef = useRef(null);
+  const trRef = useRef(null);
+  const blRef = useRef(null);
+  const brRef = useRef(null);
+
   const eventsToListenFor = useMemo(() => ["scroll", "resize"], []);
-  const reportCornerCenter = useCallback(() => {
-    if (ref.current) {
-      props.setCornerCenter(ref.current.getBoundingClientRect());
+
+  const getCornerCenter = useCallback((ref) => {
+    if (!ref.current) {
+      return null;
     }
-  }, [props, ref]);
+    const { left, top, right, bottom } = ref.current.getBoundingClientRect();
+    return {
+      left: left + (right - left) / 2,
+      top: top + (bottom - top) / 2
+    }
+  }, []);
+
+  const reportCornerCenter = useCallback(() => {
+    if (tlRef.current && trRef.current && blRef.current && brRef.current) {
+      props.setCornerCenter({
+        "tl": getCornerCenter(tlRef),
+        "tr": getCornerCenter(trRef),
+        "bl": getCornerCenter(blRef),
+        "br": getCornerCenter(brRef)
+      });
+    }
+  }, [props, getCornerCenter, tlRef, trRef, blRef, brRef]);
 
   useEffect(() => {
     reportCornerCenter();
@@ -24,7 +45,10 @@ export default function Box(props) {
 
   return (
     <div className={styles.box} style={props.css}>
-      <Corner ref={ref} corner="tl" />
+      <Corner ref={tlRef} corner="tl" />
+      <Corner ref={trRef} corner="tr" />
+      <Corner ref={blRef} corner="bl" />
+      <Corner ref={brRef} corner="br" />
     </div>
   )
 };

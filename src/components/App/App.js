@@ -6,7 +6,7 @@ function App() {
   const [left, setLeft] = useState(5);
   const [bbox, setBbox] = useState({});
 
-  console.log(bbox.x ? `${bbox.x} ${bbox.y}` : 'no bbox yet');
+  console.log(bbox ? bbox : 'no bbox yet');
 
   return (
     <header className={styles.header}>
