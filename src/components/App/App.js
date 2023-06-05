@@ -1,17 +1,18 @@
 import { useState } from 'react';
-import Box from '../Box/Box';
 import styles from './App.module.css'
+import CssReceiver from '../CssReceiver/CssReceiver';
 
 function App() {
-  const [width, setWidth] = useState(5);
-  const [tlCenter, setTlCenter] = useState({});
-  console.log(tlCenter);
+  const [left, setLeft] = useState(5);
+  const [bbox, setBbox] = useState({});
+
+  console.log(bbox.x ? `${bbox.x} ${bbox.y}` : 'no bbox yet');
 
   return (
     <header className={styles.header}>
-      <input value={width} onChange={e => setWidth(e.target.value)} />
+      <input value={left} onChange={e => setLeft(e.target.value)} />
       <div className={styles.arena}>
-        <Box width={width} setTlCenter={setTlCenter} />
+        <CssReceiver css={{left: `${left}vw`}} setCornerCenter={setBbox} />
       </div>
     </header>
   );
