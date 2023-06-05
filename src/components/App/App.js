@@ -3,16 +3,16 @@ import styles from './App.module.css'
 import CssReceiver from '../CssReceiver/CssReceiver';
 
 function App() {
-  const [left, setLeft] = useState(5);
-  const [bbox, setBbox] = useState({});
+  const [skew, setLeft] = useState(0);
+  const [bbox, setBbox] = useState(null);
 
-  console.log(bbox ? bbox : 'no bbox yet');
+  console.log(bbox ? `TOP LEFT: left=${bbox.tl.left} top=${bbox.tl.top}` : 'no bbox yet');
 
   return (
     <header className={styles.header}>
-      <input value={left} onChange={e => setLeft(e.target.value)} />
+      <input value={skew} onChange={e => setLeft(e.target.value)} />
       <div className={styles.arena}>
-        <CssReceiver css={{left: `${left}vw`}} setCornerCenter={setBbox} />
+        <CssReceiver css={{transform: `skew(${skew}deg, 10deg)`}} setCornerCenter={setBbox} />
       </div>
     </header>
   );
