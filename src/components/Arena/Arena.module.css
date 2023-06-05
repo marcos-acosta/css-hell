@@ -1,0 +1,9 @@
+.arena {
+  position: absolute;
+  background-color: white;
+  min-width: 80vw;
+  min-height: 80vh;
+  left: calc((100vw - 80vw) / 2);
+  top: calc((100vh - 80vh) / 2);
+  box-shadow: inset 0 7px 12px rgba(0, 0, 0, 0.469);
+}

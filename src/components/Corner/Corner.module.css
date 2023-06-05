@@ -1,8 +1,9 @@
 .corner {
   width: 1vw;
   height: 1vw;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.23);
   position: absolute;
+  border-radius: .5vw;
 }
 
 .top {

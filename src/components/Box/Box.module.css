@@ -1,9 +1,0 @@
-.box {
-  width: 5vw;
-  height: 5vw;
-  background-color: rgb(63, 159, 255);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  position: relative;
-  margin-top: 10vw;
-  margin-left: 10vw;
-}

@@ -6,5 +6,6 @@ const areCssEqual = (oldCss, nextCss) => {
 }
 
 export default memo(function CssReceiver(props) {
-  return <Box css={props.css} setCornerCenter={props.setCornerCenter} />
+  const combinedCss = {...props.baseCss, ...props.css};
+  return <Box setCornerCenter={props.setCornerCenter} css={combinedCss} />
 }, (prevProps, nextProps) => areCssEqual(prevProps.css, nextProps.css));
