@@ -72,7 +72,7 @@ export default function CssEditor(props) {
             className={styles.addNewLineButton}
             onClick={props.addCssLine}
           >
-            + add new property
+            [+] add / overwrite property
           </button>
         </div>
       </div>
