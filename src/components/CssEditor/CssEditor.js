@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useCollapse } from "react-collapsed";
 import Draggable from "react-draggable";
 import styles from "./CssEditor.module.css";

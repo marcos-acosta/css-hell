@@ -27,7 +27,7 @@ const parseCustomCss = (customCss) => {
 };
 
 export default function App() {
-  const [levelNumber, _] = useState(1);
+  const levelNumber = useState(1)[0];
   const [levelData, setLevelData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [customCss, setCustomCss] = useState([]);
@@ -68,7 +68,7 @@ export default function App() {
     return;
   }
 
-  const { avatarBaseCss, goalCss, title, obstacles } = levelData.find(
+  const { avatarBaseCss, goalCss } = levelData.find(
     (level) => parseInt(level.number) === levelNumber
   );
 
