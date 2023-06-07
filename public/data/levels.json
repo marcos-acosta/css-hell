@@ -8,19 +8,22 @@
         "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
         "color": "white",
         "fontSize": "3vw",
-        "flexDirection": "column",
         "alignItems": "center",
         "justifyContent": "center",
         "fontWeight": "bold",
         "borderRadius": "0.5vw",
-        "top": "45%",
         "left": "20%"
       },
       "avatarLockedCss": {
         "display": "flex",
         "position": "absolute",
+        "marginLeft": "0",
+        "marginRight": "0",
+        "marginTop": "0",
+        "marginBottom": "0",
         "width": "10%",
-        "height": "10%"
+        "height": "10%",
+        "top": "45%"
       },
       "goalCss": {
         "backgroundColor": "rgb(237, 237, 237)",

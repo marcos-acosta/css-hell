@@ -52,6 +52,7 @@
   transition-duration: 1s;
   padding-left: 1vw;
   padding-right: 1vw;
+  font-size: 1.1vw;
 }
 
 .addNewLineButton:hover {
@@ -61,7 +62,6 @@
 .toggleDefaultStyleButtonText {
   position: absolute;
   font-size: 1.1vw;
-  font-weight: bold;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -89,10 +89,10 @@
 }
 
 .titleText {
-  font-style: italic;
   width: 100%;
   text-align: center;
-  font-size: 1.25vw;
+  font-size: 1.3vw;
+  font-weight: bold;
 }
 
 hr {
