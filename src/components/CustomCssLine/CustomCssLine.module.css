@@ -1,0 +1,31 @@
+.cssInputField {
+  border: none;
+  border-radius: 0.5vw;
+  background-color: rgb(238, 238, 238);
+  padding-top: 0.35vw;
+  padding-bottom: 0.35vw;
+  padding-left: 0.75vw;
+  margin-top: 0;
+  width: 43%;
+}
+
+.trashIconButton {
+  position: relative;
+  margin-right: 0.5vw;
+  cursor: pointer;
+  font-size: 1.5vw;
+  width: 5%;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+
+.cssInputRow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.75vw;
+}
+
+.inputContainer {
+  width: 90%;
+}

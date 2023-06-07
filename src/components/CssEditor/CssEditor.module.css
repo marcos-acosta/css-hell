@@ -1,6 +1,6 @@
 .cssEditorContainer {
   cursor: move;
-  min-width: 30vw;
+  min-width: 35vw;
   background-color: white;
   position: absolute;
   z-index: 1;
@@ -10,19 +10,52 @@
   border-radius: 1vw;
   top: 10vw;
   left: 10vw;
+  font-size: 1.1vw;
 }
 
 .toggleDefaultStyleButton {
   width: 100%;
   text-align: center;
   border: none;
-  background-color: rgb(221, 221, 221);
-  font-family: inherit;
+  background-color: rgb(238, 238, 238);
   cursor: pointer;
   border-radius: 0.4vw;
   padding-top: 0.5vw;
   padding-bottom: 0.5vw;
   position: relative;
+  margin-top: 1vw;
+  transition-property: background-color;
+  transition-duration: 1s;
+}
+
+.toggleDefaultStyleButton:hover {
+  background-color: rgb(222, 222, 222);
+}
+
+.customCssContainer {
+  width: 100%;
+  text-align: center;
+  margin-top: 1vw;
+}
+
+.addNewLineButton {
+  text-align: center;
+  border: none;
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+  border-radius: 0.4vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  position: relative;
+  margin-top: 1vw;
+  transition-property: background-color;
+  transition-duration: 1s;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.addNewLineButton:hover {
+  background-color: rgb(222, 222, 222);
 }
 
 .toggleDefaultStyleButtonText {
@@ -43,4 +76,28 @@
 
 .dropDownSymbol {
   float: left;
+  font-size: 1.5vw;
+}
+
+.lockSymbol {
+  margin-right: 0.5vw;
+  font-size: 1vw;
+}
+
+.titleText {
+  font-style: italic;
+  width: 100%;
+  text-align: center;
+  font-size: 1.25vw;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+  margin-top: 1vw;
+}
+
+.noStylesMessage {
+  font-style: italic;
 }

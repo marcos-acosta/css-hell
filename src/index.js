@@ -1,11 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Arena from "./components/Arena/Arena";
+import App from "./components/App/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  // <React.StrictMode>
-  <Arena />
-  // </React.StrictMode>
-);
+root.render(<App />);
