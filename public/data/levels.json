@@ -3,22 +3,40 @@
     {
       "number": 1,
       "title": "point a to point b",
-      "avatarBaseCss": {
+      "avatarStarterCss": {
         "backgroundColor": "rgb(37, 37, 37)",
         "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
-        "width": "5vw",
-        "height": "5vw",
+        "color": "white",
+        "fontSize": "3vw",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw",
+        "top": "45%",
+        "left": "20%"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
         "position": "absolute",
-        "color": "white"
+        "width": "10%",
+        "height": "10%"
       },
       "goalCss": {
         "backgroundColor": "rgb(237, 237, 237)",
         "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
-        "width": "5vw",
-        "height": "5vw",
+        "width": "10%",
+        "height": "10%",
         "position": "absolute",
-        "top": "1vw",
-        "right": "1vw"
+        "top": "45%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
       },
       "obstacles": []
     }

@@ -11,13 +11,11 @@ export default function Arena(props) {
     alert("Overlap!");
   }
 
-  const fullAvatarCss = {
-    ...props.customCss,
-    ...props.avatarStarterCss,
-  };
-
   return (
     <>
+      <div className={styles.title}>
+        {props.number}. {props.title}
+      </div>
       <div className={styles.arena}>
         <CssReceiver
           css={props.goalCss}
@@ -25,7 +23,7 @@ export default function Arena(props) {
           character="B"
         />
         <CssReceiver
-          css={fullAvatarCss}
+          css={props.avatarCss}
           setCornerCenter={setAvatarBbox}
           character="A"
         />

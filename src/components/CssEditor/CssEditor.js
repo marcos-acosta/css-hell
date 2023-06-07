@@ -15,7 +15,7 @@ export default function CssEditor(props) {
   return (
     <Draggable>
       <div className={styles.cssEditorContainer}>
-        <div className={styles.titleText}>.css</div>
+        <div className={styles.titleText}>A.css</div>
         <button
           className={styles.toggleDefaultStyleButton}
           {...getToggleProps()}
@@ -33,16 +33,23 @@ export default function CssEditor(props) {
           </div>
         </button>
         <div {...getCollapseProps()} className={styles.defaultStyleContainer}>
-          {Object.entries(props.baseCss).map(([key, value]) => (
+          <div className={styles.lockedStyleContainer}>
+            {Object.entries(props.lockedCss).map(([key, value]) => (
+              <div key={key}>
+                <span
+                  className={combineClassNames(
+                    "material-symbols-outlined",
+                    styles.lockSymbol
+                  )}
+                >
+                  lock
+                </span>
+                <b>{jsxStyleToCssStyle(key)}</b>: {value};
+              </div>
+            ))}
+          </div>
+          {Object.entries(props.starterCss).map(([key, value]) => (
             <div key={key}>
-              <span
-                className={combineClassNames(
-                  "material-symbols-outlined",
-                  styles.lockSymbol
-                )}
-              >
-                lock
-              </span>
               <b>{jsxStyleToCssStyle(key)}</b>: {value};
             </div>
           ))}

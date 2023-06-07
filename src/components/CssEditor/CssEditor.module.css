@@ -8,8 +8,8 @@
   border: 1px rgb(225, 225, 225) solid;
   padding: 1vw;
   border-radius: 1vw;
-  top: 20vw;
-  left: 2vw;
+  bottom: 2vw;
+  right: 2vw;
   font-size: 1.1vw;
 }
 
@@ -69,9 +69,13 @@
 }
 
 .defaultStyleContainer {
-  color: rgb(127, 127, 127);
   margin-bottom: 1.5vw;
   margin-top: 1vw;
+}
+
+.lockedStyleContainer {
+  color: rgb(127, 127, 127);
+  font-style: italic;
 }
 
 .dropDownSymbol {

@@ -7,16 +7,6 @@ const cssStyleToJsxStyle = (propertyName) => {
   return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
 };
 
-const baseBoxCss = {
-  fontSize: "3vw",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  fontWeight: "bold",
-  borderRadius: "0.5vw",
-};
-
 const parseCustomCss = (customCss) => {
   return Object.fromEntries(
     customCss.map((cssLine) => [
@@ -68,22 +58,26 @@ export default function App() {
     return;
   }
 
-  const { avatarBaseCss, goalCss } = levelData.find(
-    (level) => parseInt(level.number) === levelNumber
-  );
+  const { title, number, avatarStarterCss, avatarLockedCss, goalCss } =
+    levelData.find((level) => parseInt(level.number) === levelNumber);
 
-  const fullGoalCss = { ...goalCss, ...baseBoxCss };
-  const avatarStarterCss = { ...avatarBaseCss, ...baseBoxCss };
+  const avatarCss = {
+    ...avatarStarterCss,
+    ...parseCustomCss(customCss),
+    ...avatarLockedCss,
+  };
 
   return (
     <>
       <Arena
-        goalCss={fullGoalCss}
-        avatarStarterCss={avatarStarterCss}
-        customCss={parseCustomCss(customCss)}
+        goalCss={goalCss}
+        avatarCss={avatarCss}
+        title={title}
+        number={number}
       />
       <CssEditor
-        baseCss={avatarStarterCss}
+        lockedCss={avatarLockedCss}
+        starterCss={avatarStarterCss}
         customCss={customCss}
         updateCss={updateCss}
         deleteCssLine={deleteCssLine}
