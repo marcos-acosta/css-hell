@@ -17,8 +17,8 @@
         "width": "5vw",
         "height": "5vw",
         "position": "absolute",
-        "bottom": "2vw",
-        "right": "2vw"
+        "top": "1vw",
+        "right": "1vw"
       },
       "obstacles": []
     }

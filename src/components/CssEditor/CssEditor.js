@@ -4,42 +4,13 @@ import Draggable from "react-draggable";
 import styles from "./CssEditor.module.css";
 import { combineClassNames } from "../../util";
 import CustomCssLine from "../CustomCssLine/CustomCssLine";
-import { uid } from "uid/secure";
 
 const jsxStyleToCssStyle = (propertyName) => {
   return propertyName.replace(/(\w)([A-Z])/, "$1-$2").toLowerCase();
 };
 
-const cssStyleToJsxStyle = (propertyName) => {
-  return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
-};
-
 export default function CssEditor(props) {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-  const [customCss, setCustomCss] = useState([]);
-
-  const addCssLine = () => {
-    setCustomCss([
-      ...customCss,
-      {
-        id: uid(),
-        propertyName: "",
-        propertyValue: "",
-      },
-    ]);
-  };
-
-  const updateCss = (id, property, value) => {
-    setCustomCss(
-      customCss.map((cssLine) =>
-        cssLine.id === id ? { ...cssLine, [property]: value } : cssLine
-      )
-    );
-  };
-
-  const deleteCssLine = (id) => {
-    setCustomCss(customCss.filter((cssLine) => cssLine.id !== id));
-  };
 
   return (
     <Draggable>
@@ -78,19 +49,22 @@ export default function CssEditor(props) {
         </div>
         <hr />
         <div className={styles.customCssContainer}>
-          {customCss.map((cssItem) => (
+          {props.customCss.map((cssItem) => (
             <CustomCssLine
               {...cssItem}
               key={cssItem.id}
-              deleteCssLine={deleteCssLine}
-              updateCss={updateCss}
+              deleteCssLine={props.deleteCssLine}
+              updateCss={props.updateCss}
             />
           ))}
-          {!customCss.length && (
+          {!props.customCss.length && (
             <div className={styles.noStylesMessage}>no styles added</div>
           )}
           <hr />
-          <button className={styles.addNewLineButton} onClick={addCssLine}>
+          <button
+            className={styles.addNewLineButton}
+            onClick={props.addCssLine}
+          >
             + add new property
           </button>
         </div>
