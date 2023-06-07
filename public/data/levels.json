@@ -1,0 +1,26 @@
+{
+  "levels": [
+    {
+      "number": 1,
+      "title": "point a to point b",
+      "avatarBaseCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "width": "5vw",
+        "height": "5vw",
+        "position": "absolute",
+        "color": "white"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "width": "5vw",
+        "height": "5vw",
+        "position": "absolute",
+        "bottom": "2vw",
+        "right": "2vw"
+      },
+      "obstacles": []
+    }
+  ]
+}

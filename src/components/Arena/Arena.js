@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./Arena.module.css";
 import CssReceiver from "../CssReceiver/CssReceiver";
 import { doBboxesOverlap } from "../../util";
-import CssEditor from "../CssEditor/CssEditor";
 
 export default function Arena() {
   const [left, setLeft] = useState(0);
@@ -55,12 +54,9 @@ export default function Arena() {
     ...avatarBaseCss,
   };
 
-  // console.log(avatarBbox ? `TOP LEFT: left=${avatarBbox.tl.left} top=${avatarBbox.tl.top}` : 'no bbox yet');
-
   return (
     <>
       <input value={left} onChange={(e) => setLeft(e.target.value)} />
-      <CssEditor baseCss={avatarBaseCss} />
       <div className={styles.arena}>
         <CssReceiver
           css={goalBaseCss}
