@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import styles from './Arena.module.css'
-import CssReceiver from '../CssReceiver/CssReceiver';
-import { doBboxesOverlap } from '../../util';
+import { useState } from "react";
+import styles from "./Arena.module.css";
+import CssReceiver from "../CssReceiver/CssReceiver";
+import { doBboxesOverlap } from "../../util";
+import CssEditor from "../CssEditor/CssEditor";
 
 export default function Arena() {
   const [left, setLeft] = useState(0);
@@ -9,12 +10,22 @@ export default function Arena() {
   const [goalBbox, setGoalBbox] = useState(null);
 
   const customCss = {
-    left: `${left}vw`
-  }
+    left: `${left}vw`,
+  };
 
   if (doBboxesOverlap(avatarBbox, goalBbox)) {
     console.log("Overlap!");
   }
+
+  const baseBoxCss = {
+    fontSize: "3vw",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: "bold",
+    borderRadius: "0.5vw",
+  };
 
   const avatarBaseCss = {
     backgroundColor: "rgb(37, 37, 37)",
@@ -22,7 +33,10 @@ export default function Arena() {
     width: "5vw",
     height: "5vw",
     position: "absolute",
+    color: "white",
+    ...baseBoxCss,
   };
+  const avatarCharacter = "A";
 
   const goalBaseCss = {
     backgroundColor: "rgb(237, 237, 237)",
@@ -30,23 +44,34 @@ export default function Arena() {
     width: "5vw",
     height: "5vw",
     position: "absolute",
-    top: "12vw",
-    left: "20vw"
-  }
+    bottom: "2vw",
+    right: "2vw",
+    ...baseBoxCss,
+  };
+  const goalCharacter = "B";
 
   const combinedCss = {
     ...customCss,
-    ...avatarBaseCss
-  }
+    ...avatarBaseCss,
+  };
 
   // console.log(avatarBbox ? `TOP LEFT: left=${avatarBbox.tl.left} top=${avatarBbox.tl.top}` : 'no bbox yet');
 
   return (
     <>
-      <input value={left} onChange={e => setLeft(e.target.value)} />
+      <input value={left} onChange={(e) => setLeft(e.target.value)} />
+      <CssEditor baseCss={avatarBaseCss} />
       <div className={styles.arena}>
-        <CssReceiver css={goalBaseCss} setCornerCenter={setGoalBbox} />
-        <CssReceiver css={combinedCss} setCornerCenter={setAvatarBbox} />
+        <CssReceiver
+          css={goalBaseCss}
+          setCornerCenter={setGoalBbox}
+          character={goalCharacter}
+        />
+        <CssReceiver
+          css={combinedCss}
+          setCornerCenter={setAvatarBbox}
+          character={avatarCharacter}
+        />
       </div>
     </>
   );

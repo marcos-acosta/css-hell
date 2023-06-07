@@ -1,0 +1,46 @@
+.cssEditorContainer {
+  cursor: move;
+  min-width: 30vw;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 7px 12px;
+  border: 1px rgb(225, 225, 225) solid;
+  padding: 1vw;
+  border-radius: 1vw;
+  top: 10vw;
+  left: 10vw;
+}
+
+.toggleDefaultStyleButton {
+  width: 100%;
+  text-align: center;
+  border: none;
+  background-color: rgb(221, 221, 221);
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 0.4vw;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  position: relative;
+}
+
+.toggleDefaultStyleButtonText {
+  position: absolute;
+  font-size: 1.1vw;
+  font-weight: bold;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.defaultStyleContainer {
+  color: rgb(127, 127, 127);
+  margin-bottom: 1.5vw;
+  margin-top: 1vw;
+}
+
+.dropDownSymbol {
+  float: left;
+}

@@ -9,14 +9,11 @@ function doBboxesOverlap(bbox1, bbox2) {
 }
 
 function extractPoints(bbox) {
-  let points = []
-  Object.values(bbox).forEach(coords => {
-    points.push([coords.left, coords.top])
+  let points = [];
+  Object.values(bbox).forEach((coords) => {
+    points.push([coords.left, coords.top]);
   });
   return points;
 }
 
-export {
-  combineClassNames,
-  doBboxesOverlap
-}
+export { combineClassNames, doBboxesOverlap };
