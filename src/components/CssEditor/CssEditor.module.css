@@ -8,8 +8,9 @@
   border: 1px rgb(225, 225, 225) solid;
   padding: 1vw;
   border-radius: 1vw;
-  top: 2vw;
-  right: 2vw;
+  top: 3vw;
+  left: 3vw;
+  background-color: rgba(255, 255, 255, 0.9);
   font-size: 1.1vw;
 }
 
@@ -17,11 +18,12 @@
   width: 100%;
   text-align: center;
   border: none;
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px rgb(212, 212, 212) dashed;
   cursor: pointer;
   border-radius: 0.4vw;
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
+  padding-top: 0.525vw;
+  padding-bottom: 0.525vw;
   position: relative;
   margin-top: 1vw;
   transition-property: background-color;
@@ -29,7 +31,7 @@
 }
 
 .toggleDefaultStyleButton:hover {
-  background-color: rgb(222, 222, 222);
+  background-color: rgba(245, 245, 245, 0.6);
 }
 
 .customCssContainer {
@@ -41,7 +43,8 @@
 .addNewLineButton {
   text-align: center;
   border: none;
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px rgb(212, 212, 212) dashed;
   cursor: pointer;
   border-radius: 0.4vw;
   padding-top: 0.5vw;
@@ -56,7 +59,7 @@
 }
 
 .addNewLineButton:hover {
-  background-color: rgb(222, 222, 222);
+  background-color: rgba(245, 245, 245, 0.6);
 }
 
 .toggleDefaultStyleButtonText {

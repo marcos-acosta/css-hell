@@ -11,7 +11,7 @@ const jsxStyleToCssStyle = (propertyName) => {
 
 export default function CssEditor(props) {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-  const [isMinimized, setIsMinimized] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   return (
     <Draggable>
@@ -32,6 +32,9 @@ export default function CssEditor(props) {
                 "material-symbols-outlined",
                 styles.minimizeIcon
               )}
+              aria-label={
+                isMinimized ? "expand css editor" : "minimize css editor"
+              }
             >
               {isMinimized ? "open_in_full" : "close_fullscreen"}
             </span>

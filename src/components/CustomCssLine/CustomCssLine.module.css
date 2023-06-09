@@ -1,7 +1,8 @@
 .cssInputField {
   border: none;
   border-radius: 0.5vw;
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px rgb(212, 212, 212) dashed;
   padding-top: 0.35vw;
   padding-bottom: 0.35vw;
   padding-left: 0.75vw;
