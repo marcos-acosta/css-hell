@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCollapse } from "react-collapsed";
 import Draggable from "react-draggable";
 import styles from "./CssEditor.module.css";
@@ -11,70 +11,98 @@ const jsxStyleToCssStyle = (propertyName) => {
 
 export default function CssEditor(props) {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
+  const [isMinimized, setIsMinimized] = useState(true);
 
   return (
     <Draggable>
-      <div className={styles.cssEditorContainer}>
-        <div className={styles.titleText}>A.css</div>
-        <button
-          className={styles.toggleDefaultStyleButton}
-          {...getToggleProps()}
-        >
-          <span
-            className={combineClassNames(
-              styles.dropDownSymbol,
-              "material-symbols-outlined"
-            )}
-          >
-            {isExpanded ? "expand_more" : "chevron_right"}
-          </span>
-          <div className={styles.toggleDefaultStyleButtonText}>
-            {isExpanded ? "hide base styles" : "show base styles"}
-          </div>
-        </button>
-        <div {...getCollapseProps()} className={styles.defaultStyleContainer}>
-          <div className={styles.lockedStyleContainer}>
-            {Object.entries(props.lockedCss).map(([key, value]) => (
-              <div key={key}>
-                <span
-                  className={combineClassNames(
-                    "material-symbols-outlined",
-                    styles.lockSymbol
-                  )}
-                >
-                  lock
-                </span>
-                <b>{jsxStyleToCssStyle(key)}</b>: {value};
-              </div>
-            ))}
-          </div>
-          {Object.entries(props.starterCss).map(([key, value]) => (
-            <div key={key}>
-              <b>{jsxStyleToCssStyle(key)}</b>: {value};
-            </div>
-          ))}
-        </div>
-        <hr />
-        <div className={styles.customCssContainer}>
-          {props.customCss.map((cssItem) => (
-            <CustomCssLine
-              {...cssItem}
-              key={cssItem.id}
-              deleteCssLine={props.deleteCssLine}
-              updateCss={props.updateCss}
-            />
-          ))}
-          {!props.customCss.length && (
-            <div className={styles.noStylesMessage}>no styles added</div>
-          )}
-          <hr />
+      <div
+        className={combineClassNames(
+          styles.cssEditorContainer,
+          isMinimized && styles.collapsedPanel
+        )}
+      >
+        <div className={styles.titleTextContainer}>
+          <div className={styles.titleText}>A.css</div>
           <button
-            className={styles.addNewLineButton}
-            onClick={props.addCssLine}
+            className={styles.minimizeButton}
+            onClick={() => setIsMinimized(!isMinimized)}
           >
-            [+] add / overwrite property
+            <span
+              className={combineClassNames(
+                "material-symbols-outlined",
+                styles.minimizeIcon
+              )}
+            >
+              {isMinimized ? "open_in_full" : "close_fullscreen"}
+            </span>
           </button>
         </div>
+        {!isMinimized && (
+          <>
+            <button
+              className={styles.toggleDefaultStyleButton}
+              {...getToggleProps()}
+            >
+              <span
+                className={combineClassNames(
+                  styles.dropDownSymbol,
+                  "material-symbols-outlined"
+                )}
+              >
+                {isExpanded ? "expand_more" : "chevron_right"}
+              </span>
+              <div className={styles.toggleDefaultStyleButtonText}>
+                {isExpanded ? "hide base styles" : "show base styles"}
+              </div>
+            </button>
+            <div
+              {...getCollapseProps()}
+              className={styles.defaultStyleContainer}
+            >
+              <div className={styles.lockedStyleContainer}>
+                {Object.entries(props.lockedCss).map(([key, value]) => (
+                  <div key={key}>
+                    <span
+                      className={combineClassNames(
+                        "material-symbols-outlined",
+                        styles.lockSymbol
+                      )}
+                    >
+                      lock
+                    </span>
+                    <b>{jsxStyleToCssStyle(key)}</b>: {value};
+                  </div>
+                ))}
+              </div>
+              {Object.entries(props.starterCss).map(([key, value]) => (
+                <div key={key}>
+                  <b>{jsxStyleToCssStyle(key)}</b>: {value};
+                </div>
+              ))}
+            </div>
+            <hr />
+            <div className={styles.customCssContainer}>
+              {props.customCss.map((cssItem) => (
+                <CustomCssLine
+                  {...cssItem}
+                  key={cssItem.id}
+                  deleteCssLine={props.deleteCssLine}
+                  updateCss={props.updateCss}
+                />
+              ))}
+              {!props.customCss.length && (
+                <div className={styles.noStylesMessage}>no styles added</div>
+              )}
+              <hr />
+              <button
+                className={styles.addNewLineButton}
+                onClick={props.addCssLine}
+              >
+                [+] add / overwrite property
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </Draggable>
   );
