@@ -42,6 +42,56 @@
         "borderRadius": "0.5vw"
       },
       "obstacles": []
+    },
+    {
+      "number": 2,
+      "title": "get wide",
+      "avatarStarterCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "color": "white",
+        "fontSize": "3vw",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw",
+        "width": "10%"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
+        "position": "absolute",
+        "marginLeft": "0",
+        "marginRight": "0",
+        "marginTop": "0",
+        "marginBottom": "0",
+        "height": "10%",
+        "top": "45%",
+        "left": "20%"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "width": "10%",
+        "height": "10%",
+        "position": "absolute",
+        "top": "45%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "obstacles": []
+    }
+  ],
+  "memories": [
+    {
+      "after": 1,
+      "text": "as you cross your first hurdles leaving the C.S.S., your mind begins to clear. what's this? a memory from a previous life? a voice calls out to you from your distant past...",
+      "file": "https://drive.google.com/uc?export=download&id=1euygEGFGnq44-OdVSX45Hrg0vMzRDomY"
     }
   ]
 }

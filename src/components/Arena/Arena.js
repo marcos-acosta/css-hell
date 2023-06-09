@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Arena.module.css";
 import CssReceiver from "../CssReceiver/CssReceiver";
 import { doBboxesOverlap } from "../../util";
@@ -7,9 +7,11 @@ export default function Arena(props) {
   const [avatarBbox, setAvatarBbox] = useState(null);
   const [goalBbox, setGoalBbox] = useState(null);
 
-  if (doBboxesOverlap(avatarBbox, goalBbox)) {
-    alert("Overlap!");
-  }
+  const setIsOverlapping = props.setIsOverlapping;
+
+  useEffect(() => {
+    setIsOverlapping(doBboxesOverlap(avatarBbox, goalBbox));
+  }, [setIsOverlapping, avatarBbox, goalBbox]);
 
   return (
     <>

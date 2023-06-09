@@ -2,25 +2,36 @@ import React, { useEffect, useState } from "react";
 import Arena from "../Arena/Arena";
 import CssEditor from "../CssEditor/CssEditor";
 import { uid } from "uid/secure";
+import MemoryScreen from "../MemoryScreen/MemoryScreen";
 
 const cssStyleToJsxStyle = (propertyName) => {
   return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
 };
 
+const sanitizeInput = (propertyName) => {
+  return propertyName.replace(/[0-9]/g, "");
+};
+
+const preparePropertyName = (propertyName) => {
+  return cssStyleToJsxStyle(sanitizeInput(propertyName));
+};
+
 const parseCustomCss = (customCss) => {
   return Object.fromEntries(
     customCss.map((cssLine) => [
-      cssStyleToJsxStyle(cssLine.propertyName),
+      preparePropertyName(cssLine.propertyName),
       cssLine.propertyValue,
     ])
   );
 };
 
 export default function App() {
-  const levelNumber = useState(1)[0];
+  const [levelNumber, setLevelNumber] = useState(1);
   const [levelData, setLevelData] = useState([]);
+  const [memories, setMemories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [customCss, setCustomCss] = useState([]);
+  const [isOverlapping, setIsOverlapping] = useState(false);
 
   const addCssLine = () => {
     setCustomCss([
@@ -45,11 +56,18 @@ export default function App() {
     setCustomCss(customCss.filter((cssLine) => cssLine.id !== id));
   };
 
+  const readyForNextLevel = () => {
+    setIsOverlapping(false);
+    setCustomCss([]);
+    setLevelNumber(levelNumber + 1);
+  };
+
   useEffect(() => {
     fetch("data/levels.json")
       .then((r) => r.json())
       .then((data) => {
         setLevelData(data["levels"]);
+        setMemories(data["memories"]);
         setLoading(false);
       });
   }, []);
@@ -69,11 +87,19 @@ export default function App() {
 
   return (
     <>
+      <MemoryScreen
+        memoryText={memories[0]["text"]}
+        showMemory={isOverlapping}
+        audioSource={memories[0]["file"]}
+        nextLevel={levelNumber + (isOverlapping ? 1 : 0)}
+        readyForNextLevel={readyForNextLevel}
+      />
       <Arena
         goalCss={goalCss}
         avatarCss={avatarCss}
         title={title}
         number={number}
+        setIsOverlapping={setIsOverlapping}
       />
       <CssEditor
         lockedCss={avatarLockedCss}
