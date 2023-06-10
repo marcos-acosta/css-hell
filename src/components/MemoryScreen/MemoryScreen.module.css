@@ -32,16 +32,12 @@
 
 .monkeyContainer {
   color: white;
-  margin-top: 5vw;
   font-size: 1.5vw;
   top: 8vw;
   text-align: left;
   margin-top: 5vw;
   display: flex;
   justify-content: center;
-}
-
-.monkeyText {
 }
 
 .playMemory {
@@ -74,10 +70,10 @@
 }
 
 .nextLevelButtonContainer {
+  top: 40vw;
   width: 100%;
   text-align: center;
   position: absolute;
-  bottom: 8vw;
   transition-property: opacity;
   transition-duration: 1s;
 }
@@ -88,7 +84,7 @@
 
 .nextLevelButton {
   background-color: transparent;
-  border-bottom: white dotted 1px;
+  border-bottom: white dashed 1px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -100,6 +96,7 @@
   justify-content: center;
   transition-property: width;
   transition-duration: 1s;
+  padding-bottom: 0.5vw;
 }
 
 .nextLevelButton:hover {

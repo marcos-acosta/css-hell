@@ -44,14 +44,16 @@ export default function MemoryScreen(props) {
           !invisible && styles.opaque
         )}
       >
-        <audio
-          controls="controls"
-          ref={audioRef}
-          onEnded={audioEnded}
-          className={styles.audioElement}
-        >
-          <source src={props.audioSource} />
-        </audio>
+        {props.audioSource && (
+          <audio
+            controls="controls"
+            ref={audioRef}
+            onEnded={audioEnded}
+            className={styles.audioElement}
+          >
+            <source src={props.audioSource} />
+          </audio>
+        )}
         <div className={styles.memoryText}>{props.memoryText}</div>
         <div className={styles.monkeyContainer}>
           <div className={styles.monkeyText}>
