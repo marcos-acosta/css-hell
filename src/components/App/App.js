@@ -8,27 +8,31 @@ const cssStyleToJsxStyle = (propertyName) => {
   return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
 };
 
-const sanitizeInput = (propertyName) => {
+const sanitizePropertyName = (propertyName) => {
   return propertyName.replace(/[0-9]/g, "");
 };
 
 const preparePropertyName = (propertyName) => {
-  return cssStyleToJsxStyle(sanitizeInput(propertyName));
+  return cssStyleToJsxStyle(sanitizePropertyName(propertyName));
+};
+
+const preparePropertyValue = (propertyValue) => {
+  return propertyValue.replace(/;/g, "");
 };
 
 const parseCustomCss = (customCss) => {
   return Object.fromEntries(
     customCss.map((cssLine) => [
       preparePropertyName(cssLine.propertyName),
-      cssLine.propertyValue,
+      preparePropertyValue(cssLine.propertyValue),
     ])
   );
 };
 
 export default function App() {
   const [levelNumber, setLevelNumber] = useState(1);
-  const [levelData, setLevelData] = useState([]);
-  const [memories, setMemories] = useState([]);
+  const [levelData, setLevelData] = useState({});
+  const [memories, setMemories] = useState({});
   const [loading, setLoading] = useState(true);
   const [customCss, setCustomCss] = useState([]);
   const [isOverlapping, setIsOverlapping] = useState(false);
@@ -76,8 +80,8 @@ export default function App() {
     return;
   }
 
-  const { title, number, avatarStarterCss, avatarLockedCss, goalCss } =
-    levelData.find((level) => parseInt(level.number) === levelNumber);
+  const { title, avatarStarterCss, avatarLockedCss, goalCss } =
+    levelData[levelNumber];
 
   const avatarCss = {
     ...avatarStarterCss,
@@ -85,20 +89,22 @@ export default function App() {
     ...avatarLockedCss,
   };
 
+  const previousLevel = Math.max(levelNumber - (isOverlapping ? 0 : 1), 1);
+
   return (
     <>
       <MemoryScreen
-        memoryText={memories[0]["text"]}
+        memoryText={memories[previousLevel]["text"]}
         showMemory={isOverlapping}
-        audioSource={memories[0]["file"]}
-        nextLevel={levelNumber + (isOverlapping ? 1 : 0)}
+        audioSource={memories[previousLevel]["file"]}
+        nextLevel={previousLevel + 1}
         readyForNextLevel={readyForNextLevel}
       />
       <Arena
         goalCss={goalCss}
         avatarCss={avatarCss}
         title={title}
-        number={number}
+        number={levelNumber}
         setIsOverlapping={setIsOverlapping}
       />
       <CssEditor

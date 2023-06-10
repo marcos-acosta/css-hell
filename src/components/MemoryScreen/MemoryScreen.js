@@ -30,7 +30,7 @@ export default function MemoryScreen(props) {
     } else {
       if (!noneDisplay) {
         setInvisible(true);
-        setTimeout(() => setNoneDisplay(true), 3 * 1000);
+        setTimeout(() => setNoneDisplay(true), 2 * 1000);
       }
     }
   }, [noneDisplay, props.showMemory]);
@@ -53,29 +53,33 @@ export default function MemoryScreen(props) {
           <source src={props.audioSource} />
         </audio>
         <div className={styles.memoryText}>{props.memoryText}</div>
-        <div className={styles.monkeyText}>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_
-          <br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c ".
-          <br />
-          \_&nbsp;&nbsp;&nbsp;/A\
-          <br />
-          &nbsp;&nbsp;\_| ||
-        </div>
-        <button
-          className={combineClassNames(
-            styles.playMemory,
-            !isPlaying && styles.playMemoryClickable
+        <div className={styles.monkeyContainer}>
+          <div className={styles.monkeyText}>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c ".
+            <br />
+            \_&nbsp;&nbsp;&nbsp;/A\
+            <br />
+            &nbsp;&nbsp;\_| ||
+          </div>
+          {props.audioSource && (
+            <button
+              className={combineClassNames(
+                styles.playMemory,
+                !isPlaying && styles.playMemoryClickable
+              )}
+              onClick={playAudio}
+              disabled={isPlaying}
+            >
+              {isPlaying
+                ? "playing memory..."
+                : doneListening
+                ? "replay memory"
+                : "play memory"}
+            </button>
           )}
-          onClick={playAudio}
-          disabled={isPlaying}
-        >
-          {isPlaying
-            ? "playing memory..."
-            : doneListening
-            ? "replay memory"
-            : "play memory"}
-        </button>
+        </div>
         <div
           className={combineClassNames(
             styles.nextLevelButtonContainer,
