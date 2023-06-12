@@ -1,21 +1,19 @@
 import React from "react";
-import GameLogic from "../GameLogic/GameLogic";
+import LevelSelect from "../LevelSelect/LevelSelect";
 import { useCookies } from "react-cookie";
-
-const _DONT_UPDATE_COOKIES = true;
 
 export default function App() {
   const [cookies, setCookie] = useCookies(["checkpoint"]);
 
-  const saveLevelCheckpoint = (levelNumber) =>
-    !_DONT_UPDATE_COOKIES && setCookie("checkpoint", levelNumber);
+  const highestLevel = parseInt(cookies.checkpoint);
 
-  const initLevelNumber = parseInt(cookies.checkpoint);
+  const setHighestLevel = (levelNumber) =>
+    levelNumber > highestLevel && setCookie("checkpoint", levelNumber);
 
   return (
-    <GameLogic
-      initLevelNumber={initLevelNumber}
-      saveLevelCheckpoint={saveLevelCheckpoint}
+    <LevelSelect
+      highestLevel={highestLevel}
+      setHighestLevel={setHighestLevel}
     />
   );
 }

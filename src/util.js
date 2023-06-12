@@ -1,5 +1,7 @@
 import overlap from "polygon-overlap";
 
+const LEVEL_DATA_PATH = "data/levels.json";
+
 function combineClassNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -16,4 +18,4 @@ function extractPoints(bbox) {
   return points;
 }
 
-export { combineClassNames, doBboxesOverlap };
+export { LEVEL_DATA_PATH, combineClassNames, doBboxesOverlap };

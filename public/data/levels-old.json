@@ -1,0 +1,192 @@
+{
+  "levels": {
+    "1": {
+      "title": "point a to point b",
+      "avatarStarterCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "color": "white",
+        "fontSize": "3vw",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw",
+        "left": "20%"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
+        "position": "absolute",
+        "margin": "0",
+        "marginLeft": "0",
+        "marginTop": "0",
+        "top": "45%",
+        "height": "10%",
+        "width": "10%",
+        "transform": "none",
+        "border": "none"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "width": "10%",
+        "height": "10%",
+        "position": "absolute",
+        "top": "45%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "obstacles": []
+    },
+    "2": {
+      "title": "stretched thin",
+      "avatarStarterCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "color": "white",
+        "fontSize": "3vw",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw",
+        "width": "10%"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
+        "position": "absolute",
+        "margin": "0",
+        "marginLeft": "0",
+        "marginTop": "0",
+        "top": "45%",
+        "left": "20%",
+        "height": "10%",
+        "transform": "none"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "height": "10%",
+        "width": "10%",
+        "position": "absolute",
+        "top": "45%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "obstacles": []
+    },
+    "3": {
+      "title": "fatten up",
+      "avatarStarterCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "color": "white",
+        "fontSize": "3vw",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
+        "position": "absolute",
+        "margin": "0",
+        "marginLeft": "0",
+        "marginTop": "0",
+        "top": "20%",
+        "left": "20%",
+        "height": "10%",
+        "width": "10%",
+        "transform": "none"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "width": "10%",
+        "height": "10%",
+        "position": "absolute",
+        "bottom": "20%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "obstacles": []
+    },
+    "4": {
+      "title": "f*** the rules!",
+      "avatarStarterCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "color": "white",
+        "fontSize": "3vw",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
+        "position": "absolute",
+        "margin": "0",
+        "marginLeft": "0",
+        "marginTop": "0",
+        "left": "20%",
+        "top": "20%",
+        "height": "10%",
+        "width": "10%",
+        "transform": "none",
+        "padding": "0"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "width": "10%",
+        "height": "10%",
+        "position": "absolute",
+        "bottom": "20%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "obstacles": []
+    }
+  },
+  "memories": {
+    "1": {
+      "text": "'that was easy,' you think to yourself. you've taken your first step into the unknown.",
+      "file": null
+    },
+    "2": {
+      "text": "the second challenge proved no harder than the first. spirits rising, you keep going.",
+      "file": null
+    },
+    "3": {
+      "text": "as you breeze through your first hurdles in your escape from the C.S.S., your mind begins to clear. what's this? a memory from a previous life? a voice calls out to you from your distant past...",
+      "file": "https://drive.google.com/uc?export=download&id=1euygEGFGnq44-OdVSX45Hrg0vMzRDomY"
+    },
+    "4": {
+      "text": "message...",
+      "file": null
+    }
+  }
+}
