@@ -5,7 +5,7 @@ import { uid } from "uid/secure";
 import MemoryScreen from "../MemoryScreen/MemoryScreen";
 
 const cssStyleToJsxStyle = (propertyName) => {
-  return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
+  return propertyName.replace(/-\w/g, (x) => x.slice(1).toUpperCase());
 };
 
 const sanitizePropertyName = (propertyName) => {

@@ -16,13 +16,14 @@
       "avatarLockedCss": {
         "display": "flex",
         "position": "absolute",
+        "margin": "0",
         "marginLeft": "0",
-        "marginRight": "0",
         "marginTop": "0",
-        "marginBottom": "0",
-        "width": "10%",
+        "top": "45%",
         "height": "10%",
-        "top": "45%"
+        "width": "10%",
+        "transform": "none",
+        "border": "none"
       },
       "goalCss": {
         "backgroundColor": "rgb(237, 237, 237)",
@@ -58,19 +59,19 @@
       "avatarLockedCss": {
         "display": "flex",
         "position": "absolute",
+        "margin": "0",
         "marginLeft": "0",
-        "marginRight": "0",
         "marginTop": "0",
-        "marginBottom": "0",
-        "height": "10%",
         "top": "45%",
-        "left": "20%"
+        "left": "20%",
+        "height": "10%",
+        "transform": "none"
       },
       "goalCss": {
         "backgroundColor": "rgb(237, 237, 237)",
         "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
-        "width": "10%",
         "height": "10%",
+        "width": "10%",
         "position": "absolute",
         "top": "45%",
         "right": "20%",
@@ -85,7 +86,7 @@
       "obstacles": []
     },
     "3": {
-      "title": "just swell",
+      "title": "fatten up",
       "avatarStarterCss": {
         "backgroundColor": "rgb(37, 37, 37)",
         "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
@@ -99,14 +100,14 @@
       "avatarLockedCss": {
         "display": "flex",
         "position": "absolute",
+        "margin": "0",
         "marginLeft": "0",
-        "marginRight": "0",
         "marginTop": "0",
-        "marginBottom": "0",
+        "top": "20%",
+        "left": "20%",
         "height": "10%",
-        "top": "45%",
         "width": "10%",
-        "left": "20%"
+        "transform": "none"
       },
       "goalCss": {
         "backgroundColor": "rgb(237, 237, 237)",
@@ -114,7 +115,50 @@
         "width": "10%",
         "height": "10%",
         "position": "absolute",
-        "top": "45%",
+        "bottom": "20%",
+        "right": "20%",
+        "fontSize": "3vw",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "obstacles": []
+    },
+    "4": {
+      "title": "f*** the rules!",
+      "avatarStarterCss": {
+        "backgroundColor": "rgb(37, 37, 37)",
+        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
+        "color": "white",
+        "fontSize": "3vw",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "fontWeight": "bold",
+        "borderRadius": "0.5vw"
+      },
+      "avatarLockedCss": {
+        "display": "flex",
+        "position": "absolute",
+        "margin": "0",
+        "marginLeft": "0",
+        "marginTop": "0",
+        "left": "20%",
+        "top": "20%",
+        "height": "10%",
+        "width": "10%",
+        "transform": "none",
+        "padding": "0"
+      },
+      "goalCss": {
+        "backgroundColor": "rgb(237, 237, 237)",
+        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
+        "width": "10%",
+        "height": "10%",
+        "position": "absolute",
+        "bottom": "20%",
         "right": "20%",
         "fontSize": "3vw",
         "display": "flex",
@@ -139,6 +183,10 @@
     "3": {
       "text": "as you breeze through your first hurdles in your escape from the C.S.S., your mind begins to clear. what's this? a memory from a previous life? a voice calls out to you from your distant past...",
       "file": "https://drive.google.com/uc?export=download&id=1euygEGFGnq44-OdVSX45Hrg0vMzRDomY"
+    },
+    "4": {
+      "text": "message...",
+      "file": null
     }
   }
 }

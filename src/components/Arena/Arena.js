@@ -14,7 +14,7 @@ export default function Arena(props) {
   }, [setIsOverlapping, avatarBbox, goalBbox]);
 
   return (
-    <>
+    <div className={styles.screenContainer}>
       <div className={styles.title}>
         {props.number}. {props.title}
       </div>
@@ -30,6 +30,6 @@ export default function Arena(props) {
           character="A"
         />
       </div>
-    </>
+    </div>
   );
 }
