@@ -1,4 +1,109 @@
 {
-  "1": { "levelName": "match the braces" },
-  "2": { "levelName": "something else" }
+  "1": {
+    "levelName": "connect the dots",
+    "holes": 2,
+    "elements": [
+      {
+        "id": "d0",
+        "style": {
+          "position": "absolute",
+          "height": "10vw",
+          "width": "5vw",
+          "top": "calc((100vh - 10vw - 2vw) / 2)",
+          "left": "calc(100vw / 3)",
+          "border": "1vw solid #176bef",
+          "cursor": "pointer"
+        },
+        "cssBudget": 2,
+        "children": [
+          {
+            "id": "p0",
+            "style": {
+              "position": "static",
+              "height": "5vw",
+              "width": "5vw",
+              "color": "white",
+              "display": "inline-flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "backgroundColor": "#ff3e30",
+              "fontSize": "2vw",
+              "fontWeight": "bold",
+              "cursor": "pointer",
+              "borderRadius": "50%"
+            },
+            "cssBudget": 0,
+            "children": null
+          },
+          {
+            "id": "p1",
+            "style": {
+              "position": "static",
+              "height": "5vw",
+              "width": "5vw",
+              "color": "white",
+              "display": "inline-flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "backgroundColor": "#f7b529",
+              "fontSize": "2vw",
+              "fontWeight": "bold",
+              "cursor": "pointer",
+              "borderRadius": "50%"
+            },
+            "cssBudget": 0,
+            "children": null
+          }
+        ]
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "right": "calc(100vw / 3)",
+          "top": "calc((100vh - 10vw) / 2)",
+          "height": "4.5vw",
+          "width": "4.5vw",
+          "color": "#ff3e30",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "border": "0.25vw dashed #ff3e30",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "cursor": "pointer",
+          "borderRadius": "50%",
+          "backgroundColor": "rgb(255,255,255,0.5)"
+        },
+        "cssBudget": 0,
+        "children": null
+      },
+      {
+        "id": "h1",
+        "style": {
+          "position": "absolute",
+          "right": "calc((100vw / 3) + 11vw)",
+          "top": "calc((100vh - 10vw) / 2 + 5vw)",
+          "height": "4.5vw",
+          "width": "4.5vw",
+          "color": "#f7b529",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "border": "0.25vw dashed #f7b529",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "cursor": "pointer",
+          "borderRadius": "50%",
+          "backgroundColor": "rgb(255,255,255,0.5)"
+        },
+        "cssBudget": 0,
+        "children": null
+      }
+    ],
+    "completionMessage": {
+      "message": "well done!",
+      "audioFileSource": null
+    }
+  }
 }

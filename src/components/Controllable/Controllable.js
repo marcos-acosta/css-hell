@@ -1,12 +1,12 @@
 import React, { forwardRef } from "react";
-import { matchingIdToLetter } from "../../util";
+import { interpretId } from "../../util";
 
 export default forwardRef(function Controllable(props, ref) {
-  const letter = props.isTarget && matchingIdToLetter(props.matchingId);
+  const { hasContents, letter } = interpretId(props.id);
 
   return (
     <div style={props.styles} ref={ref} id={props.id}>
-      {props.isTarget ? letter : props.children}
+      {hasContents ? props.children : letter}
     </div>
   );
 });
