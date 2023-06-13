@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { LEVEL_DATA_PATH } from "../../util";
 import LevelButton from "./LevelButton/LevelButton";
+import Level from "../Level/Level";
 
 const _DEV_STARTING_LEVEL = 1;
 
@@ -25,7 +26,11 @@ export default function LevelSelect(props) {
   }
 
   return selectedLevel ? (
-    <div>level {selectedLevel}!</div>
+    <Level
+      levelData={gameData[selectedLevel]}
+      levelNumber={selectedLevel}
+      goHome={() => setSelectedLevel(null)}
+    />
   ) : (
     <div>
       {Object.entries(gameData).map(([levelNumber, levelData], i) => (

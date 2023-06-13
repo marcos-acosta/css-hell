@@ -1,0 +1,43 @@
+.levelContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+}
+
+.gameControlsContainer {
+  position: absolute;
+  width: 100vw;
+  height: 5vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.levelNumber {
+  color: rgb(143, 143, 143);
+  font-weight: initial;
+}
+
+.levelTitle {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.floatRightControls {
+  position: absolute;
+  right: 0;
+  margin-right: 5vw;
+}
+
+.gameControlButton {
+  display: inline-block;
+  margin-right: 1vw;
+}
+
+.devWinCondition {
+  background-color: #179c52;
+}
