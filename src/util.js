@@ -31,10 +31,10 @@ function testForOverlap(targetElement, searchId, granularity) {
     targetElement.getBoundingClientRect();
   for (let x = left; x <= right; x += width / _granularity) {
     for (let y = top; y <= bottom; y += height / _granularity) {
+      let overlappingElements = document.elementsFromPoint(x, y);
       if (
-        document
-          .elementsFromPoint(x, y)
-          .some((element) => element.id === searchId)
+        overlappingElements.some((element) => element.id === searchId) &&
+        overlappingElements.some((element) => element.id === targetElement.id)
       ) {
         return true;
       }

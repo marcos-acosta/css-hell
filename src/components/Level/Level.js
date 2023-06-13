@@ -86,14 +86,9 @@ export default function Level(props) {
   const [rotate, setRotate] = useState(0);
   const [isWinning, setIsWinning] = useState(false);
   const setRerenderState = useState(false)[1];
-  const ref1 = useRef();
-  const ref2 = useRef();
-  const ref3 = useRef();
   const ref4 = useRef();
   const ref5 = useRef();
-  const ref2bb = ref2.current && ref2.current.getBoundingClientRect();
-  const ref3bb = ref3.current && ref3.current.getBoundingClientRect();
-  const ref4bb = ref2.current && ref4.current.getBoundingClientRect();
+  const ref4bb = ref4.current && ref4.current.getBoundingClientRect();
   const ref5bb = ref5.current && ref5.current.getBoundingClientRect();
 
   console.log("rerender");
@@ -102,7 +97,7 @@ export default function Level(props) {
     setIsWinning(
       testForOverlap(ref4.current, "1") && testForOverlap(ref5.current, "2")
     );
-  }, [ref2bb, ref3bb, ref4bb, ref5bb]);
+  }, [ref4bb, ref5bb]);
 
   const customStyle = { marginLeft: `${marginLeft}vw`, rotate: `${rotate}deg` };
   const triggerRerender = useCallback(
@@ -134,42 +129,23 @@ export default function Level(props) {
           onChange={(e) => setMarginLeft(e.target.value)}
         />
         <input value={rotate} onChange={(e) => setRotate(e.target.value)} />
-        <Controllable
-          isTarget={false}
-          styles={{ ...divA, ...customStyle }}
-          reportBbox={() => {}}
-          ref={ref1}
-        >
-          <Controllable
-            isTarget={true}
-            matchingId={0}
-            styles={blockA}
-            reportBbox={() => {}}
-            ref={ref2}
-            id={1}
-          />
-          <Controllable
-            isTarget={true}
-            matchingId={1}
-            styles={blockB}
-            reportBbox={() => {}}
-            ref={ref3}
-            id={2}
-          />
+        <Controllable isTarget={false} styles={{ ...divA, ...customStyle }}>
+          <Controllable isTarget={true} matchingId={0} styles={blockA} id={1} />
+          <Controllable isTarget={true} matchingId={1} styles={blockB} id={2} />
         </Controllable>
         <Controllable
           isTarget={true}
           matchingId={0}
           styles={goalA}
-          reportBbox={() => {}}
           ref={ref4}
+          id={3}
         />
         <Controllable
           isTarget={true}
           matchingId={1}
           styles={goalB}
-          reportBbox={() => {}}
           ref={ref5}
+          id={4}
         />
       </div>
       <div className={styles.gameControlsContainer}>
