@@ -35,20 +35,26 @@ function interpretId(id) {
   };
 }
 
-function testForOverlapRandom(targetElement, searchId, numPoints) {
-  if (!targetElement) {
+function getPegIdFromHoleId(holeId) {
+  return `${ELEMENT_TYPE.peg}${holeId.slice(1)}`;
+}
+
+function testForOverlapRandom(holeElement, numPoints) {
+  if (!holeElement) {
     return false;
   }
   const _numPoints = numPoints || 225;
-  const { left, top, height, width } = targetElement.getBoundingClientRect();
+  const { left, top, height, width } = holeElement.getBoundingClientRect();
+  const holeId = holeElement.id;
+  const pegId = getPegIdFromHoleId(holeId);
   let x, y, overlappingElements;
   for (let i = 0; i < _numPoints; i++) {
     x = left + Math.random() * width;
     y = top + Math.random() * height;
     overlappingElements = document.elementsFromPoint(x, y);
     if (
-      overlappingElements.some((element) => element.id === searchId) &&
-      overlappingElements.some((element) => element.id === targetElement.id)
+      overlappingElements.some((element) => element.id === pegId) &&
+      overlappingElements.some((element) => element.id === holeId)
     ) {
       return true;
     }
@@ -56,20 +62,20 @@ function testForOverlapRandom(targetElement, searchId, numPoints) {
   return false;
 }
 
-function testForOverlap(targetElement, searchId, granularity) {
-  if (!targetElement) {
+function testForOverlap(holeElement, pegId, granularity) {
+  if (!holeElement) {
     return false;
   }
   const _granularity = granularity || 15;
   const { left, right, top, bottom, height, width } =
-    targetElement.getBoundingClientRect();
+    holeElement.getBoundingClientRect();
   let overlappingElements;
   for (let x = left; x <= right; x += width / _granularity) {
     for (let y = top; y <= bottom; y += height / _granularity) {
       overlappingElements = document.elementsFromPoint(x, y);
       if (
-        overlappingElements.some((element) => element.id === searchId) &&
-        overlappingElements.some((element) => element.id === targetElement.id)
+        overlappingElements.some((element) => element.id === pegId) &&
+        overlappingElements.some((element) => element.id === holeElement.id)
       ) {
         return true;
       }

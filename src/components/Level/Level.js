@@ -18,7 +18,6 @@ const buildElements = (elementData, customCss, elementRefs) => {
     const { id, style, children } = elementData;
     const combinedCss = { ...style, ...customCss[id] };
     const ref = isHole(id) ? (el) => (elementRefs.current[id] = el) : null;
-    // console.log(ref);
     return (
       <Controllable key={id} id={id} styles={combinedCss} ref={ref}>
         {buildElements(children, customCss, elementRefs)}
@@ -36,27 +35,16 @@ export default function Level(props) {
   const setRerenderState = useState(false)[1];
   const elementRefs = useRef({});
 
-  const ref0bb =
-    elementRefs.current &&
-    elementRefs.current["h0"] &&
-    elementRefs.current["h0"].getBoundingClientRect();
-  const ref1bb =
-    elementRefs.current &&
-    elementRefs.current["h1"] &&
-    elementRefs.current["h1"].getBoundingClientRect();
+  const reffedElements = elementRefs && Object.values(elementRefs.current);
 
   useEffect(() => {
     setIsWinning(
-      testForOverlapRandom(
-        elementRefs.current && elementRefs.current["h0"],
-        "p0"
-      ) &&
-        testForOverlapRandom(
-          elementRefs.current && elementRefs.current["h1"],
-          "p1"
-        )
+      elementRefs.current &&
+        Object.values(elementRefs.current)
+          .map((element) => testForOverlapRandom(element))
+          .every(Boolean)
     );
-  }, [ref0bb, ref1bb]);
+  }, [reffedElements]);
 
   const customCss = {
     d0: { marginLeft: `${marginLeft}vw`, rotate: `${rotate}deg` },
