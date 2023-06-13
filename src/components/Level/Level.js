@@ -1,7 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./Level.module.css";
 import Controllable from "../Controllable/Controllable";
-import { combineClassNames, isHole, testForOverlapRandom } from "../../util";
+import {
+  combineClassNames,
+  getIndexFromId,
+  isHole,
+  testForOverlapRandom,
+} from "../../util";
 
 const buildElements = (elementData, customCss, elementRefs) => {
   if (!elementData) {
@@ -17,7 +22,9 @@ const buildElements = (elementData, customCss, elementRefs) => {
   } else {
     const { id, style, children } = elementData;
     const combinedCss = { ...style, ...customCss[id] };
-    const ref = isHole(id) ? (el) => (elementRefs.current[id] = el) : null;
+    const ref = isHole(id)
+      ? (el) => (elementRefs.current[getIndexFromId(id)] = el)
+      : null;
     return (
       <Controllable key={id} id={id} styles={combinedCss} ref={ref}>
         {buildElements(children, customCss, elementRefs)}
@@ -33,18 +40,19 @@ export default function Level(props) {
   const [rotate, setRotate] = useState(0);
   const [isWinning, setIsWinning] = useState(false);
   const setRerenderState = useState(false)[1];
-  const elementRefs = useRef({});
+  const elementRefs = useRef([]);
 
-  const reffedElements = elementRefs && Object.values(elementRefs.current);
+  const elementsShallowCopy = elementRefs.current.map((x) => x);
 
   useEffect(() => {
+    console.log(elementRefs.current);
     setIsWinning(
       elementRefs.current &&
         Object.values(elementRefs.current)
           .map((element) => testForOverlapRandom(element))
           .every(Boolean)
     );
-  }, [reffedElements]);
+  }, [elementsShallowCopy]);
 
   const customCss = {
     d0: { marginLeft: `${marginLeft}vw`, rotate: `${rotate}deg` },

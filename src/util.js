@@ -35,8 +35,12 @@ function interpretId(id) {
   };
 }
 
+function getIndexFromId(id) {
+  return parseInt(id.slice(1));
+}
+
 function getPegIdFromHoleId(holeId) {
-  return `${ELEMENT_TYPE.peg}${holeId.slice(1)}`;
+  return `${ELEMENT_TYPE.peg}${getIndexFromId(holeId)}`;
 }
 
 function testForOverlapRandom(holeElement, numPoints) {
@@ -96,4 +100,5 @@ export {
   testForOverlap,
   testForOverlapRandom,
   isHole,
+  getIndexFromId,
 };
