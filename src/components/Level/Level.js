@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./Level.module.css";
 import Controllable from "../Controllable/Controllable";
-import { combineClassNames, doCirclesIntersect } from "../../util";
+import { combineClassNames, testForOverlap } from "../../util";
 
 const divA = {
   position: "absolute",
@@ -81,51 +81,45 @@ const goalB = {
 
 const RESIZE_EVENTS = ["scroll", "resize"];
 
-const isWinningConfiguration = (ref2, ref4) => {
-  return (
-    ref2.current &&
-    ref4.current &&
-    doCirclesIntersect(
-      ref2.current.getBoundingClientRect(),
-      ref4.current.getBoundingClientRect()
-    )
-  );
-};
-
 export default function Level(props) {
   const [marginLeft, setMarginLeft] = useState(0);
+  const [rotate, setRotate] = useState(0);
   const [isWinning, setIsWinning] = useState(false);
-  const triggerRerender = useState(false)[1];
+  const setRerenderState = useState(false)[1];
   const ref1 = useRef();
   const ref2 = useRef();
   const ref3 = useRef();
   const ref4 = useRef();
   const ref5 = useRef();
   const ref2bb = ref2.current && ref2.current.getBoundingClientRect();
+  const ref3bb = ref3.current && ref3.current.getBoundingClientRect();
   const ref4bb = ref2.current && ref4.current.getBoundingClientRect();
+  const ref5bb = ref5.current && ref5.current.getBoundingClientRect();
 
   console.log("rerender");
 
   useEffect(() => {
-    setIsWinning(isWinningConfiguration(ref2, ref4));
-  }, [ref2bb, ref4bb]);
+    setIsWinning(
+      testForOverlap(ref4.current, "1") && testForOverlap(ref5.current, "2")
+    );
+  }, [ref2bb, ref3bb, ref4bb, ref5bb]);
 
-  const marginLeftStyle = { marginLeft: `${marginLeft}vw` };
-  const flipMacguffin = useCallback(
-    () => triggerRerender((r) => !r),
-    [triggerRerender]
+  const customStyle = { marginLeft: `${marginLeft}vw`, rotate: `${rotate}deg` };
+  const triggerRerender = useCallback(
+    () => setRerenderState((r) => !r),
+    [setRerenderState]
   );
 
   useEffect(() => {
     RESIZE_EVENTS.forEach((eventName) =>
-      window.addEventListener(eventName, flipMacguffin)
+      window.addEventListener(eventName, triggerRerender)
     );
     return () => {
       RESIZE_EVENTS.forEach((eventName) =>
-        window.removeEventListener(eventName, flipMacguffin)
+        window.removeEventListener(eventName, triggerRerender)
       );
     };
-  }, [flipMacguffin]);
+  }, [triggerRerender]);
 
   return (
     <>
@@ -139,9 +133,10 @@ export default function Level(props) {
           value={marginLeft}
           onChange={(e) => setMarginLeft(e.target.value)}
         />
+        <input value={rotate} onChange={(e) => setRotate(e.target.value)} />
         <Controllable
           isTarget={false}
-          styles={{ ...divA, ...marginLeftStyle }}
+          styles={{ ...divA, ...customStyle }}
           reportBbox={() => {}}
           ref={ref1}
         >
@@ -151,6 +146,7 @@ export default function Level(props) {
             styles={blockA}
             reportBbox={() => {}}
             ref={ref2}
+            id={1}
           />
           <Controllable
             isTarget={true}
@@ -158,6 +154,7 @@ export default function Level(props) {
             styles={blockB}
             reportBbox={() => {}}
             ref={ref3}
+            id={2}
           />
         </Controllable>
         <Controllable

@@ -15,7 +15,7 @@ export default forwardRef(function Controllable(props, ref) {
   useEffect(() => reportBbox(), [bbox, reportBbox]);
 
   return (
-    <div style={props.styles} ref={ref}>
+    <div style={props.styles} ref={ref} id={props.id}>
       {props.isTarget ? letter : props.children}
     </div>
   );

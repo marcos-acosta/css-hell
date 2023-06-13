@@ -41,3 +41,10 @@
 .devWinCondition {
   background-color: #179c52;
 }
+
+.devBoundingBox {
+  border: 1px solid red;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+}
