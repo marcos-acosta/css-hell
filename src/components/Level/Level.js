@@ -45,7 +45,6 @@ export default function Level(props) {
   const elementsShallowCopy = elementRefs.current.map((x) => x);
 
   useEffect(() => {
-    console.log(elementRefs.current);
     setIsWinning(
       elementRefs.current &&
         Object.values(elementRefs.current)
