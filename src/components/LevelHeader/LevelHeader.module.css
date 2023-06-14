@@ -26,6 +26,15 @@
   margin-right: 5vw;
 }
 
+.whiteText {
+  color: white;
+}
+
+button.whiteButton {
+  color: white;
+  border: 1px solid white;
+}
+
 .gameControlButton {
   display: inline-block;
   margin-right: 1vw;

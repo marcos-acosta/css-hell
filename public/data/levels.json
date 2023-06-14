@@ -1,5 +1,57 @@
 {
   "1": {
+    "levelName": "round peg, round hole",
+    "elements": [
+      {
+        "id": "p0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "left": "calc(100vw / 3)",
+          "cursor": "pointer",
+          "display": "flex",
+          "height": "5vw",
+          "width": "5vw",
+          "color": "white",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "backgroundColor": "#ff3e30",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "borderRadius": "50%"
+        },
+        "cssBudget": 1,
+        "children": null
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "right": "calc(100vw / 3)",
+          "cursor": "pointer",
+          "display": "flex",
+          "height": "4.5vw",
+          "width": "4.5vw",
+          "color": "#ff3e30",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "border": "0.25vw dashed #ff3e30",
+          "backgroundColor": "rgb(255,255,255,0.5)",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "borderRadius": "50%"
+        },
+        "cssBudget": 0,
+        "children": null
+      }
+    ],
+    "completionMessage": {
+      "message": "that was easy",
+      "audioFileSource": null
+    }
+  },
+  "2": {
     "levelName": "connect the dots",
     "elements": [
       {
@@ -68,11 +120,11 @@
           "alignItems": "center",
           "justifyContent": "center",
           "border": "0.25vw dashed #ff3e30",
+          "backgroundColor": "rgb(255,255,255,0.5)",
           "fontSize": "2vw",
           "fontWeight": "bold",
           "cursor": "pointer",
-          "borderRadius": "50%",
-          "backgroundColor": "rgb(255,255,255,0.5)"
+          "borderRadius": "50%"
         },
         "cssBudget": 0,
         "children": null

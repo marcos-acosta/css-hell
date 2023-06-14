@@ -8,7 +8,11 @@ export default function App() {
   const highestLevel = parseInt(cookies.checkpoint);
 
   const setHighestLevel = (levelNumber) =>
-    levelNumber > highestLevel && setCookie("checkpoint", levelNumber);
+    levelNumber > highestLevel &&
+    setCookie("checkpoint", levelNumber, {
+      sameSite: "none",
+      secure: true,
+    });
 
   return (
     <LevelSelect

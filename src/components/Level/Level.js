@@ -88,12 +88,10 @@ export default function Level(props) {
     [setRerenderState]
   );
 
-  const resetLevel = () => {
-    setCustomCss({});
-    props.reset();
-  };
-
   const addCustomCss = (id) => {
+    if (isWinning) {
+      return;
+    }
     const newCssElement = {
       styleId: uid(),
       propertyName: "",
@@ -107,6 +105,9 @@ export default function Level(props) {
   };
 
   const deleteCustomCss = (id, styleId) => {
+    if (isWinning) {
+      return;
+    }
     setCustomCss({
       ...customCss,
       [id]: customCss[id].filter((cssEntry) => cssEntry.styleId !== styleId),
@@ -114,6 +115,9 @@ export default function Level(props) {
   };
 
   const changeCustomCss = (id, styleId, property, value) => {
+    if (isWinning) {
+      return;
+    }
     setCustomCss({
       ...customCss,
       [id]: customCss[id].map((cssEntry) =>
@@ -131,6 +135,11 @@ export default function Level(props) {
         .every(Boolean)
     );
   }, [elementsShallowCopy]);
+
+  useEffect(() => {
+    setCustomCss({});
+    setSelectedElementInfo(null);
+  }, [props.levelData]);
 
   useEffect(() => {
     RESIZE_EVENTS.forEach((eventName) =>
@@ -153,11 +162,27 @@ export default function Level(props) {
       >
         {buildElements(props.levelData.elements, customCss, elementRefs)}
       </div>
+      {isWinning && (
+        <button
+          className={styles.nextLevelButton}
+          onClick={props.moveToNextLevel}
+        >
+          <span
+            className={combineClassNames(
+              "material-symbols-outlined",
+              styles.nextLevelSymbol
+            )}
+          >
+            skip_next
+          </span>
+        </button>
+      )}
       <LevelHeader
         levelNumber={props.levelNumber}
         levelName={props.levelData.levelName}
         goHome={props.goHome}
-        resetLevel={resetLevel}
+        resetLevel={props.reset}
+        isWinning={isWinning}
       />
       <CssEditor
         selectedElementInfo={selectedElementInfo}
