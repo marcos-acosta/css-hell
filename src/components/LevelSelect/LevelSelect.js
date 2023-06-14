@@ -12,13 +12,17 @@ export default function LevelSelect(props) {
     _DEV_STARTING_LEVEL || null
   );
 
-  useEffect(() => {
+  const loadGameData = () => {
     fetch(LEVEL_DATA_PATH)
       .then((r) => r.json())
       .then((data) => {
         setGameData(data);
         setIsLoading(false);
       });
+  };
+
+  useEffect(() => {
+    loadGameData();
   }, []);
 
   if (isLoading) {
@@ -30,6 +34,7 @@ export default function LevelSelect(props) {
       levelData={gameData[selectedLevel]}
       levelNumber={selectedLevel}
       goHome={() => setSelectedLevel(null)}
+      reset={() => loadGameData()}
     />
   ) : (
     <div>

@@ -36,8 +36,8 @@ const buildElements = (elementData, customCss, elementRefs) => {
 const RESIZE_EVENTS = ["scroll", "resize"];
 
 export default function Level(props) {
-  const [marginLeft, setMarginLeft] = useState(0);
-  const [rotate, setRotate] = useState(0);
+  const [marginLeft, setMarginLeft] = useState("");
+  const [rotate, setRotate] = useState("");
   const [isWinning, setIsWinning] = useState(false);
   const setRerenderState = useState(false)[1];
   const elementRefs = useRef([]);
@@ -46,21 +46,26 @@ export default function Level(props) {
 
   useEffect(() => {
     setIsWinning(
-      elementRefs.current &&
-        Object.values(elementRefs.current)
-          .map((element) => testForOverlapRandom(element))
-          .every(Boolean)
+      elementRefs.current
+        .map((element) => testForOverlapRandom(element))
+        .every(Boolean)
     );
   }, [elementsShallowCopy]);
 
   const customCss = {
-    d0: { marginLeft: `${marginLeft}vw`, rotate: `${rotate}deg` },
+    d0: { marginLeft: `${marginLeft}`, rotate: `${rotate}` },
   };
 
   const triggerRerender = useCallback(
     () => setRerenderState((r) => !r),
     [setRerenderState]
   );
+
+  const resetLevel = () => {
+    setMarginLeft("");
+    setRotate("");
+    props.reset();
+  };
 
   useEffect(() => {
     RESIZE_EVENTS.forEach((eventName) =>
@@ -98,7 +103,7 @@ export default function Level(props) {
           #{props.levelNumber} {props.levelData.levelName}
         </div>
         <div className={styles.floatRightControls}>
-          <button className={styles.gameControlButton}>
+          <button className={styles.gameControlButton} onClick={resetLevel}>
             <span
               className={combineClassNames(
                 "material-symbols-outlined",
