@@ -1,111 +1,125 @@
-import React, { useState } from "react";
-import { useCollapse } from "react-collapsed";
-import Draggable from "react-draggable";
+import React from "react";
 import styles from "./CssEditor.module.css";
-import { combineClassNames } from "../../util";
-import CustomCssLine from "../CustomCssLine/CustomCssLine";
+import Draggable from "react-draggable";
+import { interpretId, ELEMENT_TYPE, combineClassNames } from "../../util";
+import CustomCssEntry from "./CustomCssEntry";
 
-const jsxStyleToCssStyle = (propertyName) => {
+const ELEMENT_TYPE_TO_NAME = {
+  [ELEMENT_TYPE.peg]: "PEG",
+  [ELEMENT_TYPE.hole]: "HOLE",
+  [ELEMENT_TYPE.div]: "DIV",
+};
+
+const convertIdToTitle = (id) => {
+  const { elementType, letter, index } = interpretId(id);
+  const displayName = letter ? letter : index + 1;
+  return `${ELEMENT_TYPE_TO_NAME[elementType]} ${displayName}`;
+};
+
+const jsxPropertyToCssProperty = (propertyName) => {
   return propertyName.replace(/(\w)([A-Z])/, "$1-$2").toLowerCase();
 };
 
 export default function CssEditor(props) {
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-  const [isMinimized, setIsMinimized] = useState(false);
+  if (!props.selectedElementInfo) {
+    return;
+  }
+
+  const { cssBudget, id, style } = props.selectedElementInfo;
+  const customCss = id in props.customCss ? props.customCss[id] : [];
+
+  const addCustomCss = (cssBudget) => {
+    if (customCss.length >= cssBudget) {
+      return;
+    }
+    props.addCustomCss(id);
+  };
+
+  const changeCustomCss = (styleId, propertyName, value) =>
+    props.changeCustomCss(id, styleId, propertyName, value);
+
+  const deleteCustomCss = (styleId) => props.deleteCustomCss(id, styleId);
 
   return (
     <Draggable>
       <div
         className={combineClassNames(
           styles.cssEditorContainer,
-          isMinimized && styles.collapsedPanel
+          props.isWinning && styles.isWinning
         )}
       >
-        <div className={styles.titleTextContainer}>
-          <div className={styles.titleText}>A.css</div>
+        <div className={styles.titleContainer}>
           <button
-            className={styles.minimizeButton}
-            onClick={() => setIsMinimized(!isMinimized)}
+            className={combineClassNames(
+              styles.closeButton,
+              props.isWinning && styles.whiteBorder
+            )}
+            onClick={props.closeCssEditor}
           >
             <span
               className={combineClassNames(
                 "material-symbols-outlined",
-                styles.minimizeIcon
+                styles.closeSymbol
               )}
-              aria-label={
-                isMinimized ? "expand css editor" : "minimize css editor"
-              }
             >
-              {isMinimized ? "open_in_full" : "close_fullscreen"}
+              close
             </span>
           </button>
-        </div>
-        {!isMinimized && (
-          <>
-            <button
-              className={styles.toggleDefaultStyleButton}
-              {...getToggleProps()}
-            >
+          <span className={styles.titleText}>{convertIdToTitle(id)}</span>
+          <span className={styles.cssAllowance}>
+            {!cssBudget ? (
               <span
                 className={combineClassNames(
-                  styles.dropDownSymbol,
-                  "material-symbols-outlined"
+                  "material-symbols-outlined",
+                  styles.lockSymbol
                 )}
               >
-                {isExpanded ? "expand_more" : "chevron_right"}
+                lock
               </span>
-              <div className={styles.toggleDefaultStyleButtonText}>
-                {isExpanded ? "hide base styles" : "show base styles"}
-              </div>
-            </button>
-            <div
-              {...getCollapseProps()}
-              className={styles.defaultStyleContainer}
-            >
-              <div className={styles.lockedStyleContainer}>
-                {Object.entries(props.lockedCss).map(([key, value]) => (
-                  <div key={key}>
-                    <span
-                      className={combineClassNames(
-                        "material-symbols-outlined",
-                        styles.lockSymbol
-                      )}
-                    >
-                      lock
-                    </span>
-                    <b>{jsxStyleToCssStyle(key)}</b>: {value};
-                  </div>
-                ))}
-              </div>
-              {Object.entries(props.starterCss).map(([key, value]) => (
-                <div key={key}>
-                  <b>{jsxStyleToCssStyle(key)}</b>: {value};
-                </div>
-              ))}
+            ) : (
+              <span>
+                [{customCss.length}/{cssBudget}]
+              </span>
+            )}
+          </span>
+        </div>
+        <div className={styles.defaultCssContainer}>
+          {Object.entries(style).map(([propertyName, propertyValue]) => (
+            <div key={propertyName}>
+              <span className={styles.propertyName}>
+                {jsxPropertyToCssProperty(propertyName)}
+              </span>
+              : <span>{propertyValue}</span>;
             </div>
-            <hr />
-            <div className={styles.customCssContainer}>
-              {props.customCss.map((cssItem) => (
-                <CustomCssLine
-                  {...cssItem}
-                  key={cssItem.id}
-                  deleteCssLine={props.deleteCssLine}
-                  updateCss={props.updateCss}
-                />
-              ))}
-              {!props.customCss.length && (
-                <div className={styles.noStylesMessage}>no styles added</div>
-              )}
-              <hr />
-              <button
-                className={styles.addNewLineButton}
-                onClick={props.addCssLine}
-              >
-                [+] add / overwrite property
-              </button>
-            </div>
-          </>
-        )}
+          ))}
+        </div>
+        <div className={styles.customCssContainer}>
+          {customCss.length ? (
+            customCss.map((cssElement) => (
+              <CustomCssEntry
+                key={cssElement.styleId}
+                propertyName={cssElement.propertyName}
+                propertyValue={cssElement.propertyValue}
+                id={cssElement.styleId}
+                changeCustomCss={changeCustomCss}
+                deleteCustomCss={deleteCustomCss}
+                isWinning={props.isWinning}
+              />
+            ))
+          ) : (
+            <div className={styles.noCustomCss}>no added css</div>
+          )}
+        </div>
+        <button
+          className={combineClassNames(
+            styles.addCssButton,
+            props.isWinning && styles.whiteText
+          )}
+          onClick={() => addCustomCss(cssBudget)}
+          disabled={customCss.length >= cssBudget}
+        >
+          add css
+        </button>
       </div>
     </Draggable>
   );

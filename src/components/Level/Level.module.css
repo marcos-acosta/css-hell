@@ -1,0 +1,44 @@
+.levelContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.devWinCondition {
+  background-color: #179c52;
+}
+
+.devBoundingBox {
+  border: 1px solid red;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+}
+
+.nextLevelButton {
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-flex;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  color: white;
+  top: calc((100vh - 5vw) / 2);
+  right: 2vw;
+}
+
+.nextLevelButton:hover {
+  background-color: rgba(0, 0, 0, 0.143);
+}
+
+.nextLevelSymbol {
+  font-size: 3vw;
+}

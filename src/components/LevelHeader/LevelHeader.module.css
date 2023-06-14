@@ -1,0 +1,61 @@
+.gameControlsContainer {
+  position: absolute;
+  width: 100vw;
+  height: 5vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.levelNumber {
+  color: rgb(143, 143, 143);
+  font-weight: initial;
+}
+
+.levelTitle {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.floatRightControls {
+  position: absolute;
+  right: 0;
+  margin-right: 5vw;
+}
+
+.whiteText {
+  color: white;
+}
+
+button.whiteButton {
+  color: white;
+  border: 1px solid white;
+}
+
+.gameControlButton {
+  display: inline-block;
+  margin-right: 1vw;
+  border: 1px solid black;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: all;
+  display: inline-flex;
+  width: 3vw;
+  height: 3vw;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.gameControlButton:hover {
+  background-color: rgba(0, 0, 0, 0.143);
+}
+
+.gameControlSymbol {
+  font-size: 2vw;
+}

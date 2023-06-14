@@ -1,144 +1,160 @@
 {
-  "levels": {
-    "1": {
-      "title": "point a to point b",
-      "avatarStarterCss": {
-        "backgroundColor": "rgb(37, 37, 37)",
-        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
-        "color": "white",
-        "fontSize": "3vw",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "fontWeight": "bold",
-        "borderRadius": "0.5vw",
-        "left": "20%"
+  "1": {
+    "levelName": "round peg, round hole",
+    "elements": [
+      {
+        "id": "p0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "left": "calc(100vw / 3)",
+          "cursor": "pointer",
+          "display": "flex",
+          "height": "5vw",
+          "width": "5vw",
+          "color": "white",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "backgroundColor": "#ff3e30",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "borderRadius": "50%"
+        },
+        "cssBudget": 1,
+        "children": null
       },
-      "avatarLockedCss": {
-        "display": "flex",
-        "position": "absolute",
-        "marginLeft": "0",
-        "marginRight": "0",
-        "marginTop": "0",
-        "marginBottom": "0",
-        "width": "10%",
-        "height": "10%",
-        "top": "45%"
-      },
-      "goalCss": {
-        "backgroundColor": "rgb(237, 237, 237)",
-        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
-        "width": "10%",
-        "height": "10%",
-        "position": "absolute",
-        "top": "45%",
-        "right": "20%",
-        "fontSize": "3vw",
-        "display": "flex",
-        "flexDirection": "column",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "fontWeight": "bold",
-        "borderRadius": "0.5vw"
-      },
-      "obstacles": []
-    },
-    "2": {
-      "title": "stretched thin",
-      "avatarStarterCss": {
-        "backgroundColor": "rgb(37, 37, 37)",
-        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
-        "color": "white",
-        "fontSize": "3vw",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "fontWeight": "bold",
-        "borderRadius": "0.5vw",
-        "width": "10%"
-      },
-      "avatarLockedCss": {
-        "display": "flex",
-        "position": "absolute",
-        "marginLeft": "0",
-        "marginRight": "0",
-        "marginTop": "0",
-        "marginBottom": "0",
-        "height": "10%",
-        "top": "45%",
-        "left": "20%"
-      },
-      "goalCss": {
-        "backgroundColor": "rgb(237, 237, 237)",
-        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
-        "width": "10%",
-        "height": "10%",
-        "position": "absolute",
-        "top": "45%",
-        "right": "20%",
-        "fontSize": "3vw",
-        "display": "flex",
-        "flexDirection": "column",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "fontWeight": "bold",
-        "borderRadius": "0.5vw"
-      },
-      "obstacles": []
-    },
-    "3": {
-      "title": "just swell",
-      "avatarStarterCss": {
-        "backgroundColor": "rgb(37, 37, 37)",
-        "boxShadow": "rgba(0, 0, 0, 0.24) 0px 7px 12px",
-        "color": "white",
-        "fontSize": "3vw",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "fontWeight": "bold",
-        "borderRadius": "0.5vw"
-      },
-      "avatarLockedCss": {
-        "display": "flex",
-        "position": "absolute",
-        "marginLeft": "0",
-        "marginRight": "0",
-        "marginTop": "0",
-        "marginBottom": "0",
-        "height": "10%",
-        "top": "45%",
-        "width": "10%",
-        "left": "20%"
-      },
-      "goalCss": {
-        "backgroundColor": "rgb(237, 237, 237)",
-        "boxShadow": "inset 0 7px 12px rgba(0, 0, 0, 0.24)",
-        "width": "10%",
-        "height": "10%",
-        "position": "absolute",
-        "top": "45%",
-        "right": "20%",
-        "fontSize": "3vw",
-        "display": "flex",
-        "flexDirection": "column",
-        "alignItems": "center",
-        "justifyContent": "center",
-        "fontWeight": "bold",
-        "borderRadius": "0.5vw"
-      },
-      "obstacles": []
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "right": "calc(100vw / 3)",
+          "cursor": "pointer",
+          "display": "flex",
+          "height": "4.5vw",
+          "width": "4.5vw",
+          "color": "#ff3e30",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "border": "0.25vw dashed #ff3e30",
+          "backgroundColor": "rgb(255,255,255,0.5)",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "borderRadius": "50%"
+        },
+        "cssBudget": 0,
+        "children": null
+      }
+    ],
+    "completionMessage": {
+      "message": "that was easy",
+      "audioFileSource": null
     }
   },
-  "memories": {
-    "1": {
-      "text": "'that was easy,' you think to yourself. you've taken your first step into the unknown.",
-      "file": null
-    },
-    "2": {
-      "text": "the second challenge proved no harder than the first. spirits rising, you keep going.",
-      "file": null
-    },
-    "3": {
-      "text": "as you breeze through your first hurdles in your escape from the C.S.S., your mind begins to clear. what's this? a memory from a previous life? a voice calls out to you from your distant past...",
-      "file": "https://drive.google.com/uc?export=download&id=1euygEGFGnq44-OdVSX45Hrg0vMzRDomY"
+  "2": {
+    "levelName": "connect the dots",
+    "elements": [
+      {
+        "id": "d0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 10vw - 2vw) / 2)",
+          "left": "calc(100vw / 3)",
+          "border": "1vw solid black",
+          "cursor": "pointer",
+          "display": "flex",
+          "flexDirection": "column"
+        },
+        "cssBudget": 2,
+        "children": [
+          {
+            "id": "p0",
+            "style": {
+              "position": "static",
+              "height": "5vw",
+              "width": "5vw",
+              "color": "white",
+              "display": "inline-flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "backgroundColor": "#ff3e30",
+              "fontSize": "2vw",
+              "fontWeight": "bold",
+              "cursor": "pointer",
+              "borderRadius": "50%"
+            },
+            "cssBudget": 0,
+            "children": null
+          },
+          {
+            "id": "p1",
+            "style": {
+              "position": "static",
+              "height": "5vw",
+              "width": "5vw",
+              "color": "white",
+              "display": "inline-flex",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "backgroundColor": "#176bef",
+              "fontSize": "2vw",
+              "fontWeight": "bold",
+              "cursor": "pointer",
+              "borderRadius": "50%"
+            },
+            "cssBudget": 0,
+            "children": null
+          }
+        ]
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "right": "calc(100vw / 3)",
+          "top": "calc((100vh - 10vw) / 2)",
+          "height": "4.5vw",
+          "width": "4.5vw",
+          "color": "#ff3e30",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "border": "0.25vw dashed #ff3e30",
+          "backgroundColor": "rgb(255,255,255,0.5)",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "cursor": "pointer",
+          "borderRadius": "50%"
+        },
+        "cssBudget": 0,
+        "children": null
+      },
+      {
+        "id": "h1",
+        "style": {
+          "position": "absolute",
+          "right": "calc((100vw / 3) + 11vw)",
+          "top": "calc((100vh - 10vw) / 2 + 5vw)",
+          "height": "4.5vw",
+          "width": "4.5vw",
+          "color": "#176bef",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "border": "0.25vw dashed #176bef",
+          "fontSize": "2vw",
+          "fontWeight": "bold",
+          "cursor": "pointer",
+          "borderRadius": "50%",
+          "backgroundColor": "rgb(255,255,255,0.5)"
+        },
+        "cssBudget": 0,
+        "children": null
+      }
+    ],
+    "completionMessage": {
+      "message": "well done!",
+      "audioFileSource": null
     }
   }
 }

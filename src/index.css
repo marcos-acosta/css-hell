@@ -3,7 +3,6 @@ body {
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #747474;
 }
 
 code {
@@ -14,4 +13,9 @@ code {
 input,
 button {
   font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
 }
