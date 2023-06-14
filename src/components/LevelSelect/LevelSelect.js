@@ -21,6 +21,11 @@ export default function LevelSelect(props) {
       });
   };
 
+  const moveToNextLevel = () => {
+    props.setHighestLevel(selectedLevel + 1);
+    setSelectedLevel(selectedLevel + 1);
+  };
+
   useEffect(() => {
     loadGameData();
   }, []);
@@ -34,7 +39,8 @@ export default function LevelSelect(props) {
       levelData={gameData[selectedLevel]}
       levelNumber={selectedLevel}
       goHome={() => setSelectedLevel(null)}
-      reset={() => loadGameData()}
+      reset={loadGameData}
+      moveToNextLevel={moveToNextLevel}
     />
   ) : (
     <div>
