@@ -1,9 +1,136 @@
 .cssEditorContainer {
-  background-color: rgba(255, 255, 255, 0.721);
+  background-color: rgba(255, 255, 255, 1);
   position: absolute;
-  top: 10vw;
-  left: 10vw;
+  top: 2vw;
+  left: 2vw;
   border: 2px dashed black;
   padding: 1vw;
   cursor: move;
+  width: 25vw;
+  font-size: 1vw;
+}
+
+.isWinning {
+  /* border: 2px dashed #179c52; */
+  border: 2px dashed white;
+  color: white;
+  background-color: #179c52;
+}
+
+.titleContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 0.5vw;
+  padding-bottom: 0.5vw;
+  padding-top: 0.5vw;
+}
+
+.titleText {
+  font-weight: bold;
+  font-size: 1.25vw;
+}
+
+.cssAllowance {
+  position: absolute;
+  right: 1vw;
+}
+
+.lockSymbol {
+  font-size: 1.5vw;
+  margin-top: 0.25vw;
+}
+
+.propertyName {
+  font-weight: bold;
+}
+
+.defaultCssContainer {
+  margin-bottom: 1vw;
+}
+
+.noCustomCss {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+
+.customCssContainer {
+  margin-bottom: 1vw;
+}
+
+.addCssButton {
+  width: 100%;
+  border: none;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+
+.addCssButton:disabled {
+  background-color: rgba(221, 221, 221, 0.441);
+  color: black;
+  cursor: initial;
+}
+
+.cssEntry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.25vw;
+}
+
+.cssInput {
+  font-size: 1vw;
+  width: 42%;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  display: inline;
+  color: inherit;
+}
+
+.cssInput::selection,
+.cssInput::-moz-selection {
+  background: black;
+  color: white;
+}
+.cssInput:focus {
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  margin-right: 0.25vw;
+  color: inherit;
+}
+
+.propertyNameInput {
+  font-weight: bold;
+}
+
+.trashIcon {
+  font-size: 1.5vw;
+  margin-top: 0.25vw;
+}
+
+.whiteText {
+  background-color: white;
+  color: #179c52;
+}
+
+.whiteText:disabled {
+  color: white;
+}
+
+.whiteInputUnderline:focus {
+  border-bottom: 1px solid white;
 }

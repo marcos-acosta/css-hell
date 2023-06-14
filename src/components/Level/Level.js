@@ -15,11 +15,11 @@ const cssStyleToJsxStyle = (propertyName) => {
 };
 
 const sanitizePropertyName = (propertyName) => {
-  return propertyName.replace(/[0-9]/g, "");
+  return propertyName.replace(/[0-9\-]/g, "");
 };
 
 const preparePropertyName = (propertyName) => {
-  return cssStyleToJsxStyle(sanitizePropertyName(propertyName));
+  return sanitizePropertyName(cssStyleToJsxStyle(propertyName));
 };
 
 const preparePropertyValue = (propertyValue) => {
@@ -192,6 +192,7 @@ export default function Level(props) {
         addCustomCss={addCustomCss}
         deleteCustomCss={deleteCustomCss}
         changeCustomCss={changeCustomCss}
+        isWinning={isWinning}
       />
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CssEditor.module.css";
 import Draggable from "react-draggable";
-import { interpretId, ELEMENT_TYPE } from "../../util";
+import { interpretId, ELEMENT_TYPE, combineClassNames } from "../../util";
 import CustomCssEntry from "./CustomCssEntry";
 
 const ELEMENT_TYPE_TO_NAME = {
@@ -42,12 +42,24 @@ export default function CssEditor(props) {
 
   return (
     <Draggable>
-      <div className={styles.cssEditorContainer}>
-        <div className={styles.title}>
+      <div
+        className={combineClassNames(
+          styles.cssEditorContainer,
+          props.isWinning && styles.isWinning
+        )}
+      >
+        <div className={styles.titleContainer}>
           <span className={styles.titleText}>{convertIdToTitle(id)}</span>{" "}
           <span className={styles.cssAllowance}>
             {!cssBudget ? (
-              <span>[locked]</span>
+              <span
+                className={combineClassNames(
+                  "material-symbols-outlined",
+                  styles.lockSymbol
+                )}
+              >
+                lock
+              </span>
             ) : (
               <span>
                 [{customCss.length}/{cssBudget}]
@@ -55,17 +67,16 @@ export default function CssEditor(props) {
             )}
           </span>
         </div>
-        <div className={styles.existingCssList}>
+        <div className={styles.defaultCssContainer}>
           {Object.entries(style).map(([propertyName, propertyValue]) => (
-            <div key={propertyName} className={styles.cssEntry}>
+            <div key={propertyName}>
               <span className={styles.propertyName}>
                 {jsxPropertyToCssProperty(propertyName)}
               </span>
-              : <span className={styles.propertyValue}>{propertyValue}</span>;
+              : <span>{propertyValue}</span>;
             </div>
           ))}
         </div>
-        <hr />
         <div className={styles.customCssContainer}>
           {customCss.length ? (
             customCss.map((cssElement) => (
@@ -76,17 +87,22 @@ export default function CssEditor(props) {
                 id={cssElement.styleId}
                 changeCustomCss={changeCustomCss}
                 deleteCustomCss={deleteCustomCss}
+                isWinning={props.isWinning}
               />
             ))
           ) : (
-            <span className={styles.noCustomCss}>no css</span>
+            <div className={styles.noCustomCss}>no added css</div>
           )}
         </div>
         <button
-          className={styles.addCssButton}
+          className={combineClassNames(
+            styles.addCssButton,
+            props.isWinning && styles.whiteText
+          )}
           onClick={() => addCustomCss(cssBudget)}
+          disabled={customCss.length >= cssBudget}
         >
-          [add css]
+          add css
         </button>
       </div>
     </Draggable>

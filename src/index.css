@@ -15,3 +15,7 @@ button {
   font-family: inherit;
   font-size: inherit;
 }
+
+button {
+  cursor: pointer;
+}
