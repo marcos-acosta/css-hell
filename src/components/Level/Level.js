@@ -1,13 +1,14 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./Level.module.css";
 import Controllable from "../Controllable/Controllable";
+import CssEditor from "../CssEditor/CssEditor";
+import LevelHeader from "../LevelHeader/LevelHeader";
 import {
   combineClassNames,
   getIndexFromId,
   isHole,
   testForOverlapRandom,
 } from "../../util";
-import CssEditor from "../CssEditor/CssEditor";
 import { uid } from "uid/secure";
 
 const cssStyleToJsxStyle = (propertyName) => {
@@ -15,7 +16,7 @@ const cssStyleToJsxStyle = (propertyName) => {
 };
 
 const sanitizePropertyName = (propertyName) => {
-  return propertyName.replace(/[0-9\-]/g, "");
+  return propertyName.replace(/[0-9-]/g, "");
 };
 
 const preparePropertyName = (propertyName) => {
@@ -152,50 +153,12 @@ export default function Level(props) {
       >
         {buildElements(props.levelData.elements, customCss, elementRefs)}
       </div>
-      <div className={styles.gameControlsContainer}>
-        <div
-          className={combineClassNames(
-            styles.levelTitle,
-            isWinning && styles.whiteText
-          )}
-        >
-          #{props.levelNumber} {props.levelData.levelName}
-        </div>
-        <div className={styles.floatRightControls}>
-          <button
-            className={combineClassNames(
-              styles.gameControlButton,
-              isWinning && styles.whiteButton
-            )}
-            onClick={resetLevel}
-          >
-            <span
-              className={combineClassNames(
-                "material-symbols-outlined",
-                styles.gameControlSymbol
-              )}
-            >
-              undo
-            </span>
-          </button>
-          <button
-            className={combineClassNames(
-              styles.gameControlButton,
-              isWinning && styles.whiteButton
-            )}
-            onClick={props.goHome}
-          >
-            <span
-              className={combineClassNames(
-                "material-symbols-outlined",
-                styles.gameControlSymbol
-              )}
-            >
-              logout
-            </span>
-          </button>
-        </div>
-      </div>
+      <LevelHeader
+        levelNumber={props.levelNumber}
+        levelName={props.levelData.levelName}
+        goHome={props.goHome}
+        resetLevel={resetLevel}
+      />
       <CssEditor
         selectedElementInfo={selectedElementInfo}
         customCss={customCss}
