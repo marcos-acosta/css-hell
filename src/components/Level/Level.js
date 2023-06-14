@@ -89,13 +89,36 @@ export default function Level(props) {
         {buildElements(props.levelData.elements, customCss, elementRefs)}
       </div>
       <div className={styles.gameControlsContainer}>
-        <div className={styles.levelTitle}>
+        <div
+          className={combineClassNames(
+            styles.levelTitle,
+            isWinning && styles.whiteText
+          )}
+        >
           #{props.levelNumber} {props.levelData.levelName}
         </div>
         <div className={styles.floatRightControls}>
-          <button className={styles.gameControlButton}>restart</button>
+          <button className={styles.gameControlButton}>
+            <span
+              className={combineClassNames(
+                "material-symbols-outlined",
+                styles.gameControlSymbol,
+                isWinning && styles.whiteText
+              )}
+            >
+              undo
+            </span>
+          </button>
           <button className={styles.gameControlButton} onClick={props.goHome}>
-            home
+            <span
+              className={combineClassNames(
+                "material-symbols-outlined",
+                styles.gameControlSymbol,
+                isWinning && styles.whiteText
+              )}
+            >
+              logout
+            </span>
           </button>
         </div>
       </div>

@@ -36,6 +36,26 @@
 .gameControlButton {
   display: inline-block;
   margin-right: 1vw;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: all;
+  display: inline-flex;
+  width: 3vw;
+  height: 3vw;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.gameControlButton:hover {
+  background-color: rgba(0, 0, 0, 0.143);
+}
+
+.gameControlSymbol {
+  font-size: 2vw;
 }
 
 .devWinCondition {
@@ -47,4 +67,8 @@
   position: absolute;
   width: 5vw;
   height: 5vw;
+}
+
+.whiteText {
+  color: white;
 }
