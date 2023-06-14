@@ -1,0 +1,9 @@
+.cssEditorContainer {
+  background-color: rgba(255, 255, 255, 0.721);
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+  border: 2px dashed black;
+  padding: 1vw;
+  cursor: move;
+}

@@ -5,7 +5,7 @@ export default forwardRef(function Controllable(props, ref) {
   const { hasContents, letter } = interpretId(props.id);
 
   return (
-    <div style={props.styles} ref={ref} id={props.id}>
+    <div style={props.styles} ref={ref} id={props.id} onClick={props.onClick}>
       {hasContents ? props.children : letter}
     </div>
   );

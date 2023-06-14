@@ -17,7 +17,9 @@ function interpretId(id) {
   const [type, matchingId] = id;
   return {
     hasContents: type === ELEMENT_TYPE.div,
-    letter: type !== ELEMENT_TYPE && matchingIdToLetter(matchingId),
+    elementType: type,
+    letter: type !== ELEMENT_TYPE.div && matchingIdToLetter(matchingId),
+    index: parseInt(matchingId),
   };
 }
 
@@ -58,6 +60,7 @@ function isHole(id) {
 
 export {
   LEVEL_DATA_PATH,
+  ELEMENT_TYPE,
   combineClassNames,
   interpretId,
   testForOverlapRandom,
