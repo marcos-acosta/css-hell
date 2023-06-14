@@ -49,7 +49,23 @@ export default function CssEditor(props) {
         )}
       >
         <div className={styles.titleContainer}>
-          <span className={styles.titleText}>{convertIdToTitle(id)}</span>{" "}
+          <button
+            className={combineClassNames(
+              styles.closeButton,
+              props.isWinning && styles.whiteBorder
+            )}
+            onClick={props.closeCssEditor}
+          >
+            <span
+              className={combineClassNames(
+                "material-symbols-outlined",
+                styles.closeSymbol
+              )}
+            >
+              close
+            </span>
+          </button>
+          <span className={styles.titleText}>{convertIdToTitle(id)}</span>
           <span className={styles.cssAllowance}>
             {!cssBudget ? (
               <span

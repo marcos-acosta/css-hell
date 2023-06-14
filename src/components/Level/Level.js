@@ -162,23 +162,33 @@ export default function Level(props) {
           #{props.levelNumber} {props.levelData.levelName}
         </div>
         <div className={styles.floatRightControls}>
-          <button className={styles.gameControlButton} onClick={resetLevel}>
+          <button
+            className={combineClassNames(
+              styles.gameControlButton,
+              isWinning && styles.whiteButton
+            )}
+            onClick={resetLevel}
+          >
             <span
               className={combineClassNames(
                 "material-symbols-outlined",
-                styles.gameControlSymbol,
-                isWinning && styles.whiteText
+                styles.gameControlSymbol
               )}
             >
               undo
             </span>
           </button>
-          <button className={styles.gameControlButton} onClick={props.goHome}>
+          <button
+            className={combineClassNames(
+              styles.gameControlButton,
+              isWinning && styles.whiteButton
+            )}
+            onClick={props.goHome}
+          >
             <span
               className={combineClassNames(
                 "material-symbols-outlined",
-                styles.gameControlSymbol,
-                isWinning && styles.whiteText
+                styles.gameControlSymbol
               )}
             >
               logout
@@ -193,6 +203,7 @@ export default function Level(props) {
         deleteCustomCss={deleteCustomCss}
         changeCustomCss={changeCustomCss}
         isWinning={isWinning}
+        closeCssEditor={() => setSelectedElementInfo(null)}
       />
     </>
   );

@@ -43,6 +43,31 @@
   margin-top: 0.25vw;
 }
 
+.closeButton {
+  position: absolute;
+  left: 0vw;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 2vw;
+  width: 2vw;
+  border: 1px solid black;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.143);
+}
+
+.closeSymbol {
+  font-size: 1.5vw;
+}
+
 .propertyName {
   font-weight: bold;
 }
@@ -133,4 +158,8 @@
 
 .whiteInputUnderline:focus {
   border-bottom: 1px solid white;
+}
+
+.whiteBorder {
+  border: 1px solid white;
 }
