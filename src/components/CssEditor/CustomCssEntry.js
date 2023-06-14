@@ -29,6 +29,8 @@ export default function CustomCssEntry(props) {
           onChange={(e) =>
             props.changeCustomCss(props.id, "propertyName", e.target.value)
           }
+          placeholder="property-name"
+          autoFocus
         />
         :{" "}
         <input
@@ -40,6 +42,7 @@ export default function CustomCssEntry(props) {
           onChange={(e) =>
             props.changeCustomCss(props.id, "propertyValue", e.target.value)
           }
+          placeholder="value"
         />
         ;
       </div>
