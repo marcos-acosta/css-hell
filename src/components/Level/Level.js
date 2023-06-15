@@ -6,6 +6,7 @@ import LevelHeader from "../LevelHeader/LevelHeader";
 import {
   combineClassNames,
   getIndexFromId,
+  interpretId,
   isHole,
   testForOverlapRandom,
 } from "../../util";
@@ -62,7 +63,16 @@ export default function Level(props) {
       );
     } else {
       const { id, style, children } = elementData;
-      const combinedCss = { ...parseCustomCss(customCss[id]), ...style };
+      const { baseStyles } = interpretId(id);
+      const elementStyles = { ...baseStyles, ...style };
+      const combinedCss = {
+        ...parseCustomCss(customCss[id]),
+        ...elementStyles,
+      };
+      const completeElementData = {
+        ...elementData,
+        style: elementStyles,
+      };
       const ref = isHole(id)
         ? (el) => (elementRefs.current[getIndexFromId(id)] = el)
         : null;
@@ -74,7 +84,7 @@ export default function Level(props) {
           ref={ref}
           onClick={(e) => {
             e.stopPropagation();
-            setSelectedElementInfo(elementData);
+            setSelectedElementInfo(completeElementData);
           }}
         >
           {buildElements(children, customCss, elementRefs)}

@@ -7,18 +7,7 @@
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw) / 2)",
-          "left": "calc(100vw / 3)",
-          "cursor": "pointer",
-          "display": "flex",
-          "height": "5vw",
-          "width": "5vw",
-          "color": "white",
-          "alignItems": "center",
-          "justifyContent": "center",
-          "backgroundColor": "#ff3e30",
-          "fontSize": "2vw",
-          "fontWeight": "bold",
-          "borderRadius": "50%"
+          "left": "calc(100vw / 3)"
         },
         "cssBudget": 1,
         "children": null
@@ -28,19 +17,7 @@
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw) / 2)",
-          "right": "calc(100vw / 3)",
-          "cursor": "pointer",
-          "display": "flex",
-          "height": "4.5vw",
-          "width": "4.5vw",
-          "color": "#ff3e30",
-          "alignItems": "center",
-          "justifyContent": "center",
-          "border": "0.25vw dashed #ff3e30",
-          "backgroundColor": "rgb(255,255,255,0.5)",
-          "fontSize": "2vw",
-          "fontWeight": "bold",
-          "borderRadius": "50%"
+          "right": "calc(100vw / 3)"
         },
         "cssBudget": 0,
         "children": null
@@ -60,8 +37,6 @@
           "position": "absolute",
           "top": "calc((100vh - 10vw - 2vw) / 2)",
           "left": "calc(100vw / 3)",
-          "border": "1vw solid black",
-          "cursor": "pointer",
           "display": "flex",
           "flexDirection": "column"
         },
@@ -70,18 +45,7 @@
           {
             "id": "p0",
             "style": {
-              "position": "static",
-              "height": "5vw",
-              "width": "5vw",
-              "color": "white",
-              "display": "inline-flex",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "backgroundColor": "#ff3e30",
-              "fontSize": "2vw",
-              "fontWeight": "bold",
-              "cursor": "pointer",
-              "borderRadius": "50%"
+              "position": "static"
             },
             "cssBudget": 0,
             "children": null
@@ -89,18 +53,7 @@
           {
             "id": "p1",
             "style": {
-              "position": "static",
-              "height": "5vw",
-              "width": "5vw",
-              "color": "white",
-              "display": "inline-flex",
-              "alignItems": "center",
-              "justifyContent": "center",
-              "backgroundColor": "#176bef",
-              "fontSize": "2vw",
-              "fontWeight": "bold",
-              "cursor": "pointer",
-              "borderRadius": "50%"
+              "position": "static"
             },
             "cssBudget": 0,
             "children": null
@@ -112,19 +65,7 @@
         "style": {
           "position": "absolute",
           "right": "calc(100vw / 3)",
-          "top": "calc((100vh - 10vw) / 2)",
-          "height": "4.5vw",
-          "width": "4.5vw",
-          "color": "#ff3e30",
-          "display": "flex",
-          "alignItems": "center",
-          "justifyContent": "center",
-          "border": "0.25vw dashed #ff3e30",
-          "backgroundColor": "rgb(255,255,255,0.5)",
-          "fontSize": "2vw",
-          "fontWeight": "bold",
-          "cursor": "pointer",
-          "borderRadius": "50%"
+          "top": "calc((100vh - 10vw) / 2)"
         },
         "cssBudget": 0,
         "children": null
@@ -134,19 +75,7 @@
         "style": {
           "position": "absolute",
           "right": "calc((100vw / 3) + 11vw)",
-          "top": "calc((100vh - 10vw) / 2 + 5vw)",
-          "height": "4.5vw",
-          "width": "4.5vw",
-          "color": "#176bef",
-          "display": "flex",
-          "alignItems": "center",
-          "justifyContent": "center",
-          "border": "0.25vw dashed #176bef",
-          "fontSize": "2vw",
-          "fontWeight": "bold",
-          "cursor": "pointer",
-          "borderRadius": "50%",
-          "backgroundColor": "rgb(255,255,255,0.5)"
+          "top": "calc((100vh - 10vw) / 2 + 5vw)"
         },
         "cssBudget": 0,
         "children": null

@@ -4,6 +4,7 @@ const ELEMENT_TYPE = {
   hole: "h",
   div: "d",
 };
+const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "##44FFD2"];
 
 function combineClassNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -14,12 +15,14 @@ function matchingIdToLetter(matchingId) {
 }
 
 function interpretId(id) {
-  const [type, matchingId] = id;
+  const [type, indexStr] = id;
+  const index = parseInt(indexStr);
   return {
     hasContents: type === ELEMENT_TYPE.div,
     elementType: type,
-    letter: type !== ELEMENT_TYPE.div && matchingIdToLetter(matchingId),
-    index: parseInt(matchingId),
+    letter: type !== ELEMENT_TYPE.div && matchingIdToLetter(index),
+    index: index,
+    baseStyles: getBaseStyles(type, index),
   };
 }
 
@@ -56,6 +59,40 @@ function testForOverlapRandom(holeElement, numPoints) {
 
 function isHole(id) {
   return id && id[0] === ELEMENT_TYPE.hole;
+}
+
+function getBaseStyles(elementType, index) {
+  if (elementType === ELEMENT_TYPE.div) {
+    return {
+      border: "1vw solid black",
+      cursor: "pointer",
+    };
+  } else if (elementType === ELEMENT_TYPE.peg) {
+    return {
+      height: "5vw",
+      width: "5vw",
+      color: "white",
+      textAlign: "center",
+      backgroundColor: TARGET_COLORS[index],
+      fontSize: "2vw",
+      fontWeight: "bold",
+      cursor: "pointer",
+      borderRadius: "50%",
+    };
+  } else {
+    return {
+      height: "4.5vw",
+      width: "4.5vw",
+      textAlign: "center",
+      color: TARGET_COLORS[index],
+      border: `0.25vw dashed ${TARGET_COLORS[index]}`,
+      backgroundColor: "rgb(255,255,255,0.5)",
+      fontSize: "2vw",
+      fontWeight: "bold",
+      cursor: "pointer",
+      borderRadius: "50%",
+    };
+  }
 }
 
 export {

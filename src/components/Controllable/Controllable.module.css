@@ -1,0 +1,7 @@
+.pegLetterAlign {
+  vertical-align: -1.1vw;
+}
+
+.holeLetterAlign {
+  vertical-align: calc(-1.1vw + 0.5vw / 2);
+}
