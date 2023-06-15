@@ -1,0 +1,30 @@
+.levelButton {
+  width: 25vw;
+  left: calc(100vw - 25vw) / 2;
+  text-align: left;
+  padding: 0.25vw;
+  padding-left: 0.5vw;
+  margin-bottom: 0.5vw;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border: 1px dashed white;
+  transition: color 1s ease, background-color 1s ease;
+}
+
+.levelButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.levelButton:disabled {
+  border: none;
+  font-weight: initial;
+  cursor: initial;
+  color: rgb(212, 212, 212);
+}
+
+.levelButton:disabled:hover {
+  background-color: transparent;
+  color: rgb(212, 212, 212);
+}

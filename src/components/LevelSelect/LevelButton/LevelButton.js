@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./LevelButton.module.css";
 
 export default function LevelButton(props) {
   return (
@@ -6,8 +7,10 @@ export default function LevelButton(props) {
       onClick={() =>
         props.isUnlocked && props.setSelectedLevel(parseInt(props.levelNumber))
       }
+      disabled={!props.isUnlocked}
+      className={styles.levelButton}
     >
-      {props.levelNumber}. ({props.isUnlocked ? props.levelName : "???"})
+      #{props.levelNumber} {props.isUnlocked ? props.levelName : "???"}
     </button>
   );
 }

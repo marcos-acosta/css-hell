@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./LevelSelect.module.css";
 import { LEVEL_DATA_PATH } from "../../util";
 import LevelButton from "./LevelButton/LevelButton";
 import Level from "../Level/Level";
@@ -43,16 +44,21 @@ export default function LevelSelect(props) {
       moveToNextLevel={moveToNextLevel}
     />
   ) : (
-    <div>
-      {Object.entries(gameData).map(([levelNumber, levelData], i) => (
-        <LevelButton
-          key={i}
-          isUnlocked={props.highestLevel >= levelNumber}
-          levelNumber={levelNumber}
-          setSelectedLevel={setSelectedLevel}
-          levelName={levelData.levelName}
-        />
-      ))}
+    <div className={styles.levelSelectContainer}>
+      <div className={styles.gameTitle}>
+        <span className={styles.gameTitleText}>code-monkey</span>
+      </div>
+      <div className={styles.levelsContainer}>
+        {Object.entries(gameData).map(([levelNumber, levelData], i) => (
+          <LevelButton
+            key={i}
+            isUnlocked={props.highestLevel >= levelNumber}
+            levelNumber={levelNumber}
+            setSelectedLevel={setSelectedLevel}
+            levelName={levelData.levelName}
+          />
+        ))}
+      </div>
     </div>
   );
 }
