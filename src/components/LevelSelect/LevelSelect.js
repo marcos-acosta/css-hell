@@ -10,13 +10,23 @@ export default function LevelSelect(props) {
       </div>
       <div className={styles.levelsContainer}>
         {Object.entries(props.gameData).map(([levelNumber, levelData], i) => (
-          <LevelButton
-            key={i}
-            isUnlocked={props.highestCompletedLevel + 1 >= levelNumber}
-            levelNumber={levelNumber}
-            setSelectedLevel={props.setSelectedLevel}
-            levelName={levelData.levelName}
-          />
+          <div className={styles.levelContainer} key={i}>
+            <LevelButton
+              isUnlocked={props.highestCompletedLevel + 1 >= levelNumber}
+              levelNumber={levelNumber}
+              setSelectedLevel={props.setSelectedLevel}
+              levelName={levelData.levelName}
+            />
+
+            {levelData.completionMessage && (
+              <button
+                className={styles.messageButton}
+                onClick={() => props.showMessageByLevelNumber(levelNumber)}
+              >
+                <span className="material-symbols-outlined">sticky_note_2</span>
+              </button>
+            )}
+          </div>
         ))}
       </div>
     </div>

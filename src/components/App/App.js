@@ -15,6 +15,7 @@ export default function App() {
   const [gameData, setGameData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isShowingMessage, setIsShowingMessage] = useState(false);
+  const [isRevisitingMessage, setIsRevisitingMessage] = useState(false);
 
   const loadGameData = () => {
     fetch(LEVEL_DATA_PATH)
@@ -62,11 +63,27 @@ export default function App() {
     }
   };
 
+  const handleNextFromMessageScreen = () => {
+    if (isRevisitingMessage) {
+      setSelectedLevel(null);
+      setIsRevisitingMessage(false);
+      setIsShowingMessage(false);
+    } else {
+      moveToNextLevel();
+    }
+  };
+
+  const showMessageByLevelNumber = (levelNumber) => {
+    setSelectedLevel(levelNumber);
+    setIsShowingMessage(true);
+    setIsRevisitingMessage(true);
+  };
+
   return selectedLevel ? (
     isShowingMessage ? (
       <MessageScreen
         messageData={gameData[selectedLevel].completionMessage}
-        moveToNextLevel={moveToNextLevel}
+        moveToNextLevel={handleNextFromMessageScreen}
       />
     ) : (
       <Level
@@ -83,6 +100,7 @@ export default function App() {
       highestCompletedLevel={highestCompletedLevel}
       gameData={gameData}
       setSelectedLevel={setSelectedLevel}
+      showMessageByLevelNumber={showMessageByLevelNumber}
     />
   );
 }

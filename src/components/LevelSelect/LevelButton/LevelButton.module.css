@@ -1,8 +1,7 @@
 .levelButton {
   width: 25vw;
-  left: calc(100vw - 25vw) / 2;
   text-align: left;
-  padding: 0.25vw;
+  height: 2.2vw;
   padding-left: 0.5vw;
   margin-bottom: 0.5vw;
   font-weight: bold;
@@ -10,6 +9,7 @@
   color: white;
   border: 1px dashed white;
   transition: color 1s ease, background-color 1s ease;
+  font-size: 1.1vw;
 }
 
 .levelButton:hover {
