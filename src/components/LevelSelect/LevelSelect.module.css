@@ -27,17 +27,20 @@
 
 .messageButton {
   margin-left: 1vw;
-  background-color: rgba(216, 216, 216);
-  border: none;
+  /* background-color: rgba(216, 216, 216); */
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: top;
   height: 2.2vw;
   cursor: pointer;
-  transition: background-color 1s ease;
+  transition: color 1s ease, background-color 1s ease;
 }
 
 .messageButton:hover {
   background-color: white;
+  color: black;
 }

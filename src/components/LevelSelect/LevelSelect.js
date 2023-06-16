@@ -9,25 +9,29 @@ export default function LevelSelect(props) {
         <span className={styles.gameTitleText}>code-monkey</span>
       </div>
       <div className={styles.levelsContainer}>
-        {Object.entries(props.gameData).map(([levelNumber, levelData], i) => (
-          <div className={styles.levelContainer} key={i}>
-            <LevelButton
-              isUnlocked={props.highestCompletedLevel + 1 >= levelNumber}
-              levelNumber={levelNumber}
-              setSelectedLevel={props.setSelectedLevel}
-              levelName={levelData.levelName}
-            />
-
-            {levelData.completionMessage && (
-              <button
-                className={styles.messageButton}
-                onClick={() => props.showMessageByLevelNumber(levelNumber)}
-              >
-                <span className="material-symbols-outlined">sticky_note_2</span>
-              </button>
-            )}
-          </div>
-        ))}
+        {Object.entries(props.gameData).map(([levelNumber, levelData], i) => {
+          const isUnlocked = props.highestCompletedLevel + 1 >= levelNumber;
+          return (
+            <div className={styles.levelContainer} key={i}>
+              <LevelButton
+                isUnlocked={isUnlocked}
+                levelNumber={levelNumber}
+                setSelectedLevel={props.setSelectedLevel}
+                levelName={levelData.levelName}
+              />
+              {isUnlocked && levelData.completionMessage && (
+                <button
+                  className={styles.messageButton}
+                  onClick={() => props.showMessageByLevelNumber(levelNumber)}
+                >
+                  <span className="material-symbols-outlined">
+                    sticky_note_2
+                  </span>
+                </button>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
