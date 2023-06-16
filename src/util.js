@@ -5,7 +5,13 @@ const ELEMENT_TYPE = {
   div: "d",
 };
 const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "##44FFD2"];
-const NERFED_PROPERTIES = ["perspective", "scale", "transform", "translate"];
+const NERFED_PROPERTIES = [
+  "offset",
+  "perspective",
+  "scale",
+  "transform",
+  "translate",
+];
 
 function combineClassNames(...classes) {
   return classes.filter(Boolean).join(" ");

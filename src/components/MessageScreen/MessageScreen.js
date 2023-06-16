@@ -4,7 +4,7 @@ import { combineClassNames } from "../../util";
 
 export default function MessageScreen(props) {
   const { messageData, moveToNextLevel } = props;
-  const { message, audioFileSource } = messageData;
+  const { message, postAudioMessage, audioFileSource } = messageData;
 
   const [isListening, setIsListening] = useState(false);
   const [hasFinishedListening, setHasFinishedListening] = useState(false);
@@ -53,6 +53,9 @@ export default function MessageScreen(props) {
           </button>
         )}
       </div>
+      {(isListening || hasFinishedListening) && postAudioMessage && (
+        <div className={styles.postAudioMessage}>{postAudioMessage}</div>
+      )}
       {(hasFinishedListening || !audioFileSource) && (
         <button className={styles.nextLevelButton} onClick={moveToNextLevel}>
           <span
