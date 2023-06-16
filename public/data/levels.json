@@ -78,7 +78,7 @@
       }
     ],
     "completionMessage": {
-      "message": "Very impressive for a guy who gets butterflies in his stomach when he sees a memory address. Tell you what: solve one more, and I'll let you hear from one of your friends. Watch out for red herrings.",
+      "message": "Very impressive for a guy who gets butterflies in his stomach when he sees a memory address. Tell you what: solve one more, and I'll let you hear from one of your friends. P.S. Watch out for red herrings.",
       "audioFileSource": null
     }
   },
@@ -91,7 +91,8 @@
           "position": "absolute",
           "display": "flex",
           "top": "calc((100vh - 5vw - 2vw) / 3)",
-          "left": "calc((100vw - 15vw - 2vw) / 2)"
+          "left": "calc((100vw - 15vw - 2vw) / 2)",
+          "transform-origin": "-10vw 0"
         },
         "cssBudget": 2,
         "children": [
@@ -147,9 +148,9 @@
       }
     ],
     "completionMessage": {
-      "message": "Excellent. I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve it. But, I am a man of my word. Here you go- don't forget to listen to the whole thing.",
+      "message": "Excellent. I hope you enjoyed my little transform-origin trick. I must admit I didn't expect you to get even this far, but I am a man of my word. Here you go- make sure to listen to the whole thing.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
-      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. Next time, I promise."
+      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. I promise I'm not laughing, this is very serious business."
     }
   },
   "4": {
@@ -190,8 +191,40 @@
       }
     ],
     "completionMessage": {
-      "message": "Spectacular! Splendid! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. But I'm still impressed, so I'll let you hear from one of your friends.",
-      "postAudioMessage": "Post-audio message..."
+      "message": "Spectacular! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. While I would love nothing more than to rick roll you a second time, we criminal masterminds have standards. Perhaps you recognize this voice?",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
+      "postAudioMessage": "HAHAHAHAHA! It was even funnier the second time! You should have seen your face! Go ahead with the next level while I keep replaying that moment in my head."
+    }
+  },
+  "5": {
+    "levelName": "think outside the box",
+    "elements": [
+      {
+        "id": "p0",
+        "style": {
+          "margin": "0",
+          "marginLeft": "calc((100vw - 5vw) / 2)",
+          "marginTop": "10vw",
+          "top": "0"
+        },
+        "cssBudget": 1,
+        "children": null
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "left": "calc((100vw - 5vw) / 2)",
+          "top": "20vw"
+        },
+        "cssBudget": 0,
+        "children": null
+      }
+    ],
+    "completionMessage": {
+      "message": "I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve. Regardless, I'm impressed by your creativity; not many C developers make it past that one. I believe comedy comes in twos, so don't worry about Mr. Astley; no tricks this time.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
+      "postAudioMessage": "Aw, wasn't that sweet? Rose-colored glasses are an amazing thing. Next!"
     }
   }
 }
