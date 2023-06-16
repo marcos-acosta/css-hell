@@ -32,21 +32,24 @@ export default function App() {
   if (isLoading) {
     return;
   }
-  const highestLevel = parseInt(cookies.checkpoint);
+  const highestCompletedLevel = cookies.checkpoint
+    ? parseInt(cookies.checkpoint)
+    : 0;
 
-  const setHighestLevel = (levelNumber) =>
-    levelNumber > highestLevel &&
+  const setHighestCompletedLevel = (levelNumber) =>
+    levelNumber > highestCompletedLevel &&
     setCookie("checkpoint", levelNumber, {
       sameSite: "none",
       secure: true,
     });
 
-  const increaseHighestLevel = () => {
-    setHighestLevel(selectedLevel + 1);
+  const increaseHighestCompletedLevel = () => {
+    setHighestCompletedLevel(selectedLevel);
   };
 
   const moveToNextLevel = () => {
-    increaseHighestLevel();
+    increaseHighestCompletedLevel();
+    setHighestCompletedLevel(selectedLevel);
     setSelectedLevel(selectedLevel + 1);
     setIsShowingMessage(false);
   };
@@ -72,12 +75,12 @@ export default function App() {
         goHome={() => setSelectedLevel(null)}
         reset={loadGameData}
         handleNextButton={handleNextButton}
-        increaseHighestLevel={increaseHighestLevel}
+        increaseHighestCompletedLevel={increaseHighestCompletedLevel}
       />
     )
   ) : (
     <LevelSelect
-      highestLevel={highestLevel}
+      highestCompletedLevel={highestCompletedLevel}
       gameData={gameData}
       setSelectedLevel={setSelectedLevel}
     />

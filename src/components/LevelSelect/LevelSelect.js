@@ -12,7 +12,7 @@ export default function LevelSelect(props) {
         {Object.entries(props.gameData).map(([levelNumber, levelData], i) => (
           <LevelButton
             key={i}
-            isUnlocked={props.highestLevel >= levelNumber}
+            isUnlocked={props.highestCompletedLevel + 1 >= levelNumber}
             levelNumber={levelNumber}
             setSelectedLevel={props.setSelectedLevel}
             levelName={levelData.levelName}

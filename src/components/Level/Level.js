@@ -69,7 +69,7 @@ export default function Level(props) {
   const elementRefs = useRef([]);
 
   const elementsShallowCopy = elementRefs.current.map((x) => x);
-  const { increaseHighestLevel } = props;
+  const { increaseHighestCompletedLevel } = props;
 
   const buildElements = (elementData, customCss, elementRefs) => {
     if (!elementData) {
@@ -165,9 +165,9 @@ export default function Level(props) {
       .every(Boolean);
     setIsWinning(areAllOverlapping);
     if (areAllOverlapping) {
-      increaseHighestLevel();
+      increaseHighestCompletedLevel();
     }
-  }, [elementsShallowCopy, increaseHighestLevel]);
+  }, [elementsShallowCopy, increaseHighestCompletedLevel]);
 
   useEffect(() => {
     setCustomCss({});
