@@ -5,6 +5,7 @@ const ELEMENT_TYPE = {
   div: "d",
 };
 const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "##44FFD2"];
+const NERFED_PROPERTIES = ["perspective", "scale", "transform", "translate"];
 
 function combineClassNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -98,6 +99,7 @@ function getBaseStyles(elementType, index) {
 export {
   LEVEL_DATA_PATH,
   ELEMENT_TYPE,
+  NERFED_PROPERTIES,
   combineClassNames,
   interpretId,
   testForOverlapRandom,

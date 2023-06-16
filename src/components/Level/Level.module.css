@@ -35,3 +35,20 @@
 .nextLevelSymbol {
   font-size: 3vw;
 }
+
+.nerfMessage {
+  position: absolute;
+  bottom: 1.5vw;
+  right: 1.5vw;
+  background-color: rgb(12, 12, 12);
+  color: white;
+  padding: 0.5vw;
+  max-width: 25vw;
+  outline: 3px solid rgb(12, 12, 12);
+  border: 1px dashed white;
+}
+
+.nerfedPropertyName {
+  color: rgb(191, 191, 191);
+  font-style: italic;
+}

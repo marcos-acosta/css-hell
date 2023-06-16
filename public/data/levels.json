@@ -44,17 +44,13 @@
         "children": [
           {
             "id": "p0",
-            "style": {
-              "position": "static"
-            },
+            "style": {},
             "cssBudget": 0,
             "children": null
           },
           {
             "id": "p1",
-            "style": {
-              "position": "static"
-            },
+            "style": {},
             "cssBudget": 0,
             "children": null
           }

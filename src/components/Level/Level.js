@@ -4,6 +4,7 @@ import Controllable from "../Controllable/Controllable";
 import CssEditor from "../CssEditor/CssEditor";
 import LevelHeader from "../LevelHeader/LevelHeader";
 import {
+  NERFED_PROPERTIES,
   combineClassNames,
   getIndexFromId,
   interpretId,
@@ -31,20 +32,39 @@ const preparePropertyValue = (propertyValue) => {
 const parseCustomCss = (customCss) => {
   return customCss
     ? Object.fromEntries(
-        customCss.map((cssLine) => [
-          preparePropertyName(cssLine.propertyName),
-          preparePropertyValue(cssLine.propertyValue),
-        ])
+        customCss
+          .map((cssLine) =>
+            NERFED_PROPERTIES.includes(
+              preparePropertyName(cssLine.propertyName)
+            )
+              ? []
+              : [
+                  preparePropertyName(cssLine.propertyName),
+                  preparePropertyValue(cssLine.propertyValue),
+                ]
+          )
+          .filter((kvPair) => kvPair.length)
       )
     : {};
 };
 
+const formatNerfedPropertyNames = () => {
+  return NERFED_PROPERTIES.map((propertyName, i) => (
+    <span key={i}>
+      {i === 0 ? "" : i === NERFED_PROPERTIES.length - 1 ? ", and " : ", "}
+      <span className={styles.nerfedPropertyName}>{propertyName}</span>
+    </span>
+  ));
+};
+
 const RESIZE_EVENTS = ["scroll", "resize"];
+const FORMATTED_NERFED_PROPERTY_NAMES = formatNerfedPropertyNames();
 
 export default function Level(props) {
   const [selectedElementInfo, setSelectedElementInfo] = useState(null);
   const [isWinning, setIsWinning] = useState(false);
   const [customCss, setCustomCss] = useState({});
+  const [showNerfMessage, setShowNerfMessage] = useState(false);
   const setRerenderState = useState(false)[1];
   const elementRefs = useRef([]);
 
@@ -155,6 +175,18 @@ export default function Level(props) {
   }, [props.levelData]);
 
   useEffect(() => {
+    for (const customCssEntries of Object.values(customCss)) {
+      for (const cssEntry of customCssEntries) {
+        if (NERFED_PROPERTIES.includes(cssEntry.propertyName)) {
+          setShowNerfMessage(true);
+          return;
+        }
+      }
+    }
+    setShowNerfMessage(false);
+  }, [customCss]);
+
+  useEffect(() => {
     RESIZE_EVENTS.forEach((eventName) =>
       window.addEventListener(eventName, triggerRerender)
     );
@@ -206,6 +238,12 @@ export default function Level(props) {
         isWinning={isWinning}
         closeCssEditor={() => setSelectedElementInfo(null)}
       />
+      {showNerfMessage && (
+        <div className={styles.nerfMessage}>
+          Nice thinking. Unfortuantely for you,{" "}
+          {FORMATTED_NERFED_PROPERTY_NAMES} are forbidden.
+        </div>
+      )}
     </>
   );
 }

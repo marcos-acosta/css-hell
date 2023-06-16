@@ -163,3 +163,8 @@
 .whiteBorder {
   border: 1px solid white;
 }
+
+.cssInput.error {
+  text-decoration: line-through;
+  font-weight: initial;
+}
