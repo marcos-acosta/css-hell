@@ -1,18 +1,25 @@
 import React, { useRef, useState } from "react";
 import styles from "./MessageScreen.module.css";
+import { combineClassNames } from "../../util";
 
 export default function MessageScreen(props) {
-  const { message, audioFileSource, moveToNextLevel } = props;
+  const { messageData, moveToNextLevel } = props;
+  const { message, audioFileSource } = messageData;
 
   const [isListening, setIsListening] = useState(false);
-  const [hasFinishedListening, setHasFinishedListening] = useState(
-    !Boolean(audioFileSource)
-  );
+  const [hasFinishedListening, setHasFinishedListening] = useState(false);
   const audioRef = useRef();
 
   const audioEnded = () => {
     setHasFinishedListening(true);
     setIsListening(false);
+  };
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      setIsListening(true);
+      audioRef.current.play();
+    }
   };
 
   return (
@@ -29,17 +36,33 @@ export default function MessageScreen(props) {
       )}
       <div className={styles.message}>{message}</div>
       <div className={styles.audioContainer}>
-        <button className={styles.playAudioButton}>
-          {isListening
-            ? "playing memory..."
-            : hasFinishedListening
-            ? "replay memory"
-            : "play memory"}
-        </button>
+        {audioFileSource && (
+          <button
+            className={combineClassNames(
+              styles.playAudioButton,
+              isListening && styles.listening
+            )}
+            onClick={playAudio}
+            disabled={isListening}
+          >
+            {isListening
+              ? "listening..."
+              : hasFinishedListening
+              ? "listen again"
+              : "listen"}
+          </button>
+        )}
       </div>
-      {hasFinishedListening && (
+      {(hasFinishedListening || !audioFileSource) && (
         <button className={styles.nextLevelButton} onClick={moveToNextLevel}>
-          next
+          <span
+            className={combineClassNames(
+              "material-symbols-outlined",
+              styles.nextLevelSymbol
+            )}
+          >
+            skip_next
+          </span>
         </button>
       )}
     </div>

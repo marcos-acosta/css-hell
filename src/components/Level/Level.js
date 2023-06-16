@@ -178,7 +178,7 @@ export default function Level(props) {
       {isWinning && (
         <button
           className={styles.nextLevelButton}
-          onClick={props.moveToNextLevel}
+          onClick={props.handleNextButton}
         >
           <span
             className={combineClassNames(

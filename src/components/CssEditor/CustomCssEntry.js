@@ -30,6 +30,7 @@ export default function CustomCssEntry(props) {
             props.changeCustomCss(props.id, "propertyName", e.target.value)
           }
           placeholder="property-name"
+          disabled={props.isWinning}
           autoFocus
         />
         :{" "}
@@ -43,6 +44,7 @@ export default function CustomCssEntry(props) {
             props.changeCustomCss(props.id, "propertyValue", e.target.value)
           }
           placeholder="value"
+          disabled={props.isWinning}
         />
         ;
       </div>

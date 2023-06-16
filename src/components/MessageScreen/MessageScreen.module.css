@@ -5,4 +5,68 @@
   top: 0;
   left: 0;
   color: white;
+  background-color: rgb(12, 12, 12);
+}
+
+.message {
+  width: 60vw;
+  font-size: 2vw;
+  position: relative;
+  margin-left: calc((100vw - 60vw - 2vw) / 2);
+  margin-top: 8vw;
+  border: 2px dashed white;
+  padding: 1vw;
+}
+
+.audioElement {
+  display: none;
+}
+
+.playAudioButton {
+  position: relative;
+  width: 15%;
+  margin-left: calc((100% - 15%) / 2);
+  margin-top: 3vw;
+  font-size: 1.25vw;
+  background-color: rgb(216, 216, 216);
+  color: black;
+  border: none;
+  padding: 0.5vw;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+
+.playAudioButton:hover {
+  background-color: white;
+}
+
+.playAudioButton.listening {
+  background-color: white;
+  cursor: initial;
+}
+
+.nextLevelButton {
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-flex;
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  color: white;
+  top: calc((100vh - 5vw) / 2);
+  right: 2vw;
+}
+
+.nextLevelButton:hover {
+  background-color: rgba(255, 255, 255, 0.093);
+}
+
+.nextLevelSymbol {
+  font-size: 3vw;
 }
