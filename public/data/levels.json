@@ -197,7 +197,7 @@
     }
   },
   "5": {
-    "levelName": "think outside the box",
+    "levelName": "the scroll of truth",
     "elements": [
       {
         "id": "p0",
@@ -205,6 +205,7 @@
           "margin": "0",
           "marginLeft": "calc((100vw - 5vw) / 2)",
           "marginTop": "10vw",
+          "padding": "0",
           "top": "0"
         },
         "cssBudget": 1,
@@ -214,7 +215,7 @@
         "id": "h0",
         "style": {
           "position": "absolute",
-          "left": "calc((100vw - 5vw) / 2)",
+          "left": "calc((100vw - 5vw) / 2 + 10vw)",
           "top": "20vw"
         },
         "cssBudget": 0,
@@ -223,7 +224,7 @@
     ],
     "completionMessage": {
       "message": "I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve. Regardless, I'm impressed by your creativity; not many C developers make it past that one. I believe comedy comes in twos, so don't worry about Mr. Astley; no tricks this time.",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
       "postAudioMessage": "Aw, wasn't that sweet? Rose-colored glasses are an amazing thing. Next!"
     }
   }
