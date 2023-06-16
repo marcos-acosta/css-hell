@@ -78,8 +78,77 @@
       }
     ],
     "completionMessage": {
-      "message": "Very impressive for a guy who gets butterflies in his stomach every time he sees a memory address. Tell you what: solve one more, and I'll let you hear from one of your friends.",
+      "message": "Very impressive for a guy who gets butterflies in his stomach when he sees a memory address. Tell you what: solve one more, and I'll let you hear from one of your friends. Watch out for red herrings.",
       "audioFileSource": null
+    }
+  },
+  "3": {
+    "levelName": "incompatible",
+    "elements": [
+      {
+        "id": "d0",
+        "style": {
+          "position": "absolute",
+          "display": "flex",
+          "top": "calc((100vh - 5vw - 2vw) / 3)",
+          "left": "calc((100vw - 15vw - 2vw) / 2)"
+        },
+        "cssBudget": 2,
+        "children": [
+          {
+            "id": "p0",
+            "style": {},
+            "cssBudget": 1,
+            "children": []
+          },
+          {
+            "id": "p1",
+            "style": {},
+            "cssBudget": 0,
+            "children": []
+          },
+          {
+            "id": "p2",
+            "style": {},
+            "cssBudget": 0,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
+          "left": "calc((100vw - 5vw) / 2 + 5vw)"
+        },
+        "children": [],
+        "cssBudget": 0
+      },
+      {
+        "id": "h1",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
+          "left": "calc((100vw - 5vw) / 2)"
+        },
+        "children": [],
+        "cssBudget": 0
+      },
+      {
+        "id": "h2",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
+          "left": "calc((100vw - 5vw) / 2 - 5vw)"
+        },
+        "children": [],
+        "cssBudget": 0
+      }
+    ],
+    "completionMessage": {
+      "message": "Excellent. I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve it. But, I am a man of my word. Here you go- don't forget to listen to the whole thing.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD"
     }
   }
 }
