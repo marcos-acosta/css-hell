@@ -99,19 +99,19 @@
             "id": "p0",
             "style": {},
             "cssBudget": 1,
-            "children": []
+            "children": null
           },
           {
             "id": "p1",
             "style": {},
             "cssBudget": 0,
-            "children": []
+            "children": null
           },
           {
             "id": "p2",
             "style": {},
             "cssBudget": 0,
-            "children": []
+            "children": null
           }
         ]
       },
@@ -122,7 +122,7 @@
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 + 5vw)"
         },
-        "children": [],
+        "children": null,
         "cssBudget": 0
       },
       {
@@ -132,7 +132,7 @@
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2)"
         },
-        "children": [],
+        "children": null,
         "cssBudget": 0
       },
       {
@@ -142,13 +142,14 @@
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 - 5vw)"
         },
-        "children": [],
+        "children": null,
         "cssBudget": 0
       }
     ],
     "completionMessage": {
       "message": "Excellent. I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve it. But, I am a man of my word. Here you go- don't forget to listen to the whole thing.",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD"
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
+      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. Next time, I promise."
     }
   }
 }

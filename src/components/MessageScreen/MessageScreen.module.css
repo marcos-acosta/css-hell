@@ -45,6 +45,16 @@
   cursor: initial;
 }
 
+.postAudioMessage {
+  width: 60vw;
+  font-size: 2vw;
+  position: relative;
+  margin-left: calc((100vw - 60vw - 2vw) / 2);
+  margin-top: 3vw;
+  border: 2px dashed white;
+  padding: 1vw;
+}
+
 .nextLevelButton {
   border: 2px solid white;
   background-color: transparent;
