@@ -5,7 +5,7 @@ import { LEVEL_DATA_PATH } from "../../util";
 import { useCookies } from "react-cookie";
 import MessageScreen from "../MessageScreen/MessageScreen";
 
-const _DEV_STARTING_LEVEL = 3;
+const _DEV_STARTING_LEVEL = 4;
 
 export default function App() {
   const [cookies, setCookie] = useCookies(["checkpoint"]);
