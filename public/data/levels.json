@@ -197,7 +197,7 @@
     }
   },
   "5": {
-    "levelName": "think outside the box",
+    "levelName": "the scroll of truth",
     "elements": [
       {
         "id": "p0",
@@ -205,6 +205,7 @@
           "margin": "0",
           "marginLeft": "calc((100vw - 5vw) / 2)",
           "marginTop": "10vw",
+          "padding": "0",
           "top": "0"
         },
         "cssBudget": 1,
@@ -214,7 +215,7 @@
         "id": "h0",
         "style": {
           "position": "absolute",
-          "left": "calc((100vw - 5vw) / 2)",
+          "left": "calc((100vw - 5vw) / 2 + 10vw)",
           "top": "20vw"
         },
         "cssBudget": 0,
