@@ -19,3 +19,7 @@ Assign `order: -1` to HOLE A so it sits to the left of PEG A. Then, give PEG A n
 ### Level 5: the scroll of truth
 
 Assign `position: fixed` to PEG A. Then, push the CSS Editor into the bottom-right corner to generate scrolling room. Scroll PEG A into HOLE A.
+
+### Level 6: direct manipulation
+
+Assign `resize: both` to DIV 1. Then, expand it such that PEG A overlaps with HOLE A.
