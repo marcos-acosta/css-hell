@@ -83,7 +83,7 @@
     }
   },
   "3": {
-    "levelName": "incompatible",
+    "levelName": "feels like we only go backwards",
     "elements": [
       {
         "id": "d0",
@@ -287,8 +287,7 @@
     ],
     "completionMessage": {
       "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. I'm feeling generous; from now on, I'll let one of your friends free for each puzzle you solve. As a gesture of good faith:",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "PLACEHOLDER TEXT"
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv"
     }
   }
 }
