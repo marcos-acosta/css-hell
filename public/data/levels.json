@@ -229,7 +229,7 @@
     }
   },
   "6": {
-    "levelName": "direct manipulation",
+    "levelName": "breathing room",
     "elements": [
       {
         "id": "d0",
@@ -246,11 +246,12 @@
           {
             "id": "p0",
             "style": {
-              "position": "absolute",
-              "bottom": "0",
-              "right": "0"
+              "top": "0",
+              "left": "0",
+              "margin": "0",
+              "position": "absolute"
             },
-            "cssBudget": 0,
+            "cssBudget": 1,
             "children": null
           }
         ]

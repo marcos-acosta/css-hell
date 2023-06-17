@@ -22,4 +22,4 @@ Assign `position: fixed` to PEG A. Then, push the CSS Editor into the bottom-rig
 
 ### Level 6: direct manipulation
 
-Assign `resize: both` to DIV 1. Then, expand it such that PEG A overlaps with HOLE A.
+Assign large `padding` to PEG A. Then, assign `resize: both` to DIV 1 and expand it such that PEG A overlaps with HOLE A.
