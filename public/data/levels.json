@@ -279,7 +279,7 @@
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 10vw) / 2 + 1vw)",
-          "left": "calc((100vw - 10vw) / 2 + 25vw)"
+          "left": "calc((100vw - 10vw) / 2 + 35vw)"
         },
         "cssBudget": 0,
         "children": null
