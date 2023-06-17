@@ -3,7 +3,9 @@ const ELEMENT_TYPE = {
   peg: "p",
   hole: "h",
   div: "d",
+  text: "t",
 };
+const ELEMENTS_WITH_LETTERS = [ELEMENT_TYPE.peg, ELEMENT_TYPE.hole];
 const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "##44FFD2"];
 const NERFED_PROPERTIES = [
   "offset",
@@ -25,9 +27,8 @@ function interpretId(id) {
   const [type, indexStr] = id;
   const index = parseInt(indexStr);
   return {
-    hasContents: type === ELEMENT_TYPE.div,
     elementType: type,
-    letter: type !== ELEMENT_TYPE.div && matchingIdToLetter(index),
+    letter: ELEMENTS_WITH_LETTERS.includes(type) && matchingIdToLetter(index),
     index: index,
     baseStyles: getBaseStyles(type, index),
   };
@@ -86,7 +87,7 @@ function getBaseStyles(elementType, index) {
       cursor: "pointer",
       borderRadius: "50%",
     };
-  } else {
+  } else if (elementType == ELEMENT_TYPE.hole) {
     return {
       height: "4.5vw",
       width: "4.5vw",
@@ -98,6 +99,10 @@ function getBaseStyles(elementType, index) {
       fontWeight: "bold",
       cursor: "pointer",
       borderRadius: "50%",
+    };
+  } else {
+    return {
+      cursor: "pointer",
     };
   }
 }

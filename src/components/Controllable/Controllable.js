@@ -3,11 +3,15 @@ import styles from "./Controllable.module.css";
 import { ELEMENT_TYPE, interpretId } from "../../util";
 
 export default forwardRef(function Controllable(props, ref) {
-  const { hasContents, letter, elementType } = interpretId(props.id);
+  const { letter, elementType } = interpretId(props.id);
 
-  return (
+  return elementType === ELEMENT_TYPE.text ? (
+    <span style={props.styles} id={props.id} onClick={props.onClick}>
+      {props.text}
+    </span>
+  ) : (
     <div style={props.styles} ref={ref} id={props.id} onClick={props.onClick}>
-      {hasContents ? (
+      {elementType === ELEMENT_TYPE.div ? (
         props.children
       ) : (
         <span

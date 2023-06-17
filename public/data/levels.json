@@ -9,8 +9,7 @@
           "top": "calc((100vh - 5vw) / 2)",
           "left": "calc(100vw / 3)"
         },
-        "cssBudget": 1,
-        "children": null
+        "cssBudget": 1
       },
       {
         "id": "h0",
@@ -19,8 +18,7 @@
           "top": "calc((100vh - 5vw) / 2)",
           "right": "calc(100vw / 3)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
     ],
     "completionMessage": {
@@ -45,14 +43,12 @@
           {
             "id": "p0",
             "style": {},
-            "cssBudget": 0,
-            "children": null
+            "cssBudget": 0
           },
           {
             "id": "p1",
             "style": {},
-            "cssBudget": 0,
-            "children": null
+            "cssBudget": 0
           }
         ]
       },
@@ -63,8 +59,7 @@
           "right": "calc(100vw / 3)",
           "top": "calc((100vh - 10vw) / 2)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       },
       {
         "id": "h1",
@@ -73,8 +68,7 @@
           "right": "calc((100vw / 3) + 11vw)",
           "top": "calc((100vh - 10vw) / 2 + 5vw)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
     ],
     "completionMessage": {
@@ -92,27 +86,24 @@
           "display": "flex",
           "top": "calc((100vh - 5vw - 2vw) / 3)",
           "left": "calc((100vw - 15vw - 2vw) / 2)",
-          "transform-origin": "-10vw 0"
+          "transformOrigin": "-10vw 0"
         },
         "cssBudget": 2,
         "children": [
           {
             "id": "p0",
             "style": {},
-            "cssBudget": 1,
-            "children": null
+            "cssBudget": 1
           },
           {
             "id": "p1",
             "style": {},
-            "cssBudget": 0,
-            "children": null
+            "cssBudget": 0
           },
           {
             "id": "p2",
             "style": {},
-            "cssBudget": 0,
-            "children": null
+            "cssBudget": 0
           }
         ]
       },
@@ -123,7 +114,7 @@
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 + 5vw)"
         },
-        "children": null,
+
         "cssBudget": 0
       },
       {
@@ -133,7 +124,7 @@
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2)"
         },
-        "children": null,
+
         "cssBudget": 0
       },
       {
@@ -143,7 +134,7 @@
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 - 5vw)"
         },
-        "children": null,
+
         "cssBudget": 0
       }
     ],
@@ -173,8 +164,7 @@
               "position": "static",
               "display": "inline-block"
             },
-            "cssBudget": 1,
-            "children": null
+            "cssBudget": 1
           },
           {
             "id": "h0",
@@ -184,8 +174,7 @@
               "marginLeft": "2vw",
               "display": "inline-block"
             },
-            "cssBudget": 1,
-            "children": null
+            "cssBudget": 1
           }
         ]
       }
@@ -208,8 +197,7 @@
           "padding": "0",
           "top": "0"
         },
-        "cssBudget": 1,
-        "children": null
+        "cssBudget": 1
       },
       {
         "id": "h0",
@@ -218,8 +206,7 @@
           "left": "calc((100vw - 5vw) / 2 + 10vw)",
           "top": "20vw"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
     ],
     "completionMessage": {
@@ -251,16 +238,14 @@
               "margin": "0",
               "position": "absolute"
             },
-            "cssBudget": 1,
-            "children": null
+            "cssBudget": 1
           },
           {
             "id": "p1",
             "style": {
               "float": "right"
             },
-            "cssBudget": 0,
-            "children": null
+            "cssBudget": 0
           }
         ]
       },
@@ -271,8 +256,7 @@
           "top": "calc((100vh - 10vw) / 2 + 10vw)",
           "left": "calc((100vw - 10vw) / 2 + 25vw)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       },
       {
         "id": "h1",
@@ -281,13 +265,57 @@
           "top": "calc((100vh - 10vw) / 2 + 1vw)",
           "left": "calc((100vw - 10vw) / 2 + 35vw)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
     ],
     "completionMessage": {
       "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. I'm feeling generous; from now on, I'll let one of your friends free for each puzzle you solve. As a gesture of good faith:",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv"
     }
+  },
+  "7": {
+    "levelName": "figure of speech",
+    "elements": [
+      {
+        "id": "d0",
+        "style": {
+          "position": "absolute",
+          "top": "10vw",
+          "left": "5vw",
+          "width": "75vw",
+          "margin": "0",
+          "marginLeft": "0",
+          "padding": "0"
+        },
+        "cssBudget": 1,
+        "children": [
+          {
+            "id": "t0",
+            "style": {
+              "fontSize": "1.5vw"
+            },
+            "cssBudget": 1,
+            "text": "now i can taunt you from within the level itself!"
+          },
+          {
+            "id": "p0",
+            "style": {
+              "display": "inline-block",
+              "verticalAlign": "middle"
+            },
+            "cssBudget": 0
+          }
+        ]
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "top": "20vw",
+          "right": "5vw"
+        },
+        "cssBudget": 0
+      }
+    ]
   }
 }

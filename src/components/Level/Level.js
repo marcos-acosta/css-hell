@@ -83,7 +83,7 @@ export default function Level(props) {
         </>
       );
     } else {
-      const { id, style, children } = elementData;
+      const { id, style, children, text } = elementData;
       const { baseStyles } = interpretId(id);
       const elementStyles = { ...baseStyles, ...style };
       const combinedCss = {
@@ -103,6 +103,7 @@ export default function Level(props) {
           id={id}
           styles={combinedCss}
           ref={ref}
+          text={text}
           onClick={(e) => {
             e.stopPropagation();
             setSelectedElementInfo(completeElementData);

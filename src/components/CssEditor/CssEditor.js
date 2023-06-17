@@ -8,6 +8,7 @@ const ELEMENT_TYPE_TO_NAME = {
   [ELEMENT_TYPE.peg]: "PEG",
   [ELEMENT_TYPE.hole]: "HOLE",
   [ELEMENT_TYPE.div]: "DIV",
+  [ELEMENT_TYPE.text]: "TEXT",
 };
 
 const convertIdToTitle = (id) => {
