@@ -236,9 +236,9 @@
         "style": {
           "width": "8vw",
           "height": "8vw",
-          "position": "relative",
-          "marginTop": "calc((100vh - 10vw) / 2)",
-          "marginLeft": "calc((100vw - 10vw) / 2)",
+          "position": "absolute",
+          "top": "calc((100vh - 10vw) / 2)",
+          "left": "calc((100vw - 10vw) / 2)",
           "overflow": "hidden"
         },
         "cssBudget": 1,
@@ -253,6 +253,14 @@
             },
             "cssBudget": 1,
             "children": null
+          },
+          {
+            "id": "p1",
+            "style": {
+              "float": "right"
+            },
+            "cssBudget": 0,
+            "children": null
           }
         ]
       },
@@ -260,7 +268,17 @@
         "id": "h0",
         "style": {
           "position": "absolute",
-          "top": "calc((100vh - 10vw) / 2 + 15vw)",
+          "top": "calc((100vh - 10vw) / 2 + 10vw)",
+          "left": "calc((100vw - 10vw) / 2 + 25vw)"
+        },
+        "cssBudget": 0,
+        "children": null
+      },
+      {
+        "id": "h1",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 10vw) / 2 + 1vw)",
           "left": "calc((100vw - 10vw) / 2 + 25vw)"
         },
         "cssBudget": 0,
