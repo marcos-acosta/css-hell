@@ -5,7 +5,7 @@ import { LEVEL_DATA_PATH } from "../../util";
 import { useCookies } from "react-cookie";
 import MessageScreen from "../MessageScreen/MessageScreen";
 
-const _DEV_STARTING_LEVEL = null;
+const _DEV_STARTING_LEVEL = 6;
 
 export default function App() {
   const [cookies, setCookie] = useCookies(["checkpoint"]);
@@ -18,6 +18,7 @@ export default function App() {
   const [isRevisitingMessage, setIsRevisitingMessage] = useState(false);
 
   const loadGameData = () => {
+    setIsLoading(true);
     fetch(LEVEL_DATA_PATH)
       .then((r) => r.json())
       .then((data) => {
@@ -33,6 +34,7 @@ export default function App() {
   if (isLoading) {
     return;
   }
+
   const highestCompletedLevel = cookies.checkpoint
     ? parseInt(cookies.checkpoint)
     : 0;

@@ -225,7 +225,52 @@
     "completionMessage": {
       "message": "I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve. Regardless, I'm impressed by your creativity; not many C developers make it past that one. I believe comedy comes in twos, so don't worry about Mr. Astley; no tricks this time.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "Aw, wasn't that sweet? Rose-colored glasses are an amazing thing. Next!"
+      "postAudioMessage": "Aw, wasn't that sweet? Rose-colored glasses are an amazing thing. Alright, enough of that, more CSS!"
+    }
+  },
+  "6": {
+    "levelName": "breathing room",
+    "elements": [
+      {
+        "id": "d0",
+        "style": {
+          "width": "8vw",
+          "height": "8vw",
+          "position": "relative",
+          "marginTop": "calc((100vh - 10vw) / 2)",
+          "marginLeft": "calc((100vw - 10vw) / 2)",
+          "overflow": "hidden"
+        },
+        "cssBudget": 1,
+        "children": [
+          {
+            "id": "p0",
+            "style": {
+              "top": "0",
+              "left": "0",
+              "margin": "0",
+              "position": "absolute"
+            },
+            "cssBudget": 1,
+            "children": null
+          }
+        ]
+      },
+      {
+        "id": "h0",
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 10vw) / 2 + 15vw)",
+          "left": "calc((100vw - 10vw) / 2 + 25vw)"
+        },
+        "cssBudget": 0,
+        "children": null
+      }
+    ],
+    "completionMessage": {
+      "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. I'm feeling generous; from now on, I'll let one of your friends free for each puzzle you solve. As a gesture of good faith:",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "PLACEHOLDER TEXT"
     }
   }
 }
