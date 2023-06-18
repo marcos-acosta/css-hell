@@ -278,7 +278,7 @@
       "d0": {
         "style": {
           "position": "absolute",
-          "top": "10vw",
+          "top": "7vw",
           "left": "5vw",
           "width": "75vw",
           "margin": "0",
@@ -303,8 +303,8 @@
       "h0": {
         "style": {
           "position": "absolute",
-          "top": "42vw",
-          "left": "65vw"
+          "top": "41vw",
+          "left": "67vw"
         },
         "cssBudget": 0
       }
