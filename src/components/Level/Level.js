@@ -39,6 +39,28 @@ const parseAllCustomCss = (customCss) => {
   );
 };
 
+const combineStylesById = (elementStyles1, elementStyles2) => {
+  const idsUnion = [
+    ...new Set([
+      ...Object.keys(elementStyles1),
+      ...Object.keys(elementStyles2),
+    ]),
+  ];
+  return Object.fromEntries(
+    idsUnion.map((id) => [id, { ...elementStyles1[id], ...elementStyles2[id] }])
+  );
+};
+
+const getBaseStylesById = (ids) => {
+  return Object.fromEntries(ids.map((id) => [id, interpretId(id).baseStyles]));
+};
+
+const extractStylesFromElementData = (elementData) => {
+  return Object.fromEntries(
+    Object.entries(elementData).map(([id, data]) => [id, data.style])
+  );
+};
+
 const formatNerfedPropertyNames = () => {
   return NERFED_PROPERTIES.map((propertyName, i) => (
     <span key={i}>
@@ -162,7 +184,7 @@ export default function Level(props) {
       const [noNerfedStyles, wasNerfedStyles] =
         filterNerfedProperties(parsedCssForId);
       const [noConflictingStyles, wasConflictingStyles] =
-        filterConflictingProperties(noNerfedStyles, elementData[id].style);
+        filterConflictingProperties(noNerfedStyles, elementData[id]);
       if (wasNerfedStyles) {
         anyNerfed = true;
       }
@@ -200,10 +222,14 @@ export default function Level(props) {
     };
   }, [triggerRerender]);
 
+  const ids = Object.keys(props.levelData.elementData);
   const parsedCustomCss = parseAllCustomCss(customCss);
+  const baseStyles = getBaseStylesById(ids);
+  const levelStyles = extractStylesFromElementData(props.levelData.elementData);
+  const presetStyles = combineStylesById(baseStyles, levelStyles);
   const [cleanedCustomCss, anyNerfed, anyConflicting] = cleanCustomCss(
     parsedCustomCss,
-    props.levelData.elementData
+    presetStyles
   );
 
   return (
