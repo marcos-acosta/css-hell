@@ -47,11 +47,9 @@
         "cssBudget": 2
       },
       "p0": {
-        "style": {},
         "cssBudget": 0
       },
       "p1": {
-        "style": {},
         "cssBudget": 0
       },
       "h0": {
@@ -99,15 +97,12 @@
         "cssBudget": 2
       },
       "p0": {
-        "style": {},
         "cssBudget": 1
       },
       "p1": {
-        "style": {},
         "cssBudget": 0
       },
       "p2": {
-        "style": {},
         "cssBudget": 0
       },
       "h0": {
@@ -138,7 +133,8 @@
     "completionMessage": {
       "message": "Excellent. I hope you enjoyed my little transform-origin trick. I must admit I didn't expect you to get even this far, but I am a man of my word. Here you go- make sure to listen to the whole thing.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
-      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. I promise I'm not laughing, this is very serious business."
+      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. I promise I'm not laughing, this is very serious business.",
+      "showDuringListen": true
     }
   },
   "4": {
@@ -179,7 +175,8 @@
     "completionMessage": {
       "message": "Spectacular! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. While I would love nothing more than to rick roll you a second time, we criminal masterminds have standards. Perhaps you recognize this voice?",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
-      "postAudioMessage": "HAHAHAHAHA! It was even funnier the second time! You should have seen your face! Go ahead with the next level while I keep replaying that moment in my head."
+      "postAudioMessage": "HAHAHAHAHA! It was even funnier the second time! You should have seen your face! Go ahead with the next level while I keep replaying that moment in my head.",
+      "showDuringListen": "true"
     }
   },
   "5": {
@@ -306,8 +303,8 @@
       "h0": {
         "style": {
           "position": "absolute",
-          "top": "38vw",
-          "left": "60vw"
+          "top": "42vw",
+          "left": "65vw"
         },
         "cssBudget": 0
       }
@@ -315,6 +312,73 @@
     "completionMessage": {
       "message": "Why, it seems you have literally used my words against me! Hahaha! Not quite as funny as the second Rick Roll, but we UI designers must take delight in what we can. Anyway, here's your audio:",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv"
+    }
+  },
+  "8": {
+    "levelName": "hard choices",
+    "elements": [
+      {
+        "id": "d0",
+        "children": [
+          { "id": "d1", "children": [{ "id": "t0" }, { "id": "p0" }] },
+          { "id": "d2", "children": [{ "id": "t1" }, { "id": "p1" }] }
+        ]
+      },
+      { "id": "h0" },
+      { "id": "h1" }
+    ],
+    "elementData": {
+      "d0": {
+        "style": {
+          "padding": "1vw",
+          "width": "50vw",
+          "top": "10vw",
+          "position": "absolute",
+          "left": "10vw",
+          "margin": "0",
+          "rotate": "0",
+          "fontSize": "15px",
+          "whiteSpace": "nowrap"
+        },
+        "cssBudget": 1
+      },
+      "d1": {
+        "style": { "marginBottom": "1vw", "padding": "0.5vw" },
+        "cssBudget": 0
+      },
+      "d2": {
+        "style": { "padding": "0.5vw", "fontSize": "1vw" },
+        "cssBudget": 0
+      },
+      "t0": {
+        "text": "i suppose a brief villain monologue wouldn't hurt",
+        "cssBudget": 0
+      },
+      "p0": {
+        "style": { "display": "inline-block", "verticalAlign": "middle" },
+        "cssBudget": 0
+      },
+      "t1": {
+        "text": "you see, it all began with my father aaaand you're not listening",
+        "cssBudget": 0
+      },
+      "p1": {
+        "style": { "display": "inline-block", "verticalAlign": "middle" },
+        "cssBudget": 0
+      },
+      "h0": {
+        "style": { "position": "absolute", "top": "13.5vw", "left": "80vw" },
+        "cssBudget": 0
+      },
+      "h1": {
+        "style": { "position": "absolute", "top": "22.5vw", "left": "80vw" },
+        "cssBudget": 0
+      }
+    },
+    "completionMessage": {
+      "message": "Ah, I knew I should have saved my monologue for later. I guess I just have a lot of unresolved trauma to unpack. You see, it all started with my father; you could say I didn't exactly *align* with his expectations for an ideal son...",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "...and so, if I wanted to save the only precious thing in my life, my daughter, I had no choice but to become the Justifier. Do you see now? Why I had to do it? Oh, you weren't listening again- that's alright. Just go on to the next level."
     }
   }
 }

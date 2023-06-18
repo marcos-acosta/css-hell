@@ -28,4 +28,8 @@ _Alternate solution: Apply `resize: both` to DIV 1, then resize the div to be ab
 
 ### Level 7: figure of speech
 
-Assigning `word-spacing: 50vw` to TEXT 1 and `rotate: 45deg` to DIV 1 will do the trick.
+Assigning `writing-mode: vertical-rl` to DIV 1 and `word-spacing: 20vw` to TEXT 1 will do the trick.
+
+### Level 8: hard choices
+
+Assign `word-spacing` to DIV 1 such that PEG B overlaps with HOLE B. Then, resize the window such that PEG A overlaps with HOLE A (TEXT 1 has a fixed font size, whereas TEXT 2 is sized relative to the viewport width).
