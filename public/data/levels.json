@@ -1,28 +1,25 @@
 {
   "1": {
     "levelName": "round peg, round hole",
-    "elements": [
-      {
-        "id": "p0",
+    "elements": [{ "id": "p0" }, { "id": "h0" }],
+    "elementData": {
+      "p0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw) / 2)",
           "left": "calc(100vw / 3)"
         },
-        "cssBudget": 1,
-        "children": null
+        "cssBudget": 1
       },
-      {
-        "id": "h0",
+      "h0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw) / 2)",
           "right": "calc(100vw / 3)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
-    ],
+    },
     "completionMessage": {
       "message": "Well done, Anshul. Even a code *bonobo* could have figured that one out. If you want to hear from your friends again, though, you'd better get warmed up.",
       "audioFileSource": null
@@ -33,6 +30,13 @@
     "elements": [
       {
         "id": "d0",
+        "children": [{ "id": "p0" }, { "id": "p1" }]
+      },
+      { "id": "h0" },
+      { "id": "h1" }
+    ],
+    "elementData": {
+      "d0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 10vw - 2vw) / 2)",
@@ -40,113 +44,97 @@
           "display": "flex",
           "flexDirection": "column"
         },
-        "cssBudget": 2,
-        "children": [
-          {
-            "id": "p0",
-            "style": {},
-            "cssBudget": 0,
-            "children": null
-          },
-          {
-            "id": "p1",
-            "style": {},
-            "cssBudget": 0,
-            "children": null
-          }
-        ]
+        "cssBudget": 2
       },
-      {
-        "id": "h0",
+      "p0": {
+        "style": {},
+        "cssBudget": 0
+      },
+      "p1": {
+        "style": {},
+        "cssBudget": 0
+      },
+      "h0": {
         "style": {
           "position": "absolute",
           "right": "calc(100vw / 3)",
           "top": "calc((100vh - 10vw) / 2)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       },
-      {
-        "id": "h1",
+      "h1": {
         "style": {
           "position": "absolute",
           "right": "calc((100vw / 3) + 11vw)",
           "top": "calc((100vh - 10vw) / 2 + 5vw)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
-    ],
+    },
     "completionMessage": {
       "message": "Very impressive for a guy who gets butterflies in his stomach when he sees a memory address. Tell you what: solve one more, and I'll let you hear from one of your friends. P.S. Watch out for red herrings.",
       "audioFileSource": null
     }
   },
   "3": {
-    "levelName": "incompatible",
+    "levelName": "feels like we only go backwards",
     "elements": [
       {
         "id": "d0",
+        "children": [{ "id": "p0" }, { "id": "p1" }, { "id": "p2" }]
+      },
+      { "id": "h0" },
+      { "id": "h1" },
+      { "id": "h2" }
+    ],
+    "elementData": {
+      "d0": {
         "style": {
           "position": "absolute",
           "display": "flex",
           "top": "calc((100vh - 5vw - 2vw) / 3)",
           "left": "calc((100vw - 15vw - 2vw) / 2)",
-          "transform-origin": "-10vw 0"
+          "transformOrigin": "-10vw 0"
         },
-        "cssBudget": 2,
-        "children": [
-          {
-            "id": "p0",
-            "style": {},
-            "cssBudget": 1,
-            "children": null
-          },
-          {
-            "id": "p1",
-            "style": {},
-            "cssBudget": 0,
-            "children": null
-          },
-          {
-            "id": "p2",
-            "style": {},
-            "cssBudget": 0,
-            "children": null
-          }
-        ]
+        "cssBudget": 2
       },
-      {
-        "id": "h0",
+      "p0": {
+        "style": {},
+        "cssBudget": 1
+      },
+      "p1": {
+        "style": {},
+        "cssBudget": 0
+      },
+      "p2": {
+        "style": {},
+        "cssBudget": 0
+      },
+      "h0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 + 5vw)"
         },
-        "children": null,
         "cssBudget": 0
       },
-      {
-        "id": "h1",
+      "h1": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2)"
         },
-        "children": null,
         "cssBudget": 0
       },
-      {
-        "id": "h2",
+      "h2": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 - 5vw)"
         },
-        "children": null,
         "cssBudget": 0
       }
-    ],
+    },
     "completionMessage": {
       "message": "Excellent. I hope you enjoyed my little transform-origin trick. I must admit I didn't expect you to get even this far, but I am a man of my word. Here you go- make sure to listen to the whole thing.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
@@ -158,6 +146,11 @@
     "elements": [
       {
         "id": "d0",
+        "children": [{ "id": "p0" }, { "id": "h0" }]
+      }
+    ],
+    "elementData": {
+      "d0": {
         "style": {
           "position": "absolute",
           "display": "flex",
@@ -165,31 +158,25 @@
           "top": "calc((100vh - 5vw - 2vw) / 2)",
           "left": "calc((100vw - 12vw - 2vw) / 2)"
         },
-        "cssBudget": 0,
-        "children": [
-          {
-            "id": "p0",
-            "style": {
-              "position": "static",
-              "display": "inline-block"
-            },
-            "cssBudget": 1,
-            "children": null
-          },
-          {
-            "id": "h0",
-            "style": {
-              "position": "static",
-              "margin": "0",
-              "marginLeft": "2vw",
-              "display": "inline-block"
-            },
-            "cssBudget": 1,
-            "children": null
-          }
-        ]
+        "cssBudget": 0
+      },
+      "p0": {
+        "style": {
+          "position": "static",
+          "display": "inline-block"
+        },
+        "cssBudget": 1
+      },
+      "h0": {
+        "style": {
+          "position": "static",
+          "margin": "0",
+          "marginLeft": "2vw",
+          "display": "inline-block"
+        },
+        "cssBudget": 1
       }
-    ],
+    },
     "completionMessage": {
       "message": "Spectacular! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. While I would love nothing more than to rick roll you a second time, we criminal masterminds have standards. Perhaps you recognize this voice?",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
@@ -198,9 +185,9 @@
   },
   "5": {
     "levelName": "the scroll of truth",
-    "elements": [
-      {
-        "id": "p0",
+    "elements": [{ "id": "p0" }, { "id": "h0" }],
+    "elementData": {
+      "p0": {
         "style": {
           "margin": "0",
           "marginLeft": "calc((100vw - 5vw) / 2)",
@@ -208,20 +195,17 @@
           "padding": "0",
           "top": "0"
         },
-        "cssBudget": 1,
-        "children": null
+        "cssBudget": 1
       },
-      {
-        "id": "h0",
+      "h0": {
         "style": {
           "position": "absolute",
           "left": "calc((100vw - 5vw) / 2 + 10vw)",
           "top": "20vw"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
-    ],
+    },
     "completionMessage": {
       "message": "I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve. Regardless, I'm impressed by your creativity; not many C developers make it past that one. I believe comedy comes in twos, so don't worry about Mr. Astley; no tricks this time.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
@@ -233,6 +217,13 @@
     "elements": [
       {
         "id": "d0",
+        "children": [{ "id": "p0" }, { "id": "p1" }]
+      },
+      { "id": "h0" },
+      { "id": "h1" }
+    ],
+    "elementData": {
+      "d0": {
         "style": {
           "width": "8vw",
           "height": "8vw",
@@ -241,54 +232,89 @@
           "left": "calc((100vw - 10vw) / 2)",
           "overflow": "hidden"
         },
-        "cssBudget": 1,
-        "children": [
-          {
-            "id": "p0",
-            "style": {
-              "top": "0",
-              "left": "0",
-              "margin": "0",
-              "position": "absolute"
-            },
-            "cssBudget": 1,
-            "children": null
-          },
-          {
-            "id": "p1",
-            "style": {
-              "float": "right"
-            },
-            "cssBudget": 0,
-            "children": null
-          }
-        ]
+        "cssBudget": 1
       },
-      {
-        "id": "h0",
+      "p0": {
+        "style": {
+          "top": "0",
+          "left": "0",
+          "margin": "0",
+          "position": "absolute"
+        },
+        "cssBudget": 1
+      },
+      "p1": {
+        "style": {
+          "float": "right"
+        },
+        "cssBudget": 0
+      },
+      "h0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 10vw) / 2 + 10vw)",
           "left": "calc((100vw - 10vw) / 2 + 25vw)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       },
-      {
-        "id": "h1",
+      "h1": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 10vw) / 2 + 1vw)",
           "left": "calc((100vw - 10vw) / 2 + 35vw)"
         },
-        "cssBudget": 0,
-        "children": null
+        "cssBudget": 0
       }
-    ],
+    },
     "completionMessage": {
       "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. I'm feeling generous; from now on, I'll let one of your friends free for each puzzle you solve. As a gesture of good faith:",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "PLACEHOLDER TEXT"
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv"
+    }
+  },
+  "7": {
+    "levelName": "figure of speech",
+    "elements": [
+      {
+        "id": "d0",
+        "children": [{ "id": "t0" }, { "id": "p0" }]
+      },
+      { "id": "h0" }
+    ],
+    "elementData": {
+      "d0": {
+        "style": {
+          "position": "absolute",
+          "top": "10vw",
+          "left": "5vw",
+          "width": "75vw",
+          "margin": "0",
+          "marginLeft": "0",
+          "padding": "0"
+        },
+        "cssBudget": 1
+      },
+      "t0": {
+        "style": {
+          "fontSize": "1.5vw"
+        },
+        "cssBudget": 1,
+        "text": "now i can taunt you from within the level itself!"
+      },
+      "p0": {
+        "style": {
+          "display": "inline-block",
+          "verticalAlign": "middle"
+        },
+        "cssBudget": 0
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "top": "20vw",
+          "right": "5vw"
+        },
+        "cssBudget": 0
+      }
     }
   }
 }

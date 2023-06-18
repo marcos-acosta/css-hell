@@ -46,12 +46,12 @@ export default function App() {
       secure: true,
     });
 
-  const increaseHighestCompletedLevel = () => {
+  const clearThisLevel = () => {
     setHighestCompletedLevel(selectedLevel);
   };
 
   const moveToNextLevel = () => {
-    increaseHighestCompletedLevel();
+    clearThisLevel();
     setHighestCompletedLevel(selectedLevel);
     setSelectedLevel(selectedLevel + 1);
     setIsShowingMessage(false);
@@ -94,7 +94,7 @@ export default function App() {
         goHome={() => setSelectedLevel(null)}
         reset={loadGameData}
         handleNextButton={handleNextButton}
-        increaseHighestCompletedLevel={increaseHighestCompletedLevel}
+        clearThisLevel={clearThisLevel}
       />
     )
   ) : (

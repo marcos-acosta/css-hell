@@ -8,7 +8,7 @@ Assign `margin-left` (or `padding-left`) to PEG A.
 
 Assign `margin-left` and `rotate: 45deg` to DIV 1.
 
-### Level 3: incompatible
+### Level 3: feels like we only go backwards
 
 Assign `margin-top` and `flex-direction: row-reverse` to DIV 1.  
 _Alternate Albany Solution: Assign `overflow: hidden` and `resize: both` to DIV 1, then resize to a slightly larger rectangle. Then, delete both properties and add `writing-mode: vertical-rl` and, with a bit of luck, there is some `rotate` value for which all pegs and corresponding holes overlap._
@@ -21,7 +21,7 @@ Assign `order: -1` to HOLE A so it sits to the left of PEG A. Then, give PEG A n
 
 Assign `position: fixed` to PEG A. Then, push the CSS Editor into the bottom-right corner to generate scrolling room. Scroll PEG A into HOLE A.
 
-### Level 6: direct manipulation
+### Level 6: breathing room
 
 Assign large `padding` to PEG A. Then, assign `resize: both` to DIV 1 and expand it such that PEG A overlaps with HOLE A and PEG B overlaps with HOLE B.  
 _Alternate solution: Apply `resize: both` to DIV 1, then resize the div to be about 50% bigger. Then, delete the `resize` property, and add `margin-left` such that PEG B overlaps with HOLE B. Then, apply `margin-top` to PEG A so it overlaps with HOLE A._

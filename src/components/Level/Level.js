@@ -6,46 +6,37 @@ import LevelHeader from "../LevelHeader/LevelHeader";
 import {
   NERFED_PROPERTIES,
   combineClassNames,
+  filterConflictingProperties,
+  filterNerfedProperties,
   getIndexFromId,
   interpretId,
   isHole,
+  preparePropertyName,
+  preparePropertyValue,
   testForOverlapRandom,
 } from "../../util";
 import { uid } from "uid/secure";
-
-const cssStyleToJsxStyle = (propertyName) => {
-  return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
-};
-
-const sanitizePropertyName = (propertyName) => {
-  return propertyName.replace(/[0-9-]/g, "");
-};
-
-const preparePropertyName = (propertyName) => {
-  return sanitizePropertyName(cssStyleToJsxStyle(propertyName));
-};
-
-const preparePropertyValue = (propertyValue) => {
-  return propertyValue.replace(/;/g, "");
-};
 
 const parseCustomCss = (customCss) => {
   return customCss
     ? Object.fromEntries(
         customCss
-          .map((cssLine) =>
-            NERFED_PROPERTIES.includes(
-              preparePropertyName(cssLine.propertyName)
-            )
-              ? []
-              : [
-                  preparePropertyName(cssLine.propertyName),
-                  preparePropertyValue(cssLine.propertyValue),
-                ]
-          )
+          .map((cssLine) => [
+            preparePropertyName(cssLine.propertyName),
+            preparePropertyValue(cssLine.propertyValue),
+          ])
           .filter((kvPair) => kvPair.length)
       )
     : {};
+};
+
+const parseAllCustomCss = (customCss) => {
+  return Object.fromEntries(
+    Object.entries(customCss).map(([elementId, cssData]) => [
+      elementId,
+      parseCustomCss(cssData),
+    ])
+  );
 };
 
 const formatNerfedPropertyNames = () => {
@@ -64,35 +55,37 @@ export default function Level(props) {
   const [selectedElementInfo, setSelectedElementInfo] = useState(null);
   const [isWinning, setIsWinning] = useState(false);
   const [customCss, setCustomCss] = useState({});
-  const [showNerfMessage, setShowNerfMessage] = useState(false);
   const setRerenderState = useState(false)[1];
   const elementRefs = useRef([]);
 
   const elementsShallowCopy = elementRefs.current.map((x) => x);
-  const { increaseHighestCompletedLevel } = props;
+  const { clearThisLevel } = props;
 
-  const buildElements = (elementData, customCss, elementRefs) => {
-    if (!elementData) {
+  const buildElements = (elements, elementData, customCss, elementRefs) => {
+    if (!elements) {
       return <></>;
-    } else if (Array.isArray(elementData)) {
+    } else if (Array.isArray(elements)) {
       return (
         <>
-          {elementData.map((element) =>
-            buildElements(element, customCss, elementRefs)
+          {elements.map((element) =>
+            buildElements(element, elementData, customCss, elementRefs)
           )}
         </>
       );
     } else {
-      const { id, style, children } = elementData;
+      const element = elements;
+      const { id, children } = element;
+      const { style, text } = elementData[id];
       const { baseStyles } = interpretId(id);
       const elementStyles = { ...baseStyles, ...style };
       const combinedCss = {
-        ...parseCustomCss(customCss[id]),
+        ...customCss[id],
         ...elementStyles,
       };
       const completeElementData = {
-        ...elementData,
+        ...elementData[id],
         style: elementStyles,
+        id: id,
       };
       const ref = isHole(id)
         ? (el) => (elementRefs.current[getIndexFromId(id)] = el)
@@ -103,12 +96,13 @@ export default function Level(props) {
           id={id}
           styles={combinedCss}
           ref={ref}
+          text={text}
           onClick={(e) => {
             e.stopPropagation();
             setSelectedElementInfo(completeElementData);
           }}
         >
-          {buildElements(children, customCss, elementRefs)}
+          {buildElements(children, elementData, customCss, elementRefs)}
         </Controllable>
       );
     }
@@ -159,32 +153,41 @@ export default function Level(props) {
     });
   };
 
+  const cleanCustomCss = (parsedCss, elementData) => {
+    let anyNerfed = false;
+    let anyConflicting = false;
+    const cleanedStyles = {};
+    for (const id in parsedCss) {
+      const parsedCssForId = id in parsedCss ? parsedCss[id] : {};
+      const [noNerfedStyles, wasNerfedStyles] =
+        filterNerfedProperties(parsedCssForId);
+      const [noConflictingStyles, wasConflictingStyles] =
+        filterConflictingProperties(noNerfedStyles, elementData[id].style);
+      if (wasNerfedStyles) {
+        anyNerfed = true;
+      }
+      if (wasConflictingStyles) {
+        anyConflicting = true;
+      }
+      cleanedStyles[id] = noConflictingStyles;
+    }
+    return [cleanedStyles, anyNerfed, anyConflicting];
+  };
+
   useEffect(() => {
     const areAllOverlapping = elementRefs.current
       .map((element) => testForOverlapRandom(element))
       .every(Boolean);
     setIsWinning(areAllOverlapping);
     if (areAllOverlapping) {
-      increaseHighestCompletedLevel();
+      clearThisLevel();
     }
-  }, [elementsShallowCopy, increaseHighestCompletedLevel]);
+  }, [elementsShallowCopy, clearThisLevel]);
 
   useEffect(() => {
     setCustomCss({});
     setSelectedElementInfo(null);
   }, [props.levelData]);
-
-  useEffect(() => {
-    for (const customCssEntries of Object.values(customCss)) {
-      for (const cssEntry of customCssEntries) {
-        if (NERFED_PROPERTIES.includes(cssEntry.propertyName)) {
-          setShowNerfMessage(true);
-          return;
-        }
-      }
-    }
-    setShowNerfMessage(false);
-  }, [customCss]);
 
   useEffect(() => {
     RESIZE_EVENTS.forEach((eventName) =>
@@ -197,6 +200,12 @@ export default function Level(props) {
     };
   }, [triggerRerender]);
 
+  const parsedCustomCss = parseAllCustomCss(customCss);
+  const [cleanedCustomCss, anyNerfed, anyConflicting] = cleanCustomCss(
+    parsedCustomCss,
+    props.levelData.elementData
+  );
+
   return (
     <>
       <div
@@ -205,7 +214,12 @@ export default function Level(props) {
           isWinning && styles.devWinCondition
         )}
       >
-        {buildElements(props.levelData.elements, customCss, elementRefs)}
+        {buildElements(
+          props.levelData.elements,
+          props.levelData.elementData,
+          cleanedCustomCss,
+          elementRefs
+        )}
       </div>
       {isWinning && (
         <button
@@ -238,10 +252,19 @@ export default function Level(props) {
         isWinning={isWinning}
         closeCssEditor={() => setSelectedElementInfo(null)}
       />
-      {showNerfMessage && (
+      {(anyNerfed || anyConflicting) && (
         <div className={styles.nerfMessage}>
-          Nice thinking. Unfortuantely for you,{" "}
-          {FORMATTED_NERFED_PROPERTY_NAMES} are forbidden.
+          {anyNerfed ? (
+            <>
+              Nice thinking. Unfortuantely for you,{" "}
+              {FORMATTED_NERFED_PROPERTY_NAMES} are forbidden.
+            </>
+          ) : (
+            <>
+              It's bad practice to mix shorthand and non-shorthand properties.
+              And I don't like bad practice.
+            </>
+          )}
         </div>
       )}
     </>
