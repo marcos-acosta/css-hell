@@ -5,7 +5,7 @@ import { LEVEL_DATA_PATH } from "../../util";
 import { useCookies } from "react-cookie";
 import MessageScreen from "../MessageScreen/MessageScreen";
 
-const _DEV_STARTING_LEVEL = 7;
+const _DEV_STARTING_LEVEL = null;
 
 export default function App() {
   const [cookies, setCookie] = useCookies(["checkpoint"]);
@@ -46,12 +46,12 @@ export default function App() {
       secure: true,
     });
 
-  const increaseHighestCompletedLevel = () => {
+  const clearThisLevel = () => {
     setHighestCompletedLevel(selectedLevel);
   };
 
   const moveToNextLevel = () => {
-    increaseHighestCompletedLevel();
+    clearThisLevel();
     setHighestCompletedLevel(selectedLevel);
     setSelectedLevel(selectedLevel + 1);
     setIsShowingMessage(false);
@@ -94,7 +94,7 @@ export default function App() {
         goHome={() => setSelectedLevel(null)}
         reset={loadGameData}
         handleNextButton={handleNextButton}
-        increaseHighestCompletedLevel={increaseHighestCompletedLevel}
+        clearThisLevel={clearThisLevel}
       />
     )
   ) : (

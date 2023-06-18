@@ -69,21 +69,23 @@ export default function Level(props) {
   const elementRefs = useRef([]);
 
   const elementsShallowCopy = elementRefs.current.map((x) => x);
-  const { increaseHighestCompletedLevel } = props;
+  const { clearThisLevel } = props;
 
-  const buildElements = (elementData, customCss, elementRefs) => {
-    if (!elementData) {
+  const buildElements = (elements, elementData, customCss, elementRefs) => {
+    if (!elements) {
       return <></>;
-    } else if (Array.isArray(elementData)) {
+    } else if (Array.isArray(elements)) {
       return (
         <>
-          {elementData.map((element) =>
-            buildElements(element, customCss, elementRefs)
+          {elements.map((element) =>
+            buildElements(element, elementData, customCss, elementRefs)
           )}
         </>
       );
     } else {
-      const { id, style, children, text } = elementData;
+      const element = elements;
+      const { id, children } = element;
+      const { style, text } = elementData[id];
       const { baseStyles } = interpretId(id);
       const elementStyles = { ...baseStyles, ...style };
       const combinedCss = {
@@ -91,8 +93,9 @@ export default function Level(props) {
         ...elementStyles,
       };
       const completeElementData = {
-        ...elementData,
+        ...elementData[id],
         style: elementStyles,
+        id: id,
       };
       const ref = isHole(id)
         ? (el) => (elementRefs.current[getIndexFromId(id)] = el)
@@ -109,7 +112,7 @@ export default function Level(props) {
             setSelectedElementInfo(completeElementData);
           }}
         >
-          {buildElements(children, customCss, elementRefs)}
+          {buildElements(children, elementData, customCss, elementRefs)}
         </Controllable>
       );
     }
@@ -166,9 +169,9 @@ export default function Level(props) {
       .every(Boolean);
     setIsWinning(areAllOverlapping);
     if (areAllOverlapping) {
-      increaseHighestCompletedLevel();
+      clearThisLevel();
     }
-  }, [elementsShallowCopy, increaseHighestCompletedLevel]);
+  }, [elementsShallowCopy, clearThisLevel]);
 
   useEffect(() => {
     setCustomCss({});
@@ -206,7 +209,12 @@ export default function Level(props) {
           isWinning && styles.devWinCondition
         )}
       >
-        {buildElements(props.levelData.elements, customCss, elementRefs)}
+        {buildElements(
+          props.levelData.elements,
+          props.levelData.elementData,
+          customCss,
+          elementRefs
+        )}
       </div>
       {isWinning && (
         <button
