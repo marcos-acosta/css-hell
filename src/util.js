@@ -249,4 +249,5 @@ export {
   jsxPropertyToCssProperty,
   filterConflictingProperties,
   filterNerfedProperties,
+  doesPropertyNameConflictWithStyles,
 };

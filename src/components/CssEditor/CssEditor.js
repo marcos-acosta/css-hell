@@ -6,6 +6,8 @@ import {
   ELEMENT_TYPE,
   combineClassNames,
   jsxPropertyToCssProperty,
+  NERFED_PROPERTIES,
+  doesPropertyNameConflictWithStyles,
 } from "../../util";
 import CustomCssEntry from "./CustomCssEntry";
 
@@ -97,17 +99,26 @@ export default function CssEditor(props) {
         </div>
         <div className={styles.customCssContainer}>
           {customCss.length ? (
-            customCss.map((cssElement) => (
-              <CustomCssEntry
-                key={cssElement.styleId}
-                propertyName={cssElement.propertyName}
-                propertyValue={cssElement.propertyValue}
-                id={cssElement.styleId}
-                changeCustomCss={changeCustomCss}
-                deleteCustomCss={deleteCustomCss}
-                isWinning={props.isWinning}
-              />
-            ))
+            customCss.map((cssElement) => {
+              const error =
+                NERFED_PROPERTIES.includes(cssElement.propertyName) ||
+                doesPropertyNameConflictWithStyles(
+                  cssElement.propertyName,
+                  style
+                );
+              return (
+                <CustomCssEntry
+                  key={cssElement.styleId}
+                  propertyName={cssElement.propertyName}
+                  propertyValue={cssElement.propertyValue}
+                  id={cssElement.styleId}
+                  changeCustomCss={changeCustomCss}
+                  deleteCustomCss={deleteCustomCss}
+                  isWinning={props.isWinning}
+                  error={error}
+                />
+              );
+            })
           ) : (
             <div className={styles.noCustomCss}>no added css</div>
           )}

@@ -25,3 +25,7 @@ Assign `position: fixed` to PEG A. Then, push the CSS Editor into the bottom-rig
 
 Assign large `padding` to PEG A. Then, assign `resize: both` to DIV 1 and expand it such that PEG A overlaps with HOLE A and PEG B overlaps with HOLE B.  
 _Alternate solution: Apply `resize: both` to DIV 1, then resize the div to be about 50% bigger. Then, delete the `resize` property, and add `margin-left` such that PEG B overlaps with HOLE B. Then, apply `margin-top` to PEG A so it overlaps with HOLE A._
+
+### Level 7: figure of speech
+
+Assigning `word-spacing: 50vw` to TEXT 1 and `rotate: 45deg` to DIV 1 will do the trick.

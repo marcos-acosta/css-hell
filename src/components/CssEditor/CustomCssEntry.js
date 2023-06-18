@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./CssEditor.module.css";
-import { NERFED_PROPERTIES, combineClassNames } from "../../util";
+import { combineClassNames } from "../../util";
 
 export default function CustomCssEntry(props) {
   return (
@@ -24,7 +24,7 @@ export default function CustomCssEntry(props) {
             styles.cssInput,
             styles.propertyNameInput,
             props.isWinning && styles.whiteInputUnderline,
-            NERFED_PROPERTIES.includes(props.propertyName) && styles.error
+            props.error && styles.error
           )}
           value={props.propertyName}
           onChange={(e) =>
