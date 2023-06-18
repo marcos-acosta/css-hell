@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./CssEditor.module.css";
 import Draggable from "react-draggable";
-import { interpretId, ELEMENT_TYPE, combineClassNames } from "../../util";
+import {
+  interpretId,
+  ELEMENT_TYPE,
+  combineClassNames,
+  jsxPropertyToCssProperty,
+} from "../../util";
 import CustomCssEntry from "./CustomCssEntry";
 
 const ELEMENT_TYPE_TO_NAME = {
@@ -15,10 +20,6 @@ const convertIdToTitle = (id) => {
   const { elementType, letter, index } = interpretId(id);
   const displayName = letter ? letter : index + 1;
   return `${ELEMENT_TYPE_TO_NAME[elementType]} ${displayName}`;
-};
-
-const jsxPropertyToCssProperty = (propertyName) => {
-  return propertyName.replace(/(\w)([A-Z])/, "$1-$2").toLowerCase();
 };
 
 export default function CssEditor(props) {

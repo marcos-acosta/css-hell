@@ -8,12 +8,71 @@ const ELEMENT_TYPE = {
 const ELEMENTS_WITH_LETTERS = [ELEMENT_TYPE.peg, ELEMENT_TYPE.hole];
 const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "##44FFD2"];
 const NERFED_PROPERTIES = [
+  "animation",
   "offset",
   "perspective",
   "scale",
   "transform",
   "translate",
 ];
+const STYLE_CONFLICTS = {
+  background: new Set([
+    "backgroundAttachment",
+    "backgroundClip",
+    "backgroundColor",
+    "backgroundImage",
+    "backgroundOrigin",
+    "backgroundPosition",
+    "backgroundRepeat",
+    "backgroundSize",
+  ]),
+  border: new Set(["borderWidth", "borderStyle", "borderColor"]),
+  container: new Set(["containerName", "containerType"]),
+  flex: new Set(["flexGrow", "flexShrink", "flexBasis"]),
+  font: new Set([
+    "fontFamily",
+    "fontSize",
+    "fontStretch",
+    "fontStyle",
+    "fontVariant",
+    "fontWeight",
+    "lineHeight",
+  ]),
+  grid: new Set([
+    "gridAutoColumns",
+    "gridAutoFlow",
+    "gridAutoRows",
+    "gridTemplateAreas",
+    "gridTemplateColumns",
+    "gridTemplateRows",
+  ]),
+  inset: new Set(["top", "right", "bottom", "left"]),
+  margin: new Set(["marginTop", "marginRight", "marginBottom", "marginLeft"]),
+  mask: new Set([
+    "maskClip",
+    "maskComposite",
+    "maskImage",
+    "maskMode",
+    "maskOrigin",
+    "maskPosition",
+    "maskRepeat",
+    "maskSize",
+  ]),
+  outline: new Set(["outlineColor", "outlineStyle", "outlineWidth"]),
+  overflow: new Set(["overflowX", "overflowY"]),
+  padding: new Set([
+    "paddingTop",
+    "paddingRight",
+    "paddingBottom",
+    "paddingLeft",
+  ]),
+  transition: new Set([
+    "transitionDelay",
+    "transitionDuration",
+    "transitionProperty",
+    "transitionTimingFunction",
+  ]),
+};
 
 function combineClassNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -87,7 +146,7 @@ function getBaseStyles(elementType, index) {
       cursor: "pointer",
       borderRadius: "50%",
     };
-  } else if (elementType == ELEMENT_TYPE.hole) {
+  } else if (elementType === ELEMENT_TYPE.hole) {
     return {
       height: "4.5vw",
       width: "4.5vw",
@@ -107,6 +166,75 @@ function getBaseStyles(elementType, index) {
   }
 }
 
+function cssStyleToJsxStyle(propertyName) {
+  return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
+}
+
+function sanitizePropertyName(propertyName) {
+  return propertyName.replace(/[0-9-]/g, "");
+}
+
+function preparePropertyName(propertyName) {
+  return sanitizePropertyName(cssStyleToJsxStyle(propertyName));
+}
+
+function preparePropertyValue(propertyValue) {
+  return propertyValue.replace(/;/g, "");
+}
+
+function jsxPropertyToCssProperty(propertyName) {
+  return propertyName.replace(/(\w)([A-Z])/, "$1-$2").toLowerCase();
+}
+
+function filterNerfedProperties(styles) {
+  const filteredStyles = Object.fromEntries(
+    Object.entries(styles).filter(
+      ([propertyName, _]) => !NERFED_PROPERTIES.includes(propertyName)
+    )
+  );
+  const wasAltered =
+    Object.keys(filteredStyles).length !== Object.keys(styles).length;
+  return [filteredStyles, wasAltered];
+}
+
+function _isShorthandOfOtherProperty(propertyName, otherPropertyName) {
+  return (
+    STYLE_CONFLICTS[propertyName] &&
+    STYLE_CONFLICTS[propertyName].has(otherPropertyName)
+  );
+}
+
+function _areConflicting(propertyName1, propertyName2) {
+  return (
+    _isShorthandOfOtherProperty(propertyName1, propertyName2) ||
+    _isShorthandOfOtherProperty(propertyName2, propertyName1)
+  );
+}
+
+function doesPropertyNameConflictWithStyles(propertyName, styles) {
+  const cleanedPropertyName = preparePropertyName(propertyName);
+  for (const existingPropertyName in styles) {
+    if (_areConflicting(cleanedPropertyName, existingPropertyName)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function filterConflictingProperties(customStyles, defaultStyles) {
+  const filteredStyles = Object.fromEntries(
+    Object.keys(customStyles)
+      .filter(
+        (propertyName) =>
+          !doesPropertyNameConflictWithStyles(propertyName, defaultStyles)
+      )
+      .map((propertyName) => [propertyName, customStyles[propertyName]])
+  );
+  const wasAltered =
+    Object.keys(filteredStyles).length !== Object.keys(customStyles).length;
+  return [filteredStyles, wasAltered];
+}
+
 export {
   LEVEL_DATA_PATH,
   ELEMENT_TYPE,
@@ -116,4 +244,9 @@ export {
   testForOverlapRandom,
   isHole,
   getIndexFromId,
+  preparePropertyName,
+  preparePropertyValue,
+  jsxPropertyToCssProperty,
+  filterConflictingProperties,
+  filterNerfedProperties,
 };
