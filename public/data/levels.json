@@ -386,7 +386,79 @@
     "completionMessage": {
       "message": "Ah, I knew I should have saved my monologue for later. I guess I just have a lot of unresolved trauma to unpack. You see, it all started with my father; you could say I didn't exactly *align* with his expectations for an ideal son...",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "...and so, if I wanted to save the only precious thing in my life, my daughter, I had no choice but to become the Justifier. Do you see now? Why I had to do it? Oh, you weren't listening again- that's alright. Just go on to the next level."
+      "postAudioMessage": "...and so, to save everything I held dear, I had no choice but to become the Justifier. Do you see now? Why I had to do it? Oh, you weren't listening again- no, it's fine. Enjoy the next level."
+    }
+  },
+  "9": {
+    "levelName": "don't mind me",
+    "hint": "The title is lying.",
+    "elements": [
+      { "id": "t0" },
+      { "id": "p1" },
+      { "id": "h1" },
+      { "id": "h0" },
+      { "id": "d0" },
+      { "id": "p0" }
+    ],
+    "elementData": {
+      "t0": {
+        "text": "#9 don't mind me",
+        "style": {
+          "fontSize": "1.5vw",
+          "fontWeight": "bold",
+          "position": "static",
+          "marginLeft": "42.75vw",
+          "marginTop": "1.5vw",
+          "display": "inline-block"
+        },
+        "cssBudget": 1
+      },
+      "p1": {
+        "style": {
+          "position": "relative",
+          "display": "inline-block",
+          "marginLeft": "8vw",
+          "top": "16.95vw"
+        },
+        "cssBudget": 0
+      },
+      "h1": {
+        "style": {
+          "position": "absolute",
+          "left": "65vw",
+          "top": "35vw"
+        },
+        "cssBudget": 0
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "left": "30vw",
+          "top": "35vw"
+        },
+        "cssBudget": 0
+      },
+      "d0": {
+        "style": {
+          "position": "relative",
+          "width": "40vw",
+          "height": "5vw",
+          "margin": "5vw 0 0 29vw"
+        },
+        "cssBudget": 1
+      },
+      "p0": {
+        "style": {
+          "marginLeft": "30vw",
+          "position": "relative"
+        },
+        "cssBudget": 1
+      }
+    },
+    "completionMessage": {
+      "message": "So you see, Cassie, margin-top doesn't affect non-replaced inline elements because- oh! You're back! I, uh, honestly thought that would be the last of you. Well, haha, well done! Let's see... here's another sound byte for you.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "Your CSS skills may be improving... but you have absolutely no shot at solving this next level."
     }
   }
 }
