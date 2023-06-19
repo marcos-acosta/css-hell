@@ -388,5 +388,46 @@
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
       "postAudioMessage": "...and so, if I wanted to save the only precious thing in my life, my daughter, I had no choice but to become the Justifier. Do you see now? Why I had to do it? Oh, you weren't listening again- that's alright. Just go on to the next level."
     }
+  },
+  "9": {
+    "levelName": "working title",
+    "hint": "Refer to the title.",
+    "elements": [{ "id": "t0" }, { "id": "p0" }, { "id": "h0" }],
+    "elementData": {
+      "t0": {
+        "text": "#9 working title",
+        "style": {
+          "fontSize": "1.5vw",
+          "fontWeight": "bold",
+          "position": "relative",
+          "marginLeft": "42.75vw",
+          "marginTop": "1.5vw",
+          "display": "inline-block"
+        },
+        "cssBudget": 1
+      },
+      "p0": {
+        "style": {
+          "position": "relative",
+          "marginLeft": "calc((100vw - 5vw) / 2)",
+          "marginTop": "5vw",
+          "padding": "0",
+          "top": "0",
+          "border": "none"
+        },
+        "cssBudget": 1
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "left": "calc((100vw - 5vw) / 2)",
+          "bottom": "5vw",
+          "top": "auto",
+          "margin": "0",
+          "padding": "0"
+        },
+        "cssBudget": 1
+      }
+    }
   }
 }
