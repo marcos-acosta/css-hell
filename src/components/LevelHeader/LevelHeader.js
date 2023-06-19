@@ -5,6 +5,14 @@ import { combineClassNames } from "../../util";
 export default function LevelHeader(props) {
   return (
     <div className={styles.gameControlsContainer}>
+      <span
+        className={combineClassNames(
+          styles.budgetInfo,
+          props.isWinning && styles.whiteText
+        )}
+      >
+        [{props.usedCss} / {props.totalBudget}]
+      </span>
       <div
         className={combineClassNames(
           styles.levelTitle,

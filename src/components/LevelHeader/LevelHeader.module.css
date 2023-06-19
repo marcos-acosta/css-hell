@@ -68,3 +68,10 @@ button.whiteButton {
 .gameControlButton.gameControlButtonSelected:hover {
   background-color: black;
 }
+
+.budgetInfo {
+  font-size: 1vw;
+  position: absolute;
+  left: 0;
+  margin-left: 5vw;
+}
