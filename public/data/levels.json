@@ -2,6 +2,7 @@
   "1": {
     "levelName": "round peg, round hole",
     "elements": [{ "id": "p0" }, { "id": "h0" }],
+    "hint": "I'm going to assume you didn't realize this was a hint button. You do not need a hint for this.",
     "elementData": {
       "p0": {
         "style": {
@@ -27,6 +28,7 @@
   },
   "2": {
     "levelName": "connect the dots",
+    "hint": "Stop thinking so orthogonally.",
     "elements": [
       {
         "id": "d0",
@@ -76,6 +78,7 @@
   },
   "3": {
     "levelName": "feels like we only go backwards",
+    "hint": "Wouldn't it be great if those pegs were just lined up the opposite way?",
     "elements": [
       {
         "id": "d0",
@@ -139,6 +142,7 @@
   },
   "4": {
     "levelName": "why are you running?",
+    "hint": "\"If the margin is on the left, attack from the right.\" -Sun Tsu",
     "elements": [
       {
         "id": "d0",
@@ -181,6 +185,7 @@
   },
   "5": {
     "levelName": "the scroll of truth",
+    "hint": "That CSS Editor is good for more than editing styles.",
     "elements": [{ "id": "p0" }, { "id": "h0" }],
     "elementData": {
       "p0": {
@@ -209,6 +214,7 @@
   },
   "6": {
     "levelName": "breathing room",
+    "hint": "That overflow property is a hint in and of itself.",
     "elements": [
       {
         "id": "d0",
@@ -267,6 +273,7 @@
   },
   "7": {
     "levelName": "figure of speech",
+    "hint": "Honestly, I don't have a great hint for this one. Try being better?",
     "elements": [
       {
         "id": "d0",
@@ -316,6 +323,7 @@
   },
   "8": {
     "levelName": "hard choices",
+    "hint": "Note the different font size units. I wonder why that might be...",
     "elements": [
       {
         "id": "d0",

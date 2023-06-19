@@ -35,7 +35,7 @@
   font-size: 3vw;
 }
 
-.nerfMessage {
+.bottomRightPanel {
   position: absolute;
   bottom: 1.5vw;
   right: 1.5vw;
@@ -45,9 +45,23 @@
   max-width: 28vw;
   outline: 3px solid rgb(12, 12, 12);
   border: 1px dashed white;
+  font-size: 1vw;
 }
 
-.nerfedPropertyName {
+.bottomLeftPanel {
+  position: absolute;
+  bottom: 1.5vw;
+  left: 1.5vw;
+  background-color: rgb(12, 12, 12);
+  color: white;
+  padding: 0.75vw;
+  max-width: 28vw;
+  outline: 3px solid rgb(12, 12, 12);
+  border: 1px dashed white;
+  font-size: 1vw;
+}
+
+.grayText {
   color: rgb(191, 191, 191);
   font-style: italic;
 }

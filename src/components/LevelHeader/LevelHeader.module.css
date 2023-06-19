@@ -59,3 +59,12 @@ button.whiteButton {
 .gameControlSymbol {
   font-size: 2vw;
 }
+
+.gameControlButtonSelected {
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
+
+.gameControlButton.gameControlButtonSelected:hover {
+  background-color: black;
+}

@@ -65,7 +65,7 @@ const formatNerfedPropertyNames = () => {
   return NERFED_PROPERTIES.map((propertyName, i) => (
     <span key={i}>
       {i === 0 ? "" : i === NERFED_PROPERTIES.length - 1 ? ", and " : ", "}
-      <span className={styles.nerfedPropertyName}>{propertyName}</span>
+      <span className={styles.grayText}>{propertyName}</span>
     </span>
   ));
 };
@@ -77,6 +77,7 @@ export default function Level(props) {
   const [selectedElementInfo, setSelectedElementInfo] = useState(null);
   const [isWinning, setIsWinning] = useState(false);
   const [customCss, setCustomCss] = useState({});
+  const [showHint, setShowHint] = useState(false);
   const setRerenderState = useState(false)[1];
   const elementRefs = useRef([]);
 
@@ -209,6 +210,7 @@ export default function Level(props) {
   useEffect(() => {
     setCustomCss({});
     setSelectedElementInfo(null);
+    setShowHint(false);
   }, [props.levelData]);
 
   useEffect(() => {
@@ -268,6 +270,8 @@ export default function Level(props) {
         goHome={props.goHome}
         resetLevel={props.reset}
         isWinning={isWinning}
+        toggleShowHint={() => setShowHint(!showHint)}
+        isShowingHint={showHint}
       />
       <CssEditor
         selectedElementInfo={selectedElementInfo}
@@ -279,7 +283,7 @@ export default function Level(props) {
         closeCssEditor={() => setSelectedElementInfo(null)}
       />
       {(anyNerfed || anyConflicting) && (
-        <div className={styles.nerfMessage}>
+        <div className={styles.bottomRightPanel}>
           {anyNerfed ? (
             <>
               Nice thinking. Unfortuantely for you,{" "}
@@ -291,6 +295,12 @@ export default function Level(props) {
               And I don't like bad practice.
             </>
           )}
+        </div>
+      )}
+      {showHint && (
+        <div className={styles.bottomLeftPanel}>
+          <span className={styles.grayText}>SKILL ISSUE?</span>{" "}
+          {props.levelData.hint}
         </div>
       )}
     </>

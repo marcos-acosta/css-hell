@@ -17,6 +17,23 @@ export default function LevelHeader(props) {
         <button
           className={combineClassNames(
             styles.gameControlButton,
+            props.isWinning && styles.whiteButton,
+            props.isShowingHint && styles.gameControlButtonSelected
+          )}
+          onClick={props.toggleShowHint}
+        >
+          <span
+            className={combineClassNames(
+              "material-symbols-outlined",
+              styles.gameControlSymbol
+            )}
+          >
+            question_mark
+          </span>
+        </button>
+        <button
+          className={combineClassNames(
+            styles.gameControlButton,
             props.isWinning && styles.whiteButton
           )}
           onClick={props.resetLevel}
