@@ -33,3 +33,7 @@ Assigning `writing-mode: vertical-rl` to DIV 1 and `word-spacing: 20vw` to TEXT 
 ### Level 8: hard choices
 
 Assign `word-spacing` or `text-indent` to DIV 1 such that PEG B overlaps with HOLE B. Then, resize the window such that PEG A overlaps with HOLE A (TEXT 1 has a fixed font size, whereas TEXT 2 is sized relative to the viewport width).
+
+### Level 9: don't mind me
+
+Assign `padding-top: 20vw` to the fake title.

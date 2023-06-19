@@ -61,22 +61,6 @@ const extractStylesFromElementData = (elementData) => {
   );
 };
 
-const getTotalCssBudget = (elementData) => {
-  let sum = 0;
-  for (const id in elementData) {
-    sum += parseInt(elementData[id].cssBudget);
-  }
-  return sum;
-};
-
-const getUsedCssFromStyles = (parsedCss) => {
-  let sum = 0;
-  for (const id in parsedCss) {
-    sum += Object.keys(parsedCss[id]).length;
-  }
-  return sum;
-};
-
 const formatNerfedPropertyNames = () => {
   return NERFED_PROPERTIES.map((propertyName, i) => (
     <span key={i}>
@@ -249,8 +233,6 @@ export default function Level(props) {
     parsedCustomCss,
     presetStyles
   );
-  const usedCss = getUsedCssFromStyles(parsedCustomCss);
-  const totalBudget = getTotalCssBudget(props.levelData.elementData);
 
   return (
     <>
@@ -290,8 +272,6 @@ export default function Level(props) {
         isWinning={isWinning}
         toggleShowHint={() => setShowHint(!showHint)}
         isShowingHint={showHint}
-        usedCss={usedCss}
-        totalBudget={totalBudget}
       />
       <CssEditor
         selectedElementInfo={selectedElementInfo}
