@@ -391,14 +391,14 @@
   },
   "9": {
     "levelName": "don't mind me",
-    "hint": "The title is lying.",
+    "hint": "PEG B probably isn't in-line with what you think it is. Look more carefully at its positioning properties.",
     "elements": [
       { "id": "t0" },
       { "id": "p1" },
-      { "id": "h1" },
-      { "id": "h0" },
       { "id": "d0" },
-      { "id": "p0" }
+      { "id": "p0" },
+      { "id": "h1" },
+      { "id": "h0" }
     ],
     "elementData": {
       "t0": {
@@ -417,7 +417,7 @@
         "style": {
           "position": "relative",
           "display": "inline-block",
-          "marginLeft": "8vw",
+          "marginLeft": "7.8vw",
           "top": "16.95vw"
         },
         "cssBudget": 0
