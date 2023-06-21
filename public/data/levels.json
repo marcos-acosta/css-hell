@@ -22,8 +22,10 @@
       }
     },
     "completionMessage": {
-      "message": "Well done, Anshul. Even a code *bonobo* could have figured that one out. If you want to hear from your friends again, though, you'd better get warmed up.",
-      "audioFileSource": null
+      "message": "Well done, Anshul. Even a code *bonobo* could have figured that one out. But a deal's a deal; I'll let one of your friends go. Sounds like they have something to say to you:",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
+      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. I promise I'm not laughing, this is very serious business.",
+      "showDuringListen": true
     }
   },
   "2": {
@@ -72,8 +74,10 @@
       }
     },
     "completionMessage": {
-      "message": "Very impressive for a guy who gets butterflies in his stomach when he sees a memory address. Tell you what: solve one more, and I'll let you hear from one of your friends. P.S. Watch out for red herrings.",
-      "audioFileSource": null
+      "message": "Very impressive for a guy who gets butterflies in his stomach when he sees a memory address. While I would love nothing more than to rick roll you a second time, we criminal masterminds have standards. Perhaps you recognize this voice?",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
+      "postAudioMessage": "HAHAHAHAHA! It was even funnier the second time! You should have seen your face! Go ahead with the next level while I keep replaying that moment in my head. Oh, and watch out for red herrings.",
+      "showDuringListen": "true"
     }
   },
   "3": {
@@ -134,10 +138,9 @@
       }
     },
     "completionMessage": {
-      "message": "Excellent. I hope you enjoyed my little transform-origin trick. I must admit I didn't expect you to get even this far, but I am a man of my word. Here you go- make sure to listen to the whole thing.",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
-      "postAudioMessage": "Whoops, wrong audio file. I'm so sorry. There's so many and some are unlabeled, it's hard to keep track. I promise I'm not laughing, this is very serious business.",
-      "showDuringListen": true
+      "message": "Excellent- I hope you enjoyed my little transform-origin trick. I'm rather pleased with your progress, so I'll let one of your friends go. I know what you're thinking, but I believe comedy comes in twos, so don't worry about Mr. Astley; no tricks this time.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "How nice. Honestly, that was the longest three minutes of my life. You fraternize with these people? Anyway, I have another level prepared for you."
     }
   },
   "4": {
@@ -177,10 +180,9 @@
       }
     },
     "completionMessage": {
-      "message": "Spectacular! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. While I would love nothing more than to rick roll you a second time, we criminal masterminds have standards. Perhaps you recognize this voice?",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1ql33Uu7K4K8KyVoP5eR68yJ1gLTLgqdD",
-      "postAudioMessage": "HAHAHAHAHA! It was even funnier the second time! You should have seen your face! Go ahead with the next level while I keep replaying that moment in my head.",
-      "showDuringListen": "true"
+      "message": "Spectacular! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. Still, not bad for a C head. Here's another one of your friends:",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "Finally, someone who knows how to be concise; I hardly had to cringe that time. This next level is pretty easy. Just add one property."
     }
   },
   "5": {
@@ -207,7 +209,7 @@
       }
     },
     "completionMessage": {
-      "message": "I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve. Regardless, I'm impressed by your creativity; not many C developers make it past that one. I believe comedy comes in twos, so don't worry about Mr. Astley; no tricks this time.",
+      "message": "I hope you didn't spend longer than 72 seconds on that one, because that's how long it took my 3-year-old daughter Cassie to solve. Regardless, I'm impressed by your creativity; not many C developers make it past that one. I guess I'll let... ~you~ go.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
       "postAudioMessage": "Aw, wasn't that sweet? Rose-colored glasses are an amazing thing. Alright, enough of that, more CSS!"
     }
@@ -267,8 +269,9 @@
       }
     },
     "completionMessage": {
-      "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. I'm feeling generous; from now on, I'll let one of your friends free for each puzzle you solve. As a gesture of good faith:",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv"
+      "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. Let's set another one of your friends free.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "Honestly, that guy was my favorite so far, sad I had to let him go. Cool guy, that kid. Why can't you be more like him? Okay, enough taunting, onto the next level."
     }
   },
   "7": {
@@ -317,8 +320,9 @@
       }
     },
     "completionMessage": {
-      "message": "Why, it seems you have literally used my words against me! Hahaha! Not quite as funny as the second Rick Roll, but we UI designers must take delight in what we can. Anyway, here's your audio:",
-      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv"
+      "message": "Why, it seems you have literally used my words against me! Hahaha! Not quite as funny as the second Rick Roll, but we UI designers have to take pleasure in what we can. Anyway, here, you get this friend back:",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "How original. Real gems of friends you've got here. Ok, good luck with this next one, hehe. I'll see you again real soon. Real soon indeed..."
     }
   },
   "8": {
@@ -456,9 +460,9 @@
       }
     },
     "completionMessage": {
-      "message": "So you see, Cassie, margin-top doesn't affect non-replaced inline elements because- oh! You're back! I, uh, honestly thought that would be the last of you. Well, haha, well done! Let's see... here's another sound byte for you.",
+      "message": "So you see, Cassie, margin-top doesn't affect non-replaced inline- oh! You're back! I, uh, honestly thought that would be the last of you. Well, haha, well done! Let's see... this kid has been getting on my nerves, he can go free.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "Your CSS skills may be improving... but you have absolutely no shot at solving this next level."
+      "postAudioMessage": "Although your friends are slowly being saved, your integrity as a backend engineer is lost! Will they even recognize the thing you've become? Will- no, Cassie, no uppies right now. I'm in the middle of- yeah, Anshul, just go to the next one."
     }
   }
 }
