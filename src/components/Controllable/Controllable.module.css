@@ -1,3 +1,7 @@
+.controllableLetter {
+  cursor: inherit;
+}
+
 .pegLetterAlign {
   vertical-align: -1.1vw;
 }

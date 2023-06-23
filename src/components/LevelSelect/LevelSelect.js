@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./LevelSelect.module.css";
 import LevelButton from "./LevelButton/LevelButton";
+import { combineClassNames } from "../../util";
 
 export default function LevelSelect(props) {
   return (
@@ -25,7 +26,12 @@ export default function LevelSelect(props) {
                   className={styles.messageButton}
                   onClick={() => props.showMessageByLevelNumber(levelNumber)}
                 >
-                  <span className="material-symbols-outlined">
+                  <span
+                    className={combineClassNames(
+                      "material-symbols-outlined",
+                      styles.noteSymbol
+                    )}
+                  >
                     sticky_note_2
                   </span>
                 </button>

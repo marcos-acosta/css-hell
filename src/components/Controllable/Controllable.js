@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import styles from "./Controllable.module.css";
-import { ELEMENT_TYPE, interpretId } from "../../util";
+import { ELEMENT_TYPE, combineClassNames, interpretId } from "../../util";
 
 export default forwardRef(function Controllable(props, ref) {
   const { letter, elementType } = interpretId(props.id);
@@ -15,11 +15,12 @@ export default forwardRef(function Controllable(props, ref) {
         props.children
       ) : (
         <span
-          className={
+          className={combineClassNames(
+            styles.controllableLetter,
             elementType === ELEMENT_TYPE.peg
               ? styles.pegLetterAlign
               : styles.holeLetterAlign
-          }
+          )}
         >
           {letter}
         </span>
