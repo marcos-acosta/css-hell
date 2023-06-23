@@ -10,7 +10,7 @@
 
 .message {
   width: 60vw;
-  font-size: 2vw;
+  font-size: 1.75vw;
   position: relative;
   margin-left: calc((100vw - 60vw - 2vw) / 2);
   margin-top: 5vw;
@@ -47,7 +47,7 @@
 
 .postAudioMessage {
   width: 60vw;
-  font-size: 2vw;
+  font-size: 1.75vw;
   position: relative;
   margin-left: calc((100vw - 60vw - 2vw) / 2);
   margin-top: 3vw;

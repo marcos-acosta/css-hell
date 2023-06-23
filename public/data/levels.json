@@ -182,7 +182,7 @@
     "completionMessage": {
       "message": "Spectacular! I would have never thought to do that. That is, if my oversized brain had been replaced with three pounds of gravel. Still, not bad for a C head. Here's another one of your friends:",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "Finally, someone who knows how to be concise; I hardly had to cringe that time. This next level is pretty easy. Just add one property."
+      "postAudioMessage": "Great, so when *you* kidnap someone for their birthday, you're a hero, but when *I* kidnap your friends for your birthday, I'm a villain. Anyway, enjoy this next level. It's quite simple, really- just add one property."
     }
   },
   "5": {
@@ -271,7 +271,7 @@
     "completionMessage": {
       "message": "Nicely done- you know, if it weren't for all the overwhelming evidence that you don't understand or enjoy CSS, I might have mistaken you for a front end engineer. Let's set another one of your friends free.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "Honestly, that guy was my favorite so far, sad I had to let him go. Cool guy, that kid. Why can't you be more like him? Okay, enough taunting, onto the next level."
+      "postAudioMessage": "Once again, your friends thank you for making them suffer, but me? You know, there's an old saying about goats and bridges... ah, you wouldn't understand. Go on, then."
     }
   },
   "7": {
@@ -322,7 +322,7 @@
     "completionMessage": {
       "message": "Why, it seems you have literally used my words against me! Hahaha! Not quite as funny as the second Rick Roll, but we UI designers have to take pleasure in what we can. Anyway, here, you get this friend back:",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "How original. Real gems of friends you've got here. Ok, good luck with this next one, hehe. I'll see you again real soon. Real soon indeed..."
+      "postAudioMessage": "Honestly, that guy was my favorite so far, sad I had to let him go. Cool guy, that kid. Why can't you be more like him? Okay, have fun with this next level. See you *real* soon."
     }
   },
   "8": {
@@ -460,9 +460,100 @@
       }
     },
     "completionMessage": {
-      "message": "So you see, Cassie, margin-top doesn't affect non-replaced inline- oh! You're back! I, uh, honestly thought that would be the last of you. Well, haha, well done! Let's see... this kid has been getting on my nerves, he can go free.",
+      "message": "So you see, Cassie, margin-top doesn't affect non-replaced inline- oh! You're back! I, uh, honestly thought that would be the last of you. Well, haha, well done! Let's see... this one's been getting on my nerves, they can go free.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
       "postAudioMessage": "Although your friends are slowly being saved, your integrity as a systems engineer is lost! Will they even recognize the thing you've become? Will- no, Cassie, no uppies right now. I'm in the middle of- yeah, Anshul, just go to the next one."
+    }
+  },
+  "10": {
+    "levelName": "floating",
+    "hint": "Good luck clearing this level, blockhead.",
+    "elements": [
+      {
+        "id": "d0",
+        "children": [
+          { "id": "d1" },
+          { "id": "d2" },
+          {
+            "id": "d3",
+            "children": [{ "id": "p0" }, { "id": "t0" }, { "id": "p1" }]
+          }
+        ]
+      },
+      { "id": "h0" },
+      { "id": "h1" }
+    ],
+    "elementData": {
+      "d0": {
+        "style": {
+          "position": "absolute",
+          "top": "5vw",
+          "width": "60vw",
+          "left": "18.5vw",
+          "padding": "0.5vw"
+        },
+        "cssBudget": 0
+      },
+      "d1": {
+        "style": {
+          "float": "right",
+          "height": "20vw",
+          "width": "4vw",
+          "backgroundColor": "black",
+          "display": "block",
+          "marginLeft": "1vw",
+          "padding": "0",
+          "writingMode": "vertical-rl"
+        },
+        "cssBudget": 1
+      },
+      "d2": {
+        "style": {
+          "float": "left",
+          "height": "10vw",
+          "width": "10vw",
+          "backgroundColor": "black",
+          "display": "block",
+          "marginRight": "1vw",
+          "padding": "0"
+        },
+        "cssBudget": 1
+      },
+      "d3": {
+        "style": {
+          "display": "block",
+          "padding": "0.5vw",
+          "wordSpacing": "initial"
+        }
+      },
+      "p0": {
+        "style": { "display": "inline-block", "verticalAlign": "bottom" },
+        "cssBudget": 0
+      },
+      "t0": {
+        "style": {
+          "fontSize": "1.2vw"
+        },
+        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless.",
+        "cssBudget": 0
+      },
+      "p1": {
+        "style": { "display": "inline-block", "verticalAlign": "top" },
+        "cssBudget": 0
+      },
+      "h0": {
+        "style": { "position": "absolute", "top": "18.5vw", "left": "21.5vw" },
+        "cssBudget": 0
+      },
+      "h1": {
+        "style": { "position": "absolute", "top": "42vw", "left": "68.5vw" },
+        "cssBudget": 0
+      }
+    },
+    "completionMessage": {
+      "message": "Splendid! You're shaping up to be one of the best code monkeys I've trained; I'm very impressed by your progress. Here's another one of the lackeys you call friends.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "Wow. Family. How original. Seriously, where do you find these people? And that one in particular? Ok, next level, next level... I swear I have plenty of torturous levels left, they're just... a bit disorganized, is all. Ah, here's one! Prepare to meet your demise!"
     }
   }
 }
