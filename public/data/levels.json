@@ -578,7 +578,7 @@
       },
       "d1": {
         "style": { "order": "1" },
-        "cssBudget": 1
+        "cssBudget": 0
       },
       "d2": {
         "style": { "order": "2" },
@@ -586,15 +586,7 @@
       },
       "d3": {
         "style": { "order": "3" },
-        "cssBudget": 1
-      },
-      "d4": {
-        "style": { "order": "4" },
-        "cssBudget": 1
-      },
-      "d5": {
-        "style": { "order": "5" },
-        "cssBudget": 1
+        "cssBudget": 0
       },
       "p0": {},
       "p1": {},

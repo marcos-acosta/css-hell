@@ -48,4 +48,4 @@ Same solution as Level 1 except PEG A is invisible.
 
 ### Level 12: gridlock
 
-???
+One solution is to set DIV 1's `grid-template` to `1vw 1vw / 1vw` and then assign `margin-top: 3vw` to DIV 3.
