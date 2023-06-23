@@ -461,7 +461,7 @@
           "padding": "0.5vw"
         }
       },
-      "d1": {
+      "d2": {
         "style": {
           "float": "right",
           "height": "20vw",
@@ -474,7 +474,7 @@
         },
         "cssBudget": 1
       },
-      "d2": {
+      "d1": {
         "style": {
           "float": "left",
           "height": "10vw",

@@ -37,3 +37,7 @@ Assign `word-spacing` or `text-indent` to DIV 1 such that PEG B overlaps with HO
 ### Level 9: don't mind me
 
 Assign `padding-top: 20vw` to the fake title.
+
+### Level 10: floating
+
+Assign `clear: left` to DIV 4, `block-size: 13vw` to DIV 2, and `block-size: 42vw` to DIV 3.
