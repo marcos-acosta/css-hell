@@ -42,4 +42,10 @@ Assign `padding-top: 20vw` to the fake title.
 
 Assign `clear: left` to DIV 4, `block-size: 13vw` to DIV 2, and `block-size: 42vw` to DIV 3.
 
-### Level 11: Round peg, round hole (XTREME)
+### Level 11: round peg, round hole (XTREME)
+
+Same solution as Level 1 except PEG A is invisible.
+
+### Level 12: gridlock
+
+???

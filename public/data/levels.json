@@ -550,5 +550,63 @@
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
       "postAudioMessage": "Hey, sorry about all that stuff earlier. Being a cssupervillain comes with a lot of added stress. But my moment of weakness has passed. This next level will fry what few neurons you have left!"
     }
+  },
+  "12": {
+    "levelName": "gridlock",
+    "hint": "I don't even know if this has a solution.",
+    "elements": [
+      {
+        "id": "d0",
+        "children": [
+          { "id": "d1", "children": [{ "id": "p0" }, { "id": "h2" }] },
+          { "id": "d2", "children": [{ "id": "p1" }, { "id": "p2" }] },
+          { "id": "d3", "children": [{ "id": "h0" }, { "id": "h1" }] }
+        ]
+      }
+    ],
+    "elementData": {
+      "d0": {
+        "style": {
+          "display": "grid",
+          "position": "absolute",
+          "top": "5vw",
+          "left": "45vw",
+          "gap": "0.5vw 0.5vw",
+          "padding": "0.5vw"
+        },
+        "cssBudget": 1
+      },
+      "d1": {
+        "style": { "order": "1" },
+        "cssBudget": 1
+      },
+      "d2": {
+        "style": { "order": "2" },
+        "cssBudget": 1
+      },
+      "d3": {
+        "style": { "order": "3" },
+        "cssBudget": 1
+      },
+      "d4": {
+        "style": { "order": "4" },
+        "cssBudget": 1
+      },
+      "d5": {
+        "style": { "order": "5" },
+        "cssBudget": 1
+      },
+      "p0": {},
+      "p1": {},
+      "h0": {},
+      "h1": {},
+      "p2": {},
+      "h2": {}
+    },
+    "completionMessage": {
+      "message": "Huh. That level was supposed to be unsolveable. It didn't occur to me to- I mean, it's just not good practice to- anyway, as we agreed, here's another one of your friends. This one has even more problematic opinions than I do.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "Yes, yes, very nice. Look, I didn't want to have to do this, Anshul, but it seems you're forcing my hand. Gentlemen, bring out... the Gauntlet™."
+    }
   }
 }
