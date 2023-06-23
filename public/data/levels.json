@@ -502,7 +502,8 @@
         "style": {
           "fontSize": "1.2vw"
         },
-        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless."
+        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless.",
+        "cssBudget": 1
       },
       "p1": {
         "style": { "display": "inline-block", "verticalAlign": "top" }
@@ -518,6 +519,36 @@
       "message": "Splendid! You're shaping up to be one of the best code monkeys I've trained; I'm very impressed by your progress. Here's another one of the lackeys you call friends.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
       "postAudioMessage": "Wow. Watching a cat get run over in San Francisco. How original. Seriously, where do you find these people? Ok, next level, next level... I swear I have plenty of torturous levels left, they're just... a bit disorganized, is all. Ah, here's one! Prepare to meet your demise!"
+    }
+  },
+  "11": {
+    "levelName": "round peg, round hole (XTREME)",
+    "hint": "Wait, where'd it go? Have you checked under there?",
+    "elements": [{ "id": "p0" }, { "id": "h0" }],
+    "elementData": {
+      "p0": {
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "left": "calc(100vw / 3)",
+          "backgroundColor": "transparent",
+          "color": "transparent",
+          "cursor": "default"
+        },
+        "cssBudget": 1
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "right": "calc(100vw / 3)"
+        }
+      }
+    },
+    "completionMessage": {
+      "message": "Okay, okay, I know that wasn't exactly my most ~ingenious~ level so far. I just... you know... it's hard to *satisfy* you these days, you just solve all my levels and... I just don't feel like you appreciate all the effort I put into these. I just want you to appreciate me like... like your friends appreciate you.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
+      "postAudioMessage": "Hey, sorry about all that stuff earlier. Being a cssupervillain comes with a lot of added stress. But my moment of weakness has passed. This next level will fry what few neurons you have left!"
     }
   }
 }
