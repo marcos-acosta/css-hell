@@ -29,7 +29,8 @@ export default function CssEditor(props) {
     return;
   }
 
-  const { cssBudget, id, style } = props.selectedElementInfo;
+  const { id, style } = props.selectedElementInfo;
+  const cssBudget = props.selectedElementInfo.cssBudget || 0;
   const customCss = id in props.customCss ? props.customCss[id] : [];
 
   const addCustomCss = (cssBudget) => {

@@ -17,8 +17,7 @@
           "position": "absolute",
           "top": "calc((100vh - 5vw) / 2)",
           "right": "calc(100vw / 3)"
-        },
-        "cssBudget": 0
+        }
       }
     },
     "completionMessage": {
@@ -50,27 +49,21 @@
         },
         "cssBudget": 2
       },
-      "p0": {
-        "cssBudget": 0
-      },
-      "p1": {
-        "cssBudget": 0
-      },
+      "p0": {},
+      "p1": {},
       "h0": {
         "style": {
           "position": "absolute",
           "right": "calc(100vw / 3)",
           "top": "calc((100vh - 10vw) / 2)"
-        },
-        "cssBudget": 0
+        }
       },
       "h1": {
         "style": {
           "position": "absolute",
           "right": "calc((100vw / 3) + 11vw)",
           "top": "calc((100vh - 10vw) / 2 + 5vw)"
-        },
-        "cssBudget": 0
+        }
       }
     },
     "completionMessage": {
@@ -106,35 +99,28 @@
       "p0": {
         "cssBudget": 1
       },
-      "p1": {
-        "cssBudget": 0
-      },
-      "p2": {
-        "cssBudget": 0
-      },
+      "p1": {},
+      "p2": {},
       "h0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 + 5vw)"
-        },
-        "cssBudget": 0
+        }
       },
       "h1": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2)"
-        },
-        "cssBudget": 0
+        }
       },
       "h2": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw - 2vw) * 2 / 3)",
           "left": "calc((100vw - 5vw) / 2 - 5vw)"
-        },
-        "cssBudget": 0
+        }
       }
     },
     "completionMessage": {
@@ -160,8 +146,7 @@
           "flexDirection": "row",
           "top": "calc((100vh - 5vw - 2vw) / 2)",
           "left": "calc((100vw - 12vw - 2vw) / 2)"
-        },
-        "cssBudget": 0
+        }
       },
       "p0": {
         "style": {
@@ -204,8 +189,7 @@
           "position": "absolute",
           "left": "calc((100vw - 5vw) / 2 + 10vw)",
           "top": "30vw"
-        },
-        "cssBudget": 0
+        }
       }
     },
     "completionMessage": {
@@ -248,24 +232,21 @@
       "p1": {
         "style": {
           "float": "right"
-        },
-        "cssBudget": 0
+        }
       },
       "h0": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 10vw) / 2 + 10vw)",
           "left": "calc((100vw - 10vw) / 2 + 25vw)"
-        },
-        "cssBudget": 0
+        }
       },
       "h1": {
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 10vw) / 2 + 1vw)",
           "left": "calc((100vw - 10vw) / 2 + 35vw)"
-        },
-        "cssBudget": 0
+        }
       }
     },
     "completionMessage": {
@@ -307,16 +288,14 @@
         "style": {
           "display": "inline-block",
           "verticalAlign": "middle"
-        },
-        "cssBudget": 0
+        }
       },
       "h0": {
         "style": {
           "position": "absolute",
           "top": "41vw",
           "left": "67vw"
-        },
-        "cssBudget": 0
+        }
       }
     },
     "completionMessage": {
@@ -355,36 +334,28 @@
         "cssBudget": 1
       },
       "d1": {
-        "style": { "marginBottom": "1vw", "padding": "0.5vw" },
-        "cssBudget": 0
+        "style": { "marginBottom": "1vw", "padding": "0.5vw" }
       },
       "d2": {
-        "style": { "padding": "0.5vw", "fontSize": "1vw" },
-        "cssBudget": 0
+        "style": { "padding": "0.5vw", "fontSize": "1vw" }
       },
       "t0": {
-        "text": "time for a brief villain monologue",
-        "cssBudget": 0
+        "text": "time for a brief villain monologue"
       },
       "p0": {
-        "style": { "display": "inline-block", "verticalAlign": "middle" },
-        "cssBudget": 0
+        "style": { "display": "inline-block", "verticalAlign": "middle" }
       },
       "t1": {
-        "text": "you see, it all began with my father. he- aaaand you're not listening",
-        "cssBudget": 0
+        "text": "you see, it all began with my father. he- aaaand you're not listening"
       },
       "p1": {
-        "style": { "display": "inline-block", "verticalAlign": "middle" },
-        "cssBudget": 0
+        "style": { "display": "inline-block", "verticalAlign": "middle" }
       },
       "h0": {
-        "style": { "position": "absolute", "top": "13.5vw", "left": "80vw" },
-        "cssBudget": 0
+        "style": { "position": "absolute", "top": "13.5vw", "left": "80vw" }
       },
       "h1": {
-        "style": { "position": "absolute", "top": "22.5vw", "left": "80vw" },
-        "cssBudget": 0
+        "style": { "position": "absolute", "top": "22.5vw", "left": "80vw" }
       }
     },
     "completionMessage": {
@@ -423,24 +394,21 @@
           "display": "inline-block",
           "marginLeft": "7.8vw",
           "top": "16.95vw"
-        },
-        "cssBudget": 0
+        }
       },
       "h1": {
         "style": {
           "position": "absolute",
           "left": "65vw",
           "top": "35vw"
-        },
-        "cssBudget": 0
+        }
       },
       "h0": {
         "style": {
           "position": "absolute",
           "left": "30vw",
           "top": "35vw"
-        },
-        "cssBudget": 0
+        }
       },
       "d0": {
         "style": {
@@ -491,8 +459,7 @@
           "width": "60vw",
           "left": "18.5vw",
           "padding": "0.5vw"
-        },
-        "cssBudget": 0
+        }
       },
       "d1": {
         "style": {
@@ -523,37 +490,34 @@
         "style": {
           "display": "block",
           "padding": "0.5vw",
-          "wordSpacing": "initial"
-        }
+          "wordSpacing": "initial",
+          "margin": "0"
+        },
+        "cssBudget": 1
       },
       "p0": {
-        "style": { "display": "inline-block", "verticalAlign": "bottom" },
-        "cssBudget": 0
+        "style": { "display": "inline-block", "verticalAlign": "bottom" }
       },
       "t0": {
         "style": {
           "fontSize": "1.2vw"
         },
-        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless.",
-        "cssBudget": 0
+        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless."
       },
       "p1": {
-        "style": { "display": "inline-block", "verticalAlign": "top" },
-        "cssBudget": 0
+        "style": { "display": "inline-block", "verticalAlign": "top" }
       },
       "h0": {
-        "style": { "position": "absolute", "top": "18.5vw", "left": "21.5vw" },
-        "cssBudget": 0
+        "style": { "position": "absolute", "top": "18.5vw", "left": "21.5vw" }
       },
       "h1": {
-        "style": { "position": "absolute", "top": "42vw", "left": "68.5vw" },
-        "cssBudget": 0
+        "style": { "position": "absolute", "top": "42vw", "left": "68.5vw" }
       }
     },
     "completionMessage": {
       "message": "Splendid! You're shaping up to be one of the best code monkeys I've trained; I'm very impressed by your progress. Here's another one of the lackeys you call friends.",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1Ux7YhCae10Cn9FJx7LK5vhfA9j-E1qiv",
-      "postAudioMessage": "Wow. Family. How original. Seriously, where do you find these people? And that one in particular? Ok, next level, next level... I swear I have plenty of torturous levels left, they're just... a bit disorganized, is all. Ah, here's one! Prepare to meet your demise!"
+      "postAudioMessage": "Wow. Watching a cat get run over in San Francisco. How original. Seriously, where do you find these people? Ok, next level, next level... I swear I have plenty of torturous levels left, they're just... a bit disorganized, is all. Ah, here's one! Prepare to meet your demise!"
     }
   }
 }
