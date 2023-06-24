@@ -1,0 +1,48 @@
+.openingLoreContainer {
+  background-color: rgb(12, 12, 12);
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 1.5vw;
+  padding-bottom: 5vw;
+}
+
+.openingLoreContainer > p {
+  border: 1px dashed white;
+  width: 50vw;
+  margin-left: 25vw;
+  padding: 0.5vw;
+}
+
+.nextButton {
+  width: 8vw;
+  margin-left: 46vw;
+  padding: 0.5vw;
+  font-size: 1.25vw;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  transition: background-color 1s ease;
+}
+
+.nextButton:hover {
+  background-color: rgba(255, 255, 255, 0.074);
+}
+
+.doneButton {
+  width: 8vw;
+  margin-left: 46vw;
+  padding: 0.5vw;
+  font-size: 1.25vw;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.845);
+  color: rgb(12, 12, 12);
+  transition: background-color 1s ease;
+}
+
+.doneButton:hover {
+  background-color: rgba(255, 255, 255);
+}
