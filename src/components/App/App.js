@@ -9,7 +9,7 @@ import OpeningLore from "../OpeningLore/OpeningLore";
 const _DEV_STARTING_LEVEL = null;
 
 export default function App() {
-  const [cookies, setCookie] = useCookies(["checkpoint", "visited"]);
+  const [cookies, setCookie] = useCookies(["visited", "checkpoint"]);
   const [selectedLevel, setSelectedLevel] = useState(
     _DEV_STARTING_LEVEL || null
   );
