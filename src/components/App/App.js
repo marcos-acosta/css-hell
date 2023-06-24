@@ -4,11 +4,12 @@ import LevelSelect from "../LevelSelect/LevelSelect";
 import { LEVEL_DATA_PATH } from "../../util";
 import { useCookies } from "react-cookie";
 import MessageScreen from "../MessageScreen/MessageScreen";
+import OpeningLore from "../OpeningLore/OpeningLore";
 
 const _DEV_STARTING_LEVEL = null;
 
 export default function App() {
-  const [cookies, setCookie] = useCookies(["checkpoint"]);
+  const [cookies, setCookie] = useCookies(["checkpoint", "visited"]);
   const [selectedLevel, setSelectedLevel] = useState(
     _DEV_STARTING_LEVEL || null
   );
@@ -39,9 +40,17 @@ export default function App() {
     ? parseInt(cookies.checkpoint)
     : 0;
 
+  const hasVisited = Boolean(cookies.visited);
+
   const setHighestCompletedLevel = (levelNumber) =>
     levelNumber > highestCompletedLevel &&
     setCookie("checkpoint", levelNumber, {
+      sameSite: "none",
+      secure: true,
+    });
+
+  const setVisited = () =>
+    setCookie("visited", true, {
       sameSite: "none",
       secure: true,
     });
@@ -81,28 +90,32 @@ export default function App() {
     setIsRevisitingMessage(true);
   };
 
-  return selectedLevel ? (
-    isShowingMessage ? (
-      <MessageScreen
-        messageData={gameData[selectedLevel].completionMessage}
-        moveToNextLevel={handleNextFromMessageScreen}
-      />
+  return hasVisited ? (
+    selectedLevel ? (
+      isShowingMessage ? (
+        <MessageScreen
+          messageData={gameData[selectedLevel].completionMessage}
+          moveToNextLevel={handleNextFromMessageScreen}
+        />
+      ) : (
+        <Level
+          levelData={gameData[selectedLevel]}
+          levelNumber={selectedLevel}
+          goHome={() => setSelectedLevel(null)}
+          reset={loadGameData}
+          handleNextButton={handleNextButton}
+          clearThisLevel={clearThisLevel}
+        />
+      )
     ) : (
-      <Level
-        levelData={gameData[selectedLevel]}
-        levelNumber={selectedLevel}
-        goHome={() => setSelectedLevel(null)}
-        reset={loadGameData}
-        handleNextButton={handleNextButton}
-        clearThisLevel={clearThisLevel}
+      <LevelSelect
+        highestCompletedLevel={highestCompletedLevel}
+        gameData={gameData}
+        setSelectedLevel={setSelectedLevel}
+        showMessageByLevelNumber={showMessageByLevelNumber}
       />
     )
   ) : (
-    <LevelSelect
-      highestCompletedLevel={highestCompletedLevel}
-      gameData={gameData}
-      setSelectedLevel={setSelectedLevel}
-      showMessageByLevelNumber={showMessageByLevelNumber}
-    />
+    <OpeningLore setVisited={setVisited} />
   );
 }
