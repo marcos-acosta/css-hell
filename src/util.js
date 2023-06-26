@@ -167,7 +167,7 @@ function getBaseStyles(elementType, index) {
 }
 
 function cssStyleToJsxStyle(propertyName) {
-  return propertyName.replace(/-\w/, (x) => x.slice(1).toUpperCase());
+  return propertyName.replace(/-\w/g, (x) => x.slice(1).toUpperCase());
 }
 
 function sanitizePropertyName(propertyName) {
@@ -183,7 +183,7 @@ function preparePropertyValue(propertyValue) {
 }
 
 function jsxPropertyToCssProperty(propertyName) {
-  return propertyName.replace(/(\w)([A-Z])/, "$1-$2").toLowerCase();
+  return propertyName.replace(/(\w)([A-Z])/g, "$1-$2").toLowerCase();
 }
 
 function filterNerfedProperties(styles) {

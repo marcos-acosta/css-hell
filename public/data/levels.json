@@ -601,5 +601,112 @@
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1pfsZRT_QNgO1HDpAv4vcCGcT6cSY3JCW",
       "postAudioMessage": "Yes, yes, very nice. Look, I didn't want to have to do this, Anshul, but it seems you're forcing my hand. Gentlemen, bring out... the Gauntlet™."
     }
+  },
+  "13": {
+    "levelName": "the Gauntlet™",
+    "hint": "No more Mr. Nice Guy. You're on your own.",
+    "elements": [
+      { "id": "t0" },
+      {
+        "id": "d0",
+        "children": [{ "id": "p0" }, { "id": "t1" }, { "id": "p1" }]
+      },
+      { "id": "t2" },
+      { "id": "p2" },
+      { "id": "h0" },
+      { "id": "h1" },
+      { "id": "h2" }
+    ],
+    "elementData": {
+      "t0": {
+        "style": {
+          "fontSize": "4.8vh",
+          "marginRight": "2vw",
+          "position": "relative",
+          "marginTop": "25vw",
+          "display": "inline-block"
+        },
+        "text": "behold, the Gauntlet™"
+      },
+      "d0": {
+        "style": {
+          "width": "13vw",
+          "position": "relative",
+          "display": "inline-block",
+          "verticalAlign": "middle",
+          "fontSize": "2.75vw",
+          "padding": "0",
+          "margin": "0",
+          "inset": "0",
+          "lineHeight": "normal"
+        },
+        "cssBudget": 1
+      },
+      "p0": {
+        "style": {
+          "display": "inline-block",
+          "verticalAlign": "bottom"
+        }
+      },
+      "t1": {
+        "style": {
+          "fontSize": "inherit"
+        },
+        "text": "the instrument of your demise. surrender immediately"
+      },
+      "p1": {
+        "style": {
+          "display": "inline-block",
+          "verticalAlign": "top"
+        }
+      },
+      "h2": {
+        "style": {
+          "position": "absolute",
+          "right": "37vw",
+          "top": "36vw"
+        }
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "left": "53vw",
+          "top": "6vw"
+        }
+      },
+      "h1": {
+        "style": {
+          "position": "absolute",
+          "left": "53vw",
+          "top": "56vh"
+        }
+      },
+      "t2": {
+        "style": {
+          "color": "white",
+          "position": "relative",
+          "padding": "1vw",
+          "marginLeft": "2vw",
+          "backgroundColor": "red",
+          "fontStyle": "italic",
+          "fontWeight": "bold"
+        },
+        "text": "herring",
+        "cssBudget": 1
+      },
+      "p2": {
+        "style": {
+          "position": "relative",
+          "display": "inline-block",
+          "top": "10.25vw",
+          "left": "2vw"
+        }
+      }
+    },
+    "completionMessage": {
+      "message": "You, uh, survived the Gauntlet™. My code monkeys spent sixteen years on their typewriters designing that one. Chimps! Design me a level based around forced-color-adjust, paint-order, ruby-position...",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1A7aLEVxknTNKfnNcr1iXZ8kx6k84fnXu",
+      "postAudioMessage": "...caret-color, and conic-gradient! Ah, welcome back, Anshul. I'm afraid I can't bear to watch what happens next."
+    }
   }
 }
