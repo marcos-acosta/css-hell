@@ -6,7 +6,7 @@ const ELEMENT_TYPE = {
   text: "t",
 };
 const ELEMENTS_WITH_LETTERS = [ELEMENT_TYPE.peg, ELEMENT_TYPE.hole];
-const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "##44FFD2"];
+const TARGET_COLORS = ["#ff3e30", "#176bef", "#f7b529", "#44FFD2"];
 const NERFED_PROPERTIES = [
   "animation",
   "offset",

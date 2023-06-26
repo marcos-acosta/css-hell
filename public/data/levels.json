@@ -708,5 +708,44 @@
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1A7aLEVxknTNKfnNcr1iXZ8kx6k84fnXu",
       "postAudioMessage": "...caret-color? what am I, an amateur? Aha! conic-gradient! It's diabolical. I can't wait to see your face..."
     }
+  },
+  "14": {
+    "levelName": "conic-gradient madness",
+    "hint": "I'm afraid I can't help you. There's just too much conic-gradient.",
+    "elements": [{ "id": "d0" }, { "id": "p0" }, { "id": "h0" }],
+    "elementData": {
+      "d0": {
+        "style": {
+          "display": "inline-block",
+          "position": "relative",
+          "width": "10vw",
+          "height": "10vw",
+          "border": "none",
+          "background": "conic-gradient(#ff3e30, #176bef, #f7b529, #44FFD2)",
+          "marginTop": "20vw",
+          "marginLeft": "10vw"
+        },
+        "cssBudget": 1
+      },
+      "p0": {
+        "style": {
+          "display": "inline-block",
+          "verticalAlign": "bottom",
+          "marginTop": "20vw"
+        }
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "top": "25vw",
+          "right": "10vw"
+        }
+      }
+    },
+    "completionMessage": {
+      "message": "Huh... I guess I should have seen that one coming. Say, Anshul, when I give you your last friend back, we'll be even, right? Like, you won't come after me or anything? Look, here's the second to last one! Just like I promised.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1uI7tXvkMa_M1knCak8ivBJRKMU5pcg51",
+      "postAudioMessage": "Haven't we had such great memories together? It's such a shame to think we'll go our separate ways after this last level. Good luck, now."
+    }
   }
 }
