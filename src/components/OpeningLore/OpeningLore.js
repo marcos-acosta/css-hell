@@ -51,8 +51,8 @@ export default function OpeningLore(props) {
             <i>CSS only</i>
           </b>
           . Each time you solve a level, I'll let one of your friends free.
-          Coincidentally, and completely spontaneously, they have coordinated a
-          common theme for something they each want to say to you.
+          While in captivity, they have had plenty of time to think of something
+          to say to you upon their liberation.
         </p>
       )}
       {textStage >= 8 && (

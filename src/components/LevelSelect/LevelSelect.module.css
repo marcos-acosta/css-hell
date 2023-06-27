@@ -9,7 +9,7 @@
 .gameTitle {
   width: 100%;
   text-align: center;
-  padding-top: 2vw;
+  padding-top: 4vw;
 }
 
 .gameTitleText {
@@ -18,11 +18,11 @@
 }
 
 .levelsContainer {
-  width: 30%;
-  margin-top: 3vw;
-  margin-left: calc((100% - 25%) / 2);
-  display: flex;
-  flex-direction: column;
+  width: 60%;
+  margin-top: 4vw;
+  margin-left: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .messageButton {
