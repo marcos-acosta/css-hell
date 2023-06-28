@@ -49,3 +49,11 @@ Same solution as Level 1 except PEG A is invisible.
 ### Level 12: gridlock
 
 One solution is to set DIV 1's `grid-template` to `1vw 1vw / 1vw` and then assign `margin-top: 3vw` to DIV 3.
+
+### Level 13: the Gauntlet™
+
+Add `hyphens: auto` to DIV 1, resize the window so PEG A and B overlap with their respective holes, and then assign negative `margin-right` to TEXT 3 so PEG C overlaps with HOLE C.
+
+### Level 14: conic-gradient madness
+
+One solution: add `padding-left` to DIV 1.
