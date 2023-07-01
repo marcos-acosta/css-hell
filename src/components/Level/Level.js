@@ -4,6 +4,7 @@ import Controllable from "../Controllable/Controllable";
 import CssEditor from "../CssEditor/CssEditor";
 import LevelHeader from "../LevelHeader/LevelHeader";
 import {
+  LAST_LEVEL_NUMBER,
   NERFED_PROPERTIES,
   combineClassNames,
   filterConflictingProperties,
@@ -82,7 +83,7 @@ export default function Level(props) {
   const elementRefs = useRef([]);
 
   const elementsShallowCopy = elementRefs.current.map((x) => x);
-  const { clearThisLevel } = props;
+  const { clearThisLevel, handleNextButton, levelNumber } = props;
 
   const buildElements = (elements, elementData, customCss, elementRefs) => {
     if (!elements) {
@@ -204,8 +205,11 @@ export default function Level(props) {
     setIsWinning(areAllOverlapping);
     if (areAllOverlapping) {
       clearThisLevel();
+      if (levelNumber === LAST_LEVEL_NUMBER) {
+        handleNextButton();
+      }
     }
-  }, [elementsShallowCopy, clearThisLevel]);
+  }, [elementsShallowCopy, clearThisLevel, levelNumber, handleNextButton]);
 
   useEffect(() => {
     setCustomCss({});
@@ -239,7 +243,8 @@ export default function Level(props) {
       <div
         className={combineClassNames(
           styles.levelContainer,
-          isWinning && styles.devWinCondition
+          isWinning && styles.devWinCondition,
+          levelNumber === LAST_LEVEL_NUMBER && styles.darkerGradient
         )}
       >
         {buildElements(
@@ -250,10 +255,7 @@ export default function Level(props) {
         )}
       </div>
       {isWinning && (
-        <button
-          className={styles.nextLevelButton}
-          onClick={props.handleNextButton}
-        >
+        <button className={styles.nextLevelButton} onClick={handleNextButton}>
           <span
             className={combineClassNames(
               "material-symbols-outlined",
@@ -265,7 +267,7 @@ export default function Level(props) {
         </button>
       )}
       <LevelHeader
-        levelNumber={props.levelNumber}
+        levelNumber={levelNumber}
         levelName={props.levelData.levelName}
         goHome={props.goHome}
         resetLevel={props.reset}

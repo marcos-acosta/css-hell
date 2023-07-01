@@ -283,7 +283,7 @@
           "fontSize": "1.5vw"
         },
         "cssBudget": 1,
-        "text": "now i can taunt you from within the level itself!"
+        "text": "Now I can taunt you from within the level itself!"
       },
       "p0": {
         "style": {
@@ -341,13 +341,13 @@
         "style": { "padding": "0.5vw", "fontSize": "1vw" }
       },
       "t0": {
-        "text": "time for a brief villain monologue"
+        "text": "Time for a brief villain monologue"
       },
       "p0": {
         "style": { "display": "inline-block", "verticalAlign": "middle" }
       },
       "t1": {
-        "text": "you see, it all began with my father. he- aaaand you're not listening"
+        "text": "You see, it all began with my father. he- aaaand you're not listening"
       },
       "p1": {
         "style": { "display": "inline-block", "verticalAlign": "middle" }
@@ -626,7 +626,7 @@
           "marginTop": "25vw",
           "display": "inline-block"
         },
-        "text": "behold, the Gauntlet™"
+        "text": "Behold, the Gauntlet™"
       },
       "d0": {
         "style": {
@@ -652,7 +652,7 @@
         "style": {
           "fontSize": "inherit"
         },
-        "text": "the instrument of your demise. surrender immediately"
+        "text": "the instrument of your demise. Surrender immediately"
       },
       "p1": {
         "style": {
@@ -804,6 +804,237 @@
       "message": "I know, Cassie, it's unfortunate that we had to kill Anshul like that. But it's for- AH! You! I was just saying, haha, it's so *fortunate* that you *killed* the last level like that. Uh, well, anyway, here's the last of your friends!",
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1-a8LcMnusTuCvHGYa_IgN1dVbwXOGRuD",
       "postAudioMessage": "You did it, Anshul! You've beaten all of my puzzles! Time to head our separate ways and let bygones be bygones, yeah?"
+    }
+  },
+  "16": {
+    "levelName": "this is not a level",
+    "hint": "Please stop.",
+    "elements": [
+      { "id": "t0" },
+      { "id": "t1" },
+      { "id": "t2" },
+      { "id": "t3" },
+      { "id": "t4" },
+      { "id": "t5" },
+      { "id": "t6" },
+      { "id": "t7" },
+      { "id": "t8" },
+      { "id": "t9" },
+      { "id": "t10" },
+      { "id": "t11" },
+      { "id": "p0" },
+      { "id": "h0" }
+    ],
+    "elementData": {
+      "p0": {
+        "style": {
+          "position": "fixed",
+          "top": "50vh",
+          "left": "calc(50% - 2.5vw)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px"
+        }
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "left": "calc(50% - 2.5vw)",
+          "top": "calc(2000vh - 50vh)"
+        },
+        "cssBudget": 1
+      },
+      "t0": {
+        "style": {
+          "position": "absolute",
+          "top": "40vh",
+          "left": "10vw",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white"
+        },
+        "text": "Wait- where are you going?"
+      },
+      "t1": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "240vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white"
+        },
+        "text": "Seriously, where are you taking that?"
+      },
+      "t2": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "440vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "color": "white",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white"
+        },
+        "text": "You can turn around now, there's nothing down here."
+      },
+      "t3": {
+        "style": {
+          "position": "absolute",
+          "right": "10vw",
+          "top": "640vh",
+          "textAlign": "center",
+          "fontSize": "1.5vw",
+          "backgroundColor": "white",
+          "boxShadow": "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px",
+          "color": "rgb(12, 12, 12)",
+          "padding": "0.75vw",
+          "outline": "3px solid white",
+          "border": "2px dashed rgb(12, 12, 12)"
+        },
+        "text": "SELF DESTRUCT BUTTON ↴"
+      },
+      "t4": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "700vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white"
+        },
+        "text": "I mean, that sign could mean literally anything."
+      },
+      "t5": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "900vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white",
+          "maxWidth": "60vw"
+        },
+        "text": "Look, I set your friends free, didn't I? We're even! You can go back to chasing SEGFAULTs like nothing even happened!"
+      },
+      "t6": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "1100vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white",
+          "maxWidth": "60vw"
+        },
+        "text": "You don't want to do this."
+      },
+      "t7": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "1300vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white",
+          "maxWidth": "60vw"
+        },
+        "text": "You think of me as a friend, right? Friends forgive each other for kidnapping their other friends."
+      },
+      "t8": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "1500vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white",
+          "maxWidth": "60vw"
+        },
+        "text": "I'm not joking around anymore. Turn around."
+      },
+      "t9": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "1700vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white",
+          "maxWidth": "60vw"
+        },
+        "text": "Just remember, even if you kill me, it won't change who you've become. Who you are. You'll always be..."
+      },
+      "t10": {
+        "style": {
+          "position": "absolute",
+          "left": "10vw",
+          "top": "1900vh",
+          "fontSize": "1.5vw",
+          "backgroundColor": "rgb(12, 12, 12)",
+          "boxShadow": "rgba(0, 0, 0, 0.15) 0px 5px 15px",
+          "color": "white",
+          "padding": "0.75vw",
+          "outline": "3px solid rgb(12, 12, 12)",
+          "border": "2px dashed white",
+          "maxWidth": "60vw"
+        },
+        "text": "...a code monkey."
+      },
+      "t11": {
+        "style": {
+          "position": "absolute",
+          "left": "60vw",
+          "top": "calc(1950vh + 0.5vw)",
+          "textAlign": "center",
+          "fontSize": "1.5vw",
+          "backgroundColor": "white",
+          "boxShadow": "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px",
+          "color": "rgb(12, 12, 12)",
+          "padding": "0.75vw",
+          "outline": "3px solid white",
+          "border": "2px dashed rgb(12, 12, 12)"
+        },
+        "text": "↵ SELF DESTRUCT"
+      }
+    },
+    "completionMessage": {
+      "message": "*cough* It's over... I'm finished. My CSS tortue chambers... all burnt to rubble. *cough* Go, Anshul. You've shown me the truth- that code monkeys can be creative, cunning, handsome... I'm- *cough* I'm sorry I lied to you. There was one more. Listen.",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1HDqeB6DcvWwkDbvSv7qBA84iFc_bwoi4",
+      "postAudioMessage": "I don't... I don't think I'm going to make it. Take care of Cassie for me. Remind her to- to watch out for margin collapse like- *cough* like I used to. I think I'm going... I see the light! It's #f6f5eb..."
     }
   }
 }

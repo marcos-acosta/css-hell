@@ -73,6 +73,7 @@ const STYLE_CONFLICTS = {
     "transitionTimingFunction",
   ]),
 };
+const LAST_LEVEL_NUMBER = 16;
 
 function combineClassNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -239,6 +240,7 @@ export {
   LEVEL_DATA_PATH,
   ELEMENT_TYPE,
   NERFED_PROPERTIES,
+  LAST_LEVEL_NUMBER,
   combineClassNames,
   interpretId,
   testForOverlapRandom,

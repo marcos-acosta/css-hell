@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Level from "../Level/Level";
 import LevelSelect from "../LevelSelect/LevelSelect";
-import { LEVEL_DATA_PATH } from "../../util";
+import { LAST_LEVEL_NUMBER, LEVEL_DATA_PATH } from "../../util";
 import { useCookies } from "react-cookie";
 import MessageScreen from "../MessageScreen/MessageScreen";
 import OpeningLore from "../OpeningLore/OpeningLore";
@@ -75,7 +75,7 @@ export default function App() {
   };
 
   const handleNextFromMessageScreen = () => {
-    if (isRevisitingMessage) {
+    if (isRevisitingMessage || selectedLevel === LAST_LEVEL_NUMBER) {
       setSelectedLevel(null);
       setIsRevisitingMessage(false);
       setIsShowingMessage(false);
@@ -96,6 +96,7 @@ export default function App() {
         <MessageScreen
           messageData={gameData[selectedLevel].completionMessage}
           moveToNextLevel={handleNextFromMessageScreen}
+          isLastLevel={selectedLevel === LAST_LEVEL_NUMBER}
         />
       ) : (
         <Level
