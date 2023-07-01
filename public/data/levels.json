@@ -503,8 +503,7 @@
         "style": {
           "fontSize": "1.2vw"
         },
-        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless.",
-        "cssBudget": 1
+        "text": "I thought I would take a moment to read to you some scripture. The following is a reading from the MDN Web Doc. Ahem. \"The float CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it. The element is removed from the normal flow of the page, though still remaining a part of the flow (in contrast to absolute positioning).\" Ah, the great mystery of flow. We don't understand it, yet we believe in it nonetheless."
       },
       "p1": {
         "style": { "display": "inline-block", "verticalAlign": "top" }
@@ -626,7 +625,7 @@
           "marginTop": "25vw",
           "display": "inline-block"
         },
-        "text": "Behold, the Gauntlet™"
+        "text": "behold, the Gauntlet™"
       },
       "d0": {
         "style": {
@@ -652,7 +651,7 @@
         "style": {
           "fontSize": "inherit"
         },
-        "text": "the instrument of your demise. Surrender immediately"
+        "text": "the instrument of your demise. surrender immediately"
       },
       "p1": {
         "style": {
