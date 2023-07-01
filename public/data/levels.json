@@ -747,5 +747,63 @@
       "audioFileSource": "https://drive.google.com/uc?export=download&id=1uI7tXvkMa_M1knCak8ivBJRKMU5pcg51",
       "postAudioMessage": "Haven't we had such great memories together? It's such a shame to think we'll go our separate ways after this last level. Good luck, now."
     }
+  },
+  "15": {
+    "levelName": "goodbye anshul",
+    "hint": "You've grown too powerful. I can't let you escape.",
+    "elements": [
+      { "id": "p0" },
+      { "id": "d0", "children": [{ "id": "h0" }, { "id": "p1" }] },
+      { "id": "h1" }
+    ],
+    "elementData": {
+      "p0": {
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "left": "calc(100vw / 3)"
+        },
+        "cssBudget": 1
+      },
+      "h1": {
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "right": "calc(100vw / 3)"
+        }
+      },
+      "d0": {
+        "style": {
+          "overflow": "hidden",
+          "position": "absolute",
+          "resize": "both",
+          "width": "5px",
+          "height": "5px",
+          "top": "0",
+          "left": "0",
+          "border": "none",
+          "cursor": "default"
+        }
+      },
+      "h0": {
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "left": "calc(100vw / 3)"
+        }
+      },
+      "p1": {
+        "style": {
+          "position": "absolute",
+          "top": "calc((100vh - 5vw) / 2)",
+          "right": "calc(100vw / 3)"
+        }
+      }
+    },
+    "completionMessage": {
+      "message": "I know, Cassie, it's unfortunate that we had to kill Anshul like that. But it's for- AH! You! I was just saying, haha, it's so *fortunate* that you *killed* the last level like that. Uh, well, anyway, here's the last of your friends!",
+      "audioFileSource": "https://drive.google.com/uc?export=download&id=1-a8LcMnusTuCvHGYa_IgN1dVbwXOGRuD",
+      "postAudioMessage": "You did it, Anshul! You've beaten all of my puzzles! Time to head our separate ways and let bygones be bygones, yeah?"
+    }
   }
 }

@@ -57,3 +57,7 @@ Add `hyphens: auto` to DIV 1, resize the window so PEG A and B overlap with thei
 ### Level 14: conic-gradient madness
 
 One solution: add `padding-left` to DIV 1.
+
+### Level 15: goodbye anshul
+
+There's a resizable div in the top-left corner.
