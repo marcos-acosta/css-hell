@@ -1,5 +1,5 @@
 .levelContainer {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: white;
   position: absolute;
@@ -66,4 +66,13 @@
 .grayText {
   color: rgb(191, 191, 191);
   font-style: italic;
+}
+
+.darkerGradient {
+  background: linear-gradient(#ffffff, #000000);
+  height: 2000vh;
+}
+
+.darkerGradient.devWinCondition {
+  background: #179c52;
 }

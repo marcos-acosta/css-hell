@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LevelSelect.module.css";
 import LevelButton from "./LevelButton/LevelButton";
-import { combineClassNames } from "../../util";
+import { LAST_LEVEL_NUMBER, combineClassNames } from "../../util";
 
 export default function LevelSelect(props) {
   return (
@@ -12,6 +12,9 @@ export default function LevelSelect(props) {
       <div className={styles.levelsContainer}>
         {Object.entries(props.gameData).map(([levelNumber, levelData], i) => {
           const isUnlocked = props.highestCompletedLevel + 1 >= levelNumber;
+          if (!isUnlocked && parseInt(levelNumber) === LAST_LEVEL_NUMBER) {
+            return null;
+          }
           const canSkipToMessage = props.highestCompletedLevel >= levelNumber;
           return (
             <div className={styles.levelContainer} key={i}>

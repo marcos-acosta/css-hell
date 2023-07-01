@@ -80,3 +80,12 @@
 .nextLevelSymbol {
   font-size: 3vw;
 }
+
+.defaultMessageVisibility {
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
+.defaultMessageVisibility.messageVisible {
+  opacity: 1;
+}
