@@ -7,13 +7,12 @@ export default function OpeningLore(props) {
       <div className={styles.openingLoreIntro}>
         <div className={styles.instructionsContainer}>
           Hello, and welcome to{" "}
-          <span className={styles.emphasized}>&lt;div&gt;ine intervention</span>
-          , where you will be subjugated to 15 unimaginably torturous CSS
-          puzzles. "What did I do to deserve this?", you ask. But you know
-          perfectly well: you blashpemized Cascading Style Sheets. I saw that
-          time your friends were complaining about CSS and you joined in,
-          saying, "CSS isn't even a <i>real</i> programming language". It is. I
-          saw you upvote that{" "}
+          <span className={styles.emphasized}>CSS Hell</span>, where you will be
+          subjugated to 15 unimaginably torturous CSS puzzles. "What did I do to
+          deserve this?", you ask. But you know perfectly well: you blashpemized
+          Cascading Style Sheets. I saw that time your friends were complaining
+          about CSS and you joined in, saying, "CSS isn't even a <i>real</i>{" "}
+          programming language". It is. I saw you upvote that{" "}
           <a
             href="https://www.reddit.com/r/ProgrammerHumor/comments/8igmxy/whenever_i_try_vertically_centering_anything/"
             target="_blank"

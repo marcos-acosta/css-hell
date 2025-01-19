@@ -7,9 +7,7 @@ export default function LevelSelect(props) {
   return (
     <div className={styles.levelSelectContainer}>
       <div className={styles.gameTitle}>
-        <span className={styles.gameTitleText}>
-          &lt;div&gt;ine intervention
-        </span>
+        <span className={styles.gameTitleText}>css hell</span>
       </div>
       <div className={styles.levelsContainer}>
         {Object.entries(props.gameData).map(([levelNumber, levelData], i) => {

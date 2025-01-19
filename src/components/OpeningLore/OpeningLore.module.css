@@ -31,17 +31,12 @@
 }
 
 .doneButton {
-  background-color: rgba(255, 255, 255, 0.909);
+  background-color: white;
   margin-top: 50px;
-  transition: background-color 1s ease;
   border: none;
   font-size: 20px;
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
   float: right;
-}
-
-.doneButton:hover {
-  background-color: rgba(255, 255, 255);
 }
