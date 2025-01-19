@@ -58,15 +58,15 @@ export default function OpeningLore(props) {
           >
             GitHub repository
           </a>
-          . I've ensured these trials and tribulations are solvable on Chrome
-          131.0, Firefox 134.0, and Safari 17. Last thing: if you're on your
-          phone, you'll quickly see why you need to be on a desktop.
+          . I've tested each puzzle on Safari, Firefox, and Chrome (Safari
+          requires version 17). Last thing: if you're on your phone, you'll
+          quickly see why you need to be on a desktop.
           <br />
           <br />
           Thus concludes my monologue. Good luck; you'll need it.
         </div>
         <button onClick={props.toMainMenu} className={styles.doneButton}>
-          Begin
+          begin →
         </button>
       </div>
     </div>

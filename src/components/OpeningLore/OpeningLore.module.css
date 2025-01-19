@@ -21,10 +21,10 @@
 }
 
 .openingLoreIntro {
-  font-size: 20px;
-  width: max(400px, 40%);
+  font-size: clamp(16px, 1.5vw, 20px);
+  width: max(300px, 40%);
   background-color: rgb(12, 12, 12);
-  padding: 30px;
+  padding: clamp(15px, 1vw, 30px);
   outline: 3px solid rgb(12, 12, 12);
   border: 1px dashed white;
   color: white;
@@ -34,7 +34,7 @@
   background-color: white;
   margin-top: 50px;
   border: none;
-  font-size: 20px;
+  font-size: clamp(16px, 1.5vw, 20px);
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
