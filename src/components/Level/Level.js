@@ -301,7 +301,7 @@ export default function Level(props) {
       )}
       {showHint && (
         <div className={styles.bottomLeftPanel}>
-          <span className={styles.grayText}>SKILL ISSUE?</span>{" "}
+          <span className={styles.grayText}>HINT</span>&nbsp;&nbsp;
           {props.levelData.hint}
         </div>
       )}

@@ -1,15 +1,15 @@
 .levelButton {
-  width: 25vw;
   text-align: left;
   height: 2.2vw;
   padding-left: 0.5vw;
-  margin-bottom: 0.5vw;
   font-weight: bold;
   background-color: transparent;
   color: white;
-  border: 1px dashed white;
+  border: 1px solid white;
   transition: color 1s ease, background-color 1s ease;
   font-size: 1.1vw;
+  display: inline-block;
+  width: 100%;
 }
 
 .levelButton:hover {
@@ -18,7 +18,7 @@
 }
 
 .levelButton:disabled {
-  border: none;
+  border: 1px dashed white;
   font-weight: initial;
   cursor: initial;
   color: rgb(212, 212, 212);
@@ -27,4 +27,30 @@
 .levelButton:disabled:hover {
   background-color: transparent;
   color: rgb(212, 212, 212);
+}
+
+.messageButton {
+  background-color: transparent;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  cursor: pointer;
+  transition: color 1s ease, background-color 1s ease;
+  float: right;
+  background-color: rgb(12, 12, 12);
+  padding: 0.2vw;
+  border: 1px solid white;
+  margin-right: 0.25vw;
+}
+
+.messageButton:hover {
+  background-color: white;
+  color: rgb(12, 12, 12);
+  border: 1px solid rgb(12, 12, 12);
+}
+
+.noteSymbol {
+  font-size: 1vw;
 }

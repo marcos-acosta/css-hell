@@ -1,46 +1,45 @@
 .openingLoreContainer {
-  background-color: rgb(12, 12, 12);
-  color: white;
+  background-color: white;
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 100vh;
-  font-size: 1.5vw;
-  padding-bottom: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  box-sizing: border-box;
 }
 
-.openingLoreContainer > p {
+.openingLoreContainer a {
+  color: rgb(221, 221, 221);
+}
+
+.emphasized {
+  font-weight: bold;
+}
+
+.openingLoreIntro {
+  font-size: 20px;
+  width: max(400px, 40%);
+  background-color: rgb(12, 12, 12);
+  padding: 30px;
+  outline: 3px solid rgb(12, 12, 12);
   border: 1px dashed white;
-  width: 50vw;
-  margin-left: 25vw;
-  padding: 0.5vw;
-}
-
-.nextButton {
-  width: 8vw;
-  margin-left: 46vw;
-  padding: 0.5vw;
-  font-size: 1.25vw;
-  border: 1px solid white;
-  background-color: transparent;
   color: white;
-  transition: background-color 1s ease;
-}
-
-.nextButton:hover {
-  background-color: rgba(255, 255, 255, 0.074);
 }
 
 .doneButton {
-  width: 8vw;
-  margin-left: 46vw;
-  padding: 0.5vw;
-  font-size: 1.25vw;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.845);
-  color: rgb(12, 12, 12);
+  background-color: rgba(255, 255, 255, 0.909);
+  margin-top: 50px;
   transition: background-color 1s ease;
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: right;
 }
 
 .doneButton:hover {

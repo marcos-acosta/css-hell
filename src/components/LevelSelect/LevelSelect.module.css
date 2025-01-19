@@ -13,7 +13,7 @@
 }
 
 .gameTitleText {
-  font-size: 4vw;
+  font-size: 3vw;
   border-bottom: 0.25vw dashed white;
 }
 
@@ -23,27 +23,5 @@
   margin-left: 20%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-.messageButton {
-  margin-left: 1vw;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: top;
-  height: 2.2vw;
-  cursor: pointer;
-  transition: color 1s ease, background-color 1s ease;
-}
-
-.messageButton:hover {
-  background-color: white;
-  color: black;
-}
-
-.noteSymbol {
-  font-size: 1.5vw;
+  gap: 0.5vw;
 }

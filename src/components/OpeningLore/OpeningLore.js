@@ -1,84 +1,74 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./OpeningLore.module.css";
 
 export default function OpeningLore(props) {
-  const [textStage, setTextStage] = useState(1);
-
-  const incrementTextStage = () => setTextStage((s) => s + 1);
-
   return (
     <div className={styles.openingLoreContainer}>
-      <p>
-        You're finally awake. Welcome, Anshul- I've waited a long, long time for
-        this day.
-      </p>
-      {textStage >= 2 && (
-        <p>
-          Well, I suppose there's no point in drawing out the reveal. You,
-          Anshul, have fallen directly into the clutches of...{" "}
-          <b>
-            <i>THE JUSTIFIER</i>
-          </b>
-          !
-        </p>
-      )}
-      {textStage >= 3 && <p>...</p>}
-      {textStage >= 4 && (
-        <p>
-          Well, ah, I suppose I'm still a bit *underground* for a mainstream
-          audience. No mind. You'll take me seriously once you learn the{" "}
-          <i>situation</i> you're in.
-        </p>
-      )}
-      {textStage >= 5 && (
-        <p>
-          I've captured <i>some large subset</i> of your friends and am holding
-          them here as captives! Luckily, saving them is quite simple. All you
-          will need to do is a little bit of... styling.
-        </p>
-      )}
-      {textStage >= 6 && (
-        <p>
-          You see, nothing angers me more than prejudice towards frontend
-          engineers, and you've crossed me one too many times. Consequently,
-          I've devised my masterstroke:
-        </p>
-      )}
-      {textStage >= 7 && (
-        <p>
-          You will be faced with a series of levels to be solved with{" "}
-          <b>
-            <i>CSS only</i>
-          </b>
-          . Each time you solve a level, I'll let one of your friends free.
-          While in captivity, they have had plenty of time to think of something
-          to say to you upon their liberation.
-        </p>
-      )}
-      {textStage >= 8 && (
-        <p>
-          The great trick, however, is that in choosing to save your friends,
-          you will become the very thing you despise most...
-        </p>
-      )}
-      {textStage >= 9 && (
-        <p>
-          A{" "}
-          <b>
-            <i>code monkey</i>
-          </b>
-          .
-        </p>
-      )}
-      {textStage < 9 ? (
-        <button onClick={incrementTextStage} className={styles.nextButton}>
-          ok...
-        </button>
-      ) : (
+      <div className={styles.openingLoreIntro}>
+        <div className={styles.instructionsContainer}>
+          Hello, and welcome to{" "}
+          <span className={styles.emphasized}>&lt;div&gt;ine intervention</span>
+          , where you will be subjugated to 15 unimaginably torturous CSS
+          puzzles. "What did I do to deserve this?", you ask. But you know
+          perfectly well: you blashpemized Cascading Style Sheets. I saw that
+          time your friends were complaining about CSS and you joined in,
+          saying, "CSS isn't even a <i>real</i> programming language". It is. I
+          saw you upvote that{" "}
+          <a
+            href="https://www.reddit.com/r/ProgrammerHumor/comments/8igmxy/whenever_i_try_vertically_centering_anything/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reddit meme
+          </a>{" "}
+          about vertically aligning a div. Just use a flexbox. I saw you chuckle
+          sensibly at those{" "}
+          <a
+            href="https://css-tricks.com/css-is-awesome/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            CSS Is Awesome
+          </a>{" "}
+          designs. I couldn't stand to let Håkon Wium Lie's divine creation be
+          slandered in this way, so I decided to show the nonbelievers the true
+          extent of CSS's power.
+          <br />
+          <br />
+          The mechanics of the puzzle are simple: for each peg, there is a hole,
+          and each peg must overlap with its corresponding hole. To accomplish
+          this, you will add CSS properties to certain divs. All divs have a
+          limit on the number of properties that can be added (usually just one
+          or two), and some are "locked" (no properties can be added). In
+          general, <i>any</i> CSS property is allowed, with a few exceptions
+          that you may stumble across. For that reason, I would recommend
+          keeping the{" "}
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+            target="_blank"
+            rel="noreferrer"
+          >
+            MDN CSS Reference
+          </a>{" "}
+          handy. There is also a hint button and, should you require mercy,
+          solutions can be found in the{" "}
+          <a
+            href="https://github.com/marcos-acosta/code-monkey-game/blob/main/solutions.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub repository
+          </a>
+          . Finally, I've ensured these trials and tribulations are solvable on
+          Safari, Firefox, and Chrome. Use a desktop, not your phone.
+          <br />
+          <br />
+          Thus concludes my monologue. Good luck; you'll need it.
+        </div>
         <button onClick={props.setVisited} className={styles.doneButton}>
-          alright
+          Begin
         </button>
-      )}
+      </div>
     </div>
   );
 }

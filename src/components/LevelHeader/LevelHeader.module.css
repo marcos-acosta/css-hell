@@ -60,6 +60,11 @@ button.whiteButton {
   color: white;
 }
 
+button.whiteButton.gameControlButton.gameControlButtonSelected {
+  background-color: white;
+  color: #179c52;
+}
+
 .gameControlButton.gameControlButtonSelected:hover {
   background-color: black;
 }

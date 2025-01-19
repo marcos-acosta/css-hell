@@ -1,5 +1,5 @@
 .cssEditorContainer {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.95);
   position: absolute;
   top: 5vw;
   left: 2vw;
@@ -14,7 +14,7 @@
   /* border: 2px dashed #179c52; */
   border: 2px dashed white;
   color: white;
-  background-color: #179c52;
+  background-color: rgba(23, 156, 82, 0.95);
 }
 
 .titleContainer {

@@ -11,7 +11,11 @@ export default function LevelHeader(props) {
           props.isWinning && styles.whiteText
         )}
       >
-        #{props.levelNumber} {props.levelName}
+        {props.levelNumber !== 9 && (
+          <>
+            #{props.levelNumber} {props.levelName}
+          </>
+        )}
       </div>
       <div className={styles.floatRightControls}>
         <button
