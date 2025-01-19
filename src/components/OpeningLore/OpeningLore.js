@@ -59,7 +59,8 @@ export default function OpeningLore(props) {
             GitHub repository
           </a>
           . Finally, I've ensured these trials and tribulations are solvable on
-          Safari, Firefox, and Chrome. Use a desktop, not your phone.
+          Chrome 131.0, Firefox 134.0, and Safari 17. Last thing: if you're on
+          your phone, you'll quickly see why you need to be on a desktop.
           <br />
           <br />
           Thus concludes my monologue. Good luck; you'll need it.

@@ -720,7 +720,7 @@
   },
   "15": {
     "levelName": "goodbye",
-    "hint": "You've grown too powerful. I can't let you win.",
+    "hint": "You've really backed me into a corner. I can't let you win.",
     "elements": [
       { "id": "p0" },
       { "id": "d0", "children": [{ "id": "h0" }, { "id": "p1" }] },
@@ -747,8 +747,8 @@
           "overflow": "hidden",
           "position": "absolute",
           "resize": "both",
-          "width": "5px",
-          "height": "5px",
+          "width": "10px",
+          "height": "10px",
           "top": "0",
           "left": "0",
           "border": "none",
@@ -766,8 +766,9 @@
         "style": {
           "position": "absolute",
           "top": "calc((100vh - 5vw) / 2)",
-          "right": "calc(100vw / 3)"
-        }
+          "right": "calc(100vw / 2)"
+        },
+        "cssBudget": 1
       }
     },
     "completionMessage": {
