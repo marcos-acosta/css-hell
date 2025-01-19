@@ -19,9 +19,32 @@
 
 .levelsContainer {
   width: 60%;
-  margin-top: 4vw;
   margin-left: 20%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5vw;
+}
+
+.madeBy {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 2vw;
+  color: gray;
+}
+
+.madeBy a {
+  color: rgb(164, 164, 164);
+}
+
+.backToSpiel {
+  margin-top: 2vw;
+  margin-left: 20%;
+  margin-bottom: 1vw;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.backToSpiel:hover {
+  text-decoration: underline;
 }

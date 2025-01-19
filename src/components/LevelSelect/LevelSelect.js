@@ -9,6 +9,13 @@ export default function LevelSelect(props) {
       <div className={styles.gameTitle}>
         <span className={styles.gameTitleText}>css hell</span>
       </div>
+      <div
+        className={styles.backToSpiel}
+        role="button"
+        onClick={props.showIntro}
+      >
+        ← show intro again
+      </div>
       <div className={styles.levelsContainer}>
         {Object.entries(props.gameData).map(([levelNumber, levelData], i) => {
           const isUnlocked = props.highestCompletedLevel + 1 >= levelNumber;
@@ -29,6 +36,13 @@ export default function LevelSelect(props) {
             </div>
           );
         })}
+      </div>
+      <div className={styles.madeBy}>
+        made by{" "}
+        <a href="https://marcos.ac" target="_blank" rel="noreferrer">
+          marcos acosta
+        </a>{" "}
+        (2023)
       </div>
     </div>
   );

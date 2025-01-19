@@ -17,6 +17,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isShowingMessage, setIsShowingMessage] = useState(false);
   const [isRevisitingMessage, setIsRevisitingMessage] = useState(false);
+  const [isShowingIntro, setIsShowingIntro] = useState(true);
 
   const loadGameData = () => {
     setIsLoading(true);
@@ -41,6 +42,8 @@ export default function App() {
     : 0;
 
   const hasVisited = Boolean(cookies.visited);
+
+  console.log(hasVisited);
 
   const setHighestCompletedLevel = (levelNumber) =>
     levelNumber > highestCompletedLevel &&
@@ -90,7 +93,12 @@ export default function App() {
     setIsRevisitingMessage(true);
   };
 
-  return hasVisited ? (
+  const toMainMenu = () => {
+    setVisited();
+    setIsShowingIntro(false);
+  };
+
+  return hasVisited && !isShowingIntro ? (
     selectedLevel ? (
       isShowingMessage ? (
         <MessageScreen
@@ -114,9 +122,10 @@ export default function App() {
         gameData={gameData}
         setSelectedLevel={setSelectedLevel}
         showMessageByLevelNumber={showMessageByLevelNumber}
+        showIntro={() => setIsShowingIntro(true)}
       />
     )
   ) : (
-    <OpeningLore setVisited={setVisited} />
+    <OpeningLore toMainMenu={toMainMenu} />
   );
 }
