@@ -62,7 +62,7 @@ export default function OpeningLore(props) {
             </a>
             . I've tested each puzzle on Safari, Firefox, and Chrome (Safari
             requires version 17). You'll never need to open up the developer
-            console (although you could).
+            console or modify the page directly.
             <br />
             <br />
             Thus concludes my monologue. Good luck; you'll need it.
