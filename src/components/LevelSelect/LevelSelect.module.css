@@ -31,6 +31,7 @@
   text-align: center;
   bottom: 2vw;
   color: gray;
+  font-size: 0.8vw;
 }
 
 .madeBy a {
@@ -43,6 +44,7 @@
   margin-bottom: 1vw;
   display: inline-block;
   cursor: pointer;
+  font-size: 0.8vw;
 }
 
 .backToSpiel:hover {
