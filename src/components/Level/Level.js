@@ -288,7 +288,7 @@ export default function Level(props) {
         <div className={styles.bottomRightPanel}>
           {anyNerfed ? (
             <>
-              Nice thinking. Unfortuantely for you,{" "}
+              Nice thinking. Unfortunately for you,{" "}
               {FORMATTED_NERFED_PROPERTY_NAMES} are forbidden.
             </>
           ) : (
