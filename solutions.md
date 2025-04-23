@@ -11,7 +11,8 @@ Assign `margin-left` and `rotate: 45deg` to DIV 1.
 ### Level 3: feels like we only go backwards
 
 Assign `margin-top` and `flex-direction: row-reverse` to DIV 1.  
-_Alternate Albany Solution: Assign `overflow: hidden` and `resize: both` to DIV 1, then resize to a slightly larger rectangle. Then, delete both properties and add `writing-mode: vertical-rl` and, with a bit of luck, there is some `rotate` value for which all pegs and corresponding holes overlap._
+_Alternate Albany Solution: Assign `overflow: hidden` and `resize: both` to DIV 1, then resize to a slightly larger rectangle. Then, delete both properties and add `writing-mode: vertical-rl` and, with a bit of luck, there is some `rotate` value for which all pegs and corresponding holes overlap._<br>
+_Alternate Solution: Assign `order: -1` to DIV 2, then set `margin-left: -100px` on DIV 1._
 
 ### Level 4: why are you running?
 
