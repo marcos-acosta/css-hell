@@ -1,5 +1,7 @@
 # Intended solutions
 
+These are the solutions I had in mind while designing the levels :) I don't plan on updating this doc every time a different solution is found, so no need to create a PR in those case. I'm sure there's lots of alternate solutions!
+
 ### Level 1: round peg, round hole
 
 Assign `margin-left` (or `padding-left`) to PEG A.

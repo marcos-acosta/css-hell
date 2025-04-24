@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./OpeningLore.module.css";
+import { combineClassNames } from "../../util";
+import { useMediaQuery } from "react-responsive";
 
 export default function OpeningLore(props) {
+  const isWideEnough = useMediaQuery({
+    query: "(min-width: 900px)",
+  });
+  const [hideWarning, setHideWarning] = useState(false);
+
   return (
     <>
-      <div className={styles.openingLoreContainer}>
+      <div
+        className={combineClassNames(
+          styles.openingLoreContainer,
+          styles.wideLoreContainer,
+          !isWideEnough && !hideWarning && styles.hidden
+        )}
+      >
         <div className={styles.openingLoreIntro}>
           <div className={styles.instructionsContainer}>
             Hello, and welcome to{" "}
@@ -36,14 +49,14 @@ export default function OpeningLore(props) {
             <br />
             <br />
             The mechanics of the puzzles are simple: for each peg, there is a
-            hole, and each peg must overlap with its corresponding hole. To
-            accomplish this, you will add CSS properties to certain divs. Click
-            on any div to see its properties and add your own. All divs have a
-            limit on the number of properties that can be added (usually just
-            one or two), and some are "locked" (no properties can be added). In
-            general, <i>any</i> CSS property is allowed, with a few exceptions
-            that you may stumble across. For that reason, I would recommend
-            keeping the{" "}
+            hole, and each peg must overlap (even just a little) with its
+            corresponding hole. To accomplish this, you will add CSS properties
+            to certain divs. Click on any div to see its properties and add your
+            own. All divs have a limit on the number of properties that can be
+            added (usually just one or two), and some are "locked" (no
+            properties can be added). In general, <i>any</i> CSS property is
+            allowed, with a few exceptions that you may stumble across. For that
+            reason, I would recommend keeping the{" "}
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/CSS"
               target="_blank"
@@ -72,18 +85,39 @@ export default function OpeningLore(props) {
           </button>
         </div>
       </div>
-      <div className={styles.tooSmallContainer}>
-        <div className={styles.tooSmallBox}>
-          <div className={styles.tooSmallTitle}>Your viewport concerns me.</div>
-          <div className={styles.tooSmallBody}>
-            Hey! You're seeing this message because of your screen-
-            specifically, the width of it. I'm hyped you're here, but this game
-            wasn't designed for small screens, and you will <i>not</i> enjoy
-            attempting it. I mean, would you write code on your phone? Actually,
-            don't answer, because I don't want to know. Anyway, hope to see you
-            soon on a desktop.
+      <div
+        className={combineClassNames(
+          styles.openingLoreContainer,
+          styles.skinnyLoreContainer,
+          (isWideEnough || hideWarning) && styles.hidden
+        )}
+      >
+        <div className={styles.openingLoreIntro}>
+          <div className={styles.instructionsContainer}>
+            Welcome to CSS Hell, the puzzle game for CSS masochists! So, when I
+            made this site as a birthday gift in 2023, I didn't design it for
+            smaller screens, so I would recommend opening this site on a
+            desktop. If you want to try anyway, though, don't let me stop you.
+            <br />
+            <br />
+            In the meantime, enjoy this gameplay screenshot:
+            <br />
+            <br />
+            <div className={styles.imageContainer}>
+              <img
+                src="/preview.png"
+                alt="A screenshot of the gameplay"
+                width="90%"
+              />
+            </div>
+            <br />
+            <button
+              onClick={() => setHideWarning(true)}
+              className={styles.doneButton}
+            >
+              try me
+            </button>
           </div>
-          <div>-Marcos</div>
         </div>
       </div>
     </>

@@ -12,22 +12,18 @@
   box-sizing: border-box;
 }
 
-.tooSmallContainer {
+.openingLoreContainer a {
+  color: rgb(221, 221, 221);
+}
+
+.hidden {
   display: none;
 }
 
-@media (width <= 900px) {
-  .openingLoreContainer {
-    display: none;
-  }
-
-  .tooSmallContainer {
-    display: block;
-  }
-}
-
-.openingLoreContainer a {
-  color: rgb(221, 221, 221);
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .emphasized {
@@ -36,12 +32,17 @@
 
 .openingLoreIntro {
   font-size: 17px;
-  width: min(800px, 90%);
+  width: max(800px, 60%);
   background-color: rgb(12, 12, 12);
   padding: clamp(15px, 1vw, 30px);
   outline: 3px solid rgb(12, 12, 12);
   border: 1px dashed white;
   color: white;
+}
+
+.skinnyLoreContainer .openingLoreIntro {
+  width: 70%;
+  font-size: max(10px, 2.25vw);
 }
 
 .doneButton {
@@ -63,11 +64,11 @@
 
 .tooSmallTitle {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
 .tooSmallBody {
   margin-bottom: 10px;
-  font-size: 17px;
+  font-size: 1rem;
 }
