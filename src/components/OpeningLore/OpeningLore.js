@@ -24,8 +24,8 @@ export default function OpeningLore(props) {
             <span className={styles.emphasized}>CSS Hell</span>, where you will
             be subjected to 15 unimaginably torturous CSS puzzles. "What did I
             do to deserve this?", you ask. But you know perfectly well: you
-            blashpemized Cascading Style Sheets. I saw that time your friends
-            were complaining about CSS and you piled on with "CSS isn't even a{" "}
+            blasphemed Cascading Style Sheets. I saw that time your friends were
+            complaining about CSS and you piled on with "CSS isn't even a{" "}
             <i>real</i> programming language". It is. I saw you upvote that{" "}
             <a
               href="https://www.reddit.com/r/ProgrammerHumor/comments/8igmxy/whenever_i_try_vertically_centering_anything/"
