@@ -22,6 +22,7 @@ Assign `order: -1` to HOLE A so it sits to the left of PEG A. Then, give PEG A n
 ### Level 5: the scroll of truth
 
 Assign `position: fixed` to PEG A. Then, push the CSS Editor into the bottom-right corner to generate scrolling room. Scroll PEG A into HOLE A.
+_Alternative solution: Assign `all: inherit` to PEG A. Congratulations, the peg now covers the entire page._
 
 ### Level 6: breathing room
 
