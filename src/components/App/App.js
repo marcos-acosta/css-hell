@@ -43,8 +43,6 @@ export default function App() {
 
   const hasVisited = Boolean(cookies.visited);
 
-  console.log(hasVisited);
-
   const setHighestCompletedLevel = (levelNumber) =>
     levelNumber > highestCompletedLevel &&
     setCookie("checkpoint", levelNumber, {
