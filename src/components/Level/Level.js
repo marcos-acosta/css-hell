@@ -65,7 +65,7 @@ const extractStylesFromElementData = (elementData) => {
 const formatNerfedPropertyNames = () => {
   return NERFED_PROPERTIES.map((propertyName, i) => (
     <span key={i}>
-      {i === 0 ? "" : i === NERFED_PROPERTIES.length - 1 ? ", and " : ", "}
+      {i === 0 ? "" : i === NERFED_PROPERTIES.length - 1 ? ", or " : ", "}
       <span className={styles.grayText}>{propertyName}</span>
     </span>
   ));
@@ -288,13 +288,13 @@ export default function Level(props) {
         <div className={styles.bottomRightPanel}>
           {anyNerfed ? (
             <>
-              Nice thinking. Unfortunately for you,{" "}
-              {FORMATTED_NERFED_PROPERTY_NAMES} are forbidden.
+              Nice thinking, but these puzzles would be too easy if I let you
+              use {FORMATTED_NERFED_PROPERTY_NAMES}.
             </>
           ) : (
             <>
-              It's bad practice to mix shorthand and non-shorthand properties.
-              And I don't like bad practice.
+              Trying to override one of the existing properties using a
+              shorthand property? I don't think so.
             </>
           )}
         </div>
