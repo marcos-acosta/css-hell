@@ -48,17 +48,17 @@ const STYLE_CONFLICTS = {
   ]),
   inset: new Set(["top", "right", "bottom", "left"]),
   margin: new Set([
-      "marginTop",
-      "marginRight",
-      "marginBottom",
-      "marginLeft",
-      "marginBlock",
-      "marginBlockEnd",
-      "marginBlockStart",
-      "marginInline",
-      "marginInlineEnd",
-      "marginInlineStart",
-    ]),
+    "marginTop",
+    "marginRight",
+    "marginBottom",
+    "marginLeft",
+    "marginBlock",
+    "marginBlockEnd",
+    "marginBlockStart",
+    "marginInline",
+    "marginInlineEnd",
+    "marginInlineStart",
+  ]),
   mask: new Set([
     "maskClip",
     "maskComposite",
@@ -225,7 +225,8 @@ function _isShorthandOfOtherProperty(propertyName, otherPropertyName) {
 function _areConflicting(propertyName1, propertyName2) {
   return (
     _isShorthandOfOtherProperty(propertyName1, propertyName2) ||
-    _isShorthandOfOtherProperty(propertyName2, propertyName1)
+    _isShorthandOfOtherProperty(propertyName2, propertyName1) ||
+    propertyName1 === propertyName2
   );
 }
 

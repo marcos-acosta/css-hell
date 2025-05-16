@@ -293,8 +293,8 @@ export default function Level(props) {
             </>
           ) : (
             <>
-              Trying to override one of the existing properties using a
-              shorthand property? I don't think so.
+              Trying to override one of the existing properties? I don't think
+              so.
             </>
           )}
         </div>
