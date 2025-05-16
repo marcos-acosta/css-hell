@@ -46,14 +46,19 @@ export default function CssEditor(props) {
   const deleteCustomCss = (styleId) => props.deleteCustomCss(id, styleId);
 
   return (
-    <Draggable>
+    <Draggable handle={`.${styles.draggableHandle}`}>
       <div
         className={combineClassNames(
           styles.cssEditorContainer,
           props.isWinning && styles.isWinning
         )}
       >
-        <div className={styles.titleContainer}>
+        <div
+          className={combineClassNames(
+            styles.titleContainer,
+            styles.draggableHandle
+          )}
+        >
           <button
             className={combineClassNames(
               styles.closeButton,
@@ -88,7 +93,12 @@ export default function CssEditor(props) {
             )}
           </span>
         </div>
-        <div className={styles.defaultCssContainer}>
+        <div
+          className={combineClassNames(
+            styles.defaultCssContainer,
+            styles.draggableHandle
+          )}
+        >
           {Object.entries(style).map(([propertyName, propertyValue]) => (
             <div key={propertyName}>
               <span className={styles.propertyName}>
@@ -124,16 +134,18 @@ export default function CssEditor(props) {
             <div className={styles.noCustomCss}>no added css</div>
           )}
         </div>
-        <button
-          className={combineClassNames(
-            styles.addCssButton,
-            props.isWinning && styles.whiteText
-          )}
-          onClick={() => addCustomCss(cssBudget)}
-          disabled={customCss.length >= cssBudget}
-        >
-          add css
-        </button>
+        <div className={styles.addCssButtonContainer}>
+          <button
+            className={combineClassNames(
+              styles.addCssButton,
+              props.isWinning && styles.whiteText
+            )}
+            onClick={() => addCustomCss(cssBudget)}
+            disabled={customCss.length >= cssBudget}
+          >
+            add css
+          </button>
+        </div>
       </div>
     </Draggable>
   );

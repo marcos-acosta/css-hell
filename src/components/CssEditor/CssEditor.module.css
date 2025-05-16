@@ -4,10 +4,14 @@
   top: 5vw;
   left: 2vw;
   border: 2px dashed black;
-  padding: 1vw;
-  cursor: move;
-  width: 25vw;
+  width: 27vw;
   font-size: 1vw;
+  box-sizing: border-box;
+}
+
+.draggableHandle {
+  cursor: move;
+  /* background-color: red; */
 }
 
 .isWinning {
@@ -18,14 +22,16 @@
 }
 
 .titleContainer {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-bottom: 0.5vw;
   padding-bottom: 0.5vw;
-  padding-top: 0.5vw;
+  padding-top: 1.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 0.5vw;
 }
 
 .titleText {
@@ -45,7 +51,7 @@
 
 .closeButton {
   position: absolute;
-  left: 0vw;
+  left: 1vw;
   background-color: transparent;
   border: none;
   color: inherit;
@@ -73,6 +79,9 @@
 }
 
 .defaultCssContainer {
+  padding-top: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
   margin-bottom: 1vw;
 }
 
@@ -83,7 +92,15 @@
 }
 
 .customCssContainer {
-  margin-bottom: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
+}
+
+.addCssButtonContainer {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
 }
 
 .addCssButton {
