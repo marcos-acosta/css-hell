@@ -32,7 +32,8 @@
 
 .openingLoreIntro {
   font-size: 17px;
-  width: max(800px, 60%);
+  margin-top: 50px;
+  width: min(800px, 60%);
   background-color: rgb(12, 12, 12);
   padding: clamp(15px, 1vw, 30px);
   outline: 3px solid rgb(12, 12, 12);
